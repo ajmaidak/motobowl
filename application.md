@@ -50,18 +50,13 @@ tool runs locally on my own laptop, authenticated with my own Yahoo account.
 ## Website or App Store Link
 
 ```
-https://github.com/ajmaidak
+https://github.com/ajmaidak/motobowl
 ```
 
-You have no public site and `github.com/ajmaidak/motobowl` doesn't exist yet, so
-your GitHub profile is the honest, verifiable option — it shows a real developer
-behind the request.
-
-**Better, if you're willing:** push the repo public and link it directly
-(`https://github.com/ajmaidak/motobowl`). A reviewer who can see a small,
-obviously-personal fantasy football script has their answer immediately. Make
-sure `.credentials.json` and `.tokens.json` stay gitignored first — they already
-are.
+The repo is public, so link it directly rather than your profile. A reviewer who
+can see a small, obviously-personal fantasy football script has their answer
+immediately — this is the single strongest supporting detail in the application.
+Verified clean: no credential or token files are committed.
 
 ---
 
@@ -80,29 +75,19 @@ Leave blank. You don't have a YDN app yet; access is provisioned after approval.
 This is the field the decision actually turns on.
 
 ```
-Product: Motobowl — a personal command-line tool I am building for my own use
-in a single Yahoo fantasy football league (league ID 130450, my team ID 9). It
-reads my league's data and generates start/sit and waiver-wire suggestions,
-which I then act on by hand in the Yahoo Fantasy app.
+Product: Motobowl — a personal command-line tool for my own use in a single
+Yahoo fantasy football league (league ID 130450, team ID 9). It reads my
+league's data and suggests weekly lineups and waiver pickups, which I then act
+on by hand in the Yahoo Fantasy app. Source: github.com/ajmaidak/motobowl
 
-Fantasy Sports data required (read-only):
-- team/{team_key}/roster — my roster, plus other teams' rosters in the same
-  league, for weekly lineup decisions
-- league/{league_key}/players;status=FA — free agents and waiver-wire players
-- league/{league_key}/settings and /scoreboard — scoring rules and weekly
-  matchups, so recommendations reflect my league's actual scoring
-- league/{league_key}/transactions — recent adds/drops for league context
+Data required (read-only): rosters for my team and the other teams in my
+league, free agents and waivers, league settings and scoreboard, and league
+transactions.
 
-Intended user base: Personal, single-league use. I am the only user. The tool
-runs locally on my own laptop and authenticates against my own Yahoo account.
-It is not distributed, has no public website or hosted service, and does not
-redistribute or display Yahoo data to anyone else.
-
-Write access: Not required. Read-only fully covers this use case — every roster
-move is made manually in the Yahoo Fantasy app.
-
-Expected request volume: Very low. Roughly a few dozen requests per week during
-the NFL season.
+Users: Just me — personal, single-league use. It runs locally on my laptop
+with my own Yahoo account, is not distributed or hosted, and redistributes no
+Yahoo data. Read-only is sufficient; I make every roster move by hand.
+Expected volume is a few dozen requests per week during the season.
 ```
 
 ---
@@ -111,9 +96,7 @@ the NFL season.
 
 - [ ] Replace `<your legal name>` in Business Name
 - [ ] Confirm team ID 9 matches https://football.fantasysports.yahoo.com/f1/130450/9
-- [ ] Decide whether to publish the repo and link it instead of the profile
-- [ ] Keep the endpoint list accurate — it's the strongest part of the
-      application, and it's easier to have described the real shape up front
+- [x] Repo published at https://github.com/ajmaidak/motobowl
 
 ## After approval
 
