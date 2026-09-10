@@ -1,0 +1,914 @@
+Defense/Special Teams
+	
+Roster Status
+	
+GP*
+	
+Bye
+	
+Fan Pts
+	
+Pos Rank
+	
+Pre-Season
+	
+Actual
+	
+% Ros
+	
+% Ros 💎
+	
+Pts vs.*
+	
+Sack
+	
+Safe
+	
+Int
+	
+Fum Rec
+	
+TD
+	
+Blk Kick
+	
+
+	
+
+	
+Vikings
+VikingsNo new player Notes Min - DEF
+Sun 3:25 pm vs GB
+	
+W (Sep 10)
+	
+-
+	
+6
+	
+6
+	
+15 (DEF)
+	
+189
+	
+223
+	
+82%
+	
+45%
+	
+22.0
+	
+2.5
+	
+0.0
+	
+0.6
+	
+0.5
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Chargers
+ChargersNo new player Notes LAC - DEF
+Sun 3:25 pm vs Ari
+	
+W (Sep 10)
+	
+-
+	
+7
+	
+8
+	
+3 (DEF)
+	
+233
+	
+184
+	
+67%
+	
+36%
+	
+21.0
+	
+3.1
+	
+0.0
+	
+0.7
+	
+0.5
+	
+0.2
+	
+0.1
+	
+
+	
+
+	
+Cowboys
+CowboysNo new player Notes Dal - DEF
+Sun 7:20 pm @ NYG
+	
+W (Sep 10)
+	
+-
+	
+14
+	
+6
+	
+22 (DEF)
+	
+226
+	
+239
+	
+29%
+	
+5%
+	
+23.4
+	
+2.5
+	
+0.0
+	
+0.7
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Titans
+TitansNo new player Notes Ten - DEF
+Sun 12:00 pm vs NYJ
+	
+W (Sep 10)
+	
+-
+	
+9
+	
+8
+	
+7 (DEF)
+	
+303
+	
+201
+	
+20%
+	
+4%
+	
+20.2
+	
+3.4
+	
+0.0
+	
+0.8
+	
+0.5
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Bills
+BillsNo new player Notes Buf - DEF
+Sun 12:00 pm @ Hou
+	
+W (Sep 10)
+	
+-
+	
+7
+	
+6
+	
+14 (DEF)
+	
+243
+	
+221
+	
+17%
+	
+3%
+	
+22.1
+	
+2.2
+	
+0.0
+	
+0.7
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Raiders
+RaidersNo new player Notes LV - DEF
+Sun 3:25 pm vs Mia
+	
+W (Sep 10)
+	
+-
+	
+13
+	
+7
+	
+13 (DEF)
+	
+2,112
+	
+220
+	
+8%
+	
+2%
+	
+18.8
+	
+2.8
+	
+0.0
+	
+0.6
+	
+0.5
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Chiefs
+ChiefsNo new player Notes KC - DEF
+Mon 7:15 pm vs Den
+	
+W (Sep 10)
+	
+-
+	
+5
+	
+6
+	
+11 (DEF)
+	
+239
+	
+213
+	
+12%
+	
+2%
+	
+20.9
+	
+1.9
+	
+0.0
+	
+0.7
+	
+0.5
+	
+0.2
+	
+0.1
+	
+
+	
+
+	
+Packers
+PackersNo new player Notes GB - DEF
+Sun 3:25 pm @ Min
+	
+W (Sep 10)
+	
+-
+	
+11
+	
+6
+	
+12 (DEF)
+	
+240
+	
+216
+	
+15%
+	
+2%
+	
+23.1
+	
+2.5
+	
+0.0
+	
+0.7
+	
+0.4
+	
+0.2
+	
+0.1
+	
+
+	
+
+	
+49ers
+49ersNo new player Notes SF - DEF
+Thu 7:35 pm @ LAR
+	
+W (Sep 10)
+	
+-
+	
+8
+	
+4
+	
+28 (DEF)
+	
+260
+	
+260
+	
+9%
+	
+1%
+	
+24.5
+	
+1.4
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Bears
+BearsNo new player Notes Chi - DEF
+Sun 12:00 pm @ Car
+	
+W (Sep 10)
+	
+-
+	
+10
+	
+6
+	
+19 (DEF)
+	
+290
+	
+233
+	
+8%
+	
+1%
+	
+23.2
+	
+2.1
+	
+0.0
+	
+0.7
+	
+0.5
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Buccaneers
+BuccaneersNo new player Notes TB - DEF
+Sun 12:00 pm @ Cin
+	
+W (Sep 10)
+	
+-
+	
+10
+	
+5
+	
+26 (DEF)
+	
+273
+	
+252
+	
+3%
+	
+1%
+	
+26.5
+	
+2.1
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Browns
+BrownsNo new player Notes Cle - DEF
+Sun 12:00 pm @ Jax
+	
+W (Sep 10)
+	
+-
+	
+11
+	
+5
+	
+18 (DEF)
+	
+302
+	
+231
+	
+4%
+	
+1%
+	
+22.1
+	
+2.2
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Panthers
+PanthersNo new player Notes Car - DEF
+Sun 12:00 pm vs Chi
+	
+W (Sep 10)
+	
+-
+	
+5
+	
+5
+	
+30 (DEF)
+	
+2,077
+	
+268
+	
+1%
+	
+0%
+	
+24.2
+	
+2.0
+	
+0.0
+	
+0.5
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Commanders
+CommandersNo new player Notes Was - DEF
+Sun 3:25 pm @ Phi
+	
+W (Sep 10)
+	
+-
+	
+7
+	
+4
+	
+31 (DEF)
+	
+2,105
+	
+274
+	
+1%
+	
+0%
+	
+23.7
+	
+2.1
+	
+0.0
+	
+0.5
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Dolphins
+DolphinsNo new player Notes Mia - DEF
+Sun 3:25 pm @ LV
+	
+W (Sep 10)
+	
+-
+	
+6
+	
+6
+	
+17 (DEF)
+	
+2,072
+	
+229
+	
+1%
+	
+0%
+	
+21.3
+	
+2.8
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Bengals
+BengalsNo new player Notes Cin - DEF
+Sun 12:00 pm vs TB
+	
+W (Sep 10)
+	
+-
+	
+6
+	
+6
+	
+21 (DEF)
+	
+257
+	
+237
+	
+3%
+	
+0%
+	
+24.3
+	
+2.3
+	
+0.0
+	
+0.7
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Cardinals
+CardinalsNo new player Notes Ari - DEF
+Sun 3:25 pm @ LAC
+	
+W (Sep 10)
+	
+-
+	
+14
+	
+4
+	
+32 (DEF)
+	
+2,101
+	
+281
+	
+0%
+	
+0%
+	
+25.8
+	
+2.5
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Colts
+ColtsNo new player Notes Ind - DEF
+Sun 12:00 pm vs Bal
+	
+W (Sep 10)
+	
+-
+	
+13
+	
+6
+	
+20 (DEF)
+	
+272
+	
+236
+	
+2%
+	
+0%
+	
+25.4
+	
+2.6
+	
+0.0
+	
+0.7
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Jets
+JetsNo new player Notes NYJ - DEF
+Sun 12:00 pm @ Ten
+	
+W (Sep 10)
+	
+-
+	
+13
+	
+6
+	
+27 (DEF)
+	
+2,505
+	
+256
+	
+2%
+	
+0%
+	
+19.8
+	
+2.7
+	
+0.0
+	
+0.5
+	
+0.5
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Giants
+GiantsNo new player Notes NYG - DEF
+Sun 7:20 pm vs Dal
+	
+W (Sep 10)
+	
+-
+	
+8
+	
+5
+	
+24 (DEF)
+	
+267
+	
+245
+	
+3%
+	
+0%
+	
+25.5
+	
+2.1
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Saints
+SaintsNo new player Notes NO - DEF
+Sun 12:00 pm @ Det
+	
+W (Sep 10)
+	
+-
+	
+8
+	
+4
+	
+29 (DEF)
+	
+289
+	
+263
+	
+1%
+	
+0%
+	
+26.1
+	
+2.2
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
+
+	
+
+	
+Falcons
+FalconsNo new player Notes Atl - DEF
+Sun 12:00 pm @ Pit
+	
+W (Sep 10)
+	
+-
+	
+11
+	
+5
+	
+23 (DEF)
+	
+291
+	
+242
+	
+2%
+	
+0%
+	
+22.6
+	
+2.3
+	
+0.0
+	
+0.6
+	
+0.4
+	
+0.1
+	
+0.1
+	
