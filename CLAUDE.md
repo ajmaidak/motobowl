@@ -36,7 +36,7 @@ Raw pastes from the Yahoo web UI (ugly, one table cell per line — that's norma
 | `data/league-settings.txt` | Scoring & Settings page | populated |
 | `data/my-roster.txt` | My Team page, week 1 | populated |
 | `data/opponent-roster.txt` | This week's opponent | **empty** |
-| `data/free-agent-*.txt` | Players → Free Agents, one file per position | def + mixed offense populated |
+| `data/free-agent-*.txt` | Players → Free Agents, one file per position | all 6 populated (147 players) |
 
 Parsed, normalized versions — **prefer these**, don't re-parse the raw text:
 
@@ -66,7 +66,9 @@ Two paste quirks it handles, both of which silently corrupted columns before:
 
 **Free agents are split one file per position** (`data/free-agent-qb.txt`,
 `-rb`, `-wr`, `-te`, `-k`, `-def`), because Yahoo paginates at 25 rows and uses
-a different column set per position group. Merge them with:
+a different column set per position group. On duplicate players the **most
+recently modified file wins** — pastes happen at different times, and a stale
+in-progress row must never beat a finished one. Merge them with:
 
 ```bash
 .venv/bin/python free_agents.py     # -> data/free-agents.json

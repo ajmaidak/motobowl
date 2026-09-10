@@ -22,7 +22,7 @@ their own stat columns). So free agents are split by position:
 ```
 data/free-agent-qb.txt    data/free-agent-te.txt    data/free-agent-def.txt
 data/free-agent-rb.txt    data/free-agent-k.txt
-data/free-agent-wr.txt    data/free-agents.txt   (mixed offense, optional)
+data/free-agent-wr.txt
 ```
 
 Any file matching `data/free-agent*.txt` is picked up, so adding a position is
@@ -42,6 +42,11 @@ just adding a file.
    ```
 
    Writes `data/free-agents.json` and prints a per-position summary.
+
+**Re-pasting is safe.** On conflict the **most recently modified file wins**, so
+re-copying a position picks up the fresher data. This matters because pastes are
+taken at different times — a game showing `Q4 1:21, 13-10` in one paste and
+`Final W 13-10` in a later one is the same game, and the newer row must win.
 
 Top ~25 per position is plenty for waiver decisions; the tail is players you'd
 never start.

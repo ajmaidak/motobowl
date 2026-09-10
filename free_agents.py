@@ -7,11 +7,13 @@ position, each filtered on Yahoo before copying:
 
     data/free-agent-qb.txt     data/free-agent-te.txt    data/free-agent-def.txt
     data/free-agent-rb.txt     data/free-agent-k.txt
-    data/free-agent-wr.txt     data/free-agents.txt      (mixed offense, optional)
+    data/free-agent-wr.txt
 
 Any file matching data/free-agent*.txt is picked up, so adding a position is
 just adding a file. Multiple pages go in the same file back to back; columns are
-read from each file's own header, and players are de-duplicated by name+team.
+read from each file's own header, and players are de-duplicated by name+team --
+most recently modified file wins, since pastes are taken at different times and
+a stale row must never beat a fresher one.
 
     python3 free_agents.py
     python3 free_agents.py --json data/free-agents.json
@@ -33,7 +35,10 @@ def load(pattern=DATA_GLOB):
     players = {}
     report = []
 
-    for path in sorted(glob.glob(pattern)):
+    # Newest paste wins on conflict. Files are pasted at different times and the
+    # same player can appear in more than one (dual eligibility, a re-paste), so
+    # ordering by filename would let a stale in-progress row beat a finished one.
+    for path in sorted(glob.glob(pattern), key=os.path.getmtime, reverse=True):
         name = os.path.basename(path)
         try:
             text = open(path, encoding="utf-8").read()
@@ -60,7 +65,7 @@ def load(pattern=DATA_GLOB):
             added += 1
 
         dupes = len(parsed) - added
-        note = f"{len(parsed)} rows" + (f", {dupes} already seen" if dupes else "")
+        note = f"{len(parsed)} rows" + (f", {dupes} superseded by newer paste" if dupes else "")
         report.append((name, added, note))
 
     return list(players.values()), report
