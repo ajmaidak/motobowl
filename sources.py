@@ -220,13 +220,29 @@ def fantasypros(path, max_age_hours=6, **params):
     return json.loads(text)
 
 
-def consensus_rankings(season, week=None, position="ALL", scoring="PPR"):
+def consensus_rankings(season, week=None, position="ALL", scoring="PPR", max_age_hours=6):
     """Expert consensus rankings (ECR) with tiers. Weekly if week is given."""
     params = {"position": position, "scoring": scoring}
     params["type"] = "weekly" if week else "draft"
     if week:
         params["week"] = week
-    return fantasypros(f"nfl/{season}/consensus-rankings", **params)
+    return fantasypros(f"nfl/{season}/consensus-rankings", max_age_hours=max_age_hours, **params)
+
+
+def current_week(default=1):
+    """The league week the last `yahoo_web.py sync` was run for.
+
+    Read from data/my-roster.json's meta.week so weekly fetchers (rankings,
+    projections) follow the sync rather than a hard-coded number. Falls back
+    to `default` when no roster has been synced yet.
+    """
+    path = os.path.join(HERE, "data", "my-roster.json")
+    try:
+        with open(path) as fh:
+            week = json.load(fh).get("meta", {}).get("week")
+        return int(week) if week else default
+    except (OSError, ValueError, AttributeError):
+        return default
 
 
 def fp_projections(season, week, position, max_age_hours=6):
@@ -266,7 +282,7 @@ REFRESHERS = {
                          "nflverse depth charts"),
     "rosters":          (lambda a: nflverse_csv("weekly_rosters", "roster_weekly_2026.csv", a), 12,
                          "nflverse weekly rosters"),
-    "fp-rankings":      (lambda a: consensus_rankings(2026, week=1), 6,
+    "fp-rankings":      (lambda a: consensus_rankings(2026, week=current_week(), max_age_hours=a), 6,
                          "FantasyPros ECR (top 10/position only)"),
 }
 
@@ -343,8 +359,9 @@ def check():
 
     print("\nFantasyPros")
     try:
-        data = consensus_rankings(2026, week=1)
-        print(f"  ok   consensus rankings    {len(data.get('players', []))} players")
+        week = current_week()
+        data = consensus_rankings(2026, week=week)
+        print(f"  ok   consensus rankings    week {week}, {len(data.get('players', []))} players")
     except SourceError as exc:
         print(f"  FAIL {exc}")
     print()
