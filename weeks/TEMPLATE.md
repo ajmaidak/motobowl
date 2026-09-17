@@ -2,6 +2,8 @@
 
 **Opponent:** ??? · **Result:** — · **Final score:** —
 
+Analysis by: **<model name>** (`<model id>`), via `/start-sit`.
+
 ## Before
 
 ### Lineup set

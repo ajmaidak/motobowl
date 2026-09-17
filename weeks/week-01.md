@@ -5,6 +5,8 @@
 
 Team: Team Auto Pick · Source: hand-pasted snapshot (Yahoo API not yet approved)
 
+Analysis by: **Claude Opus 5** (`claude-opus-5`) — Before section 2026-09-09, After section 2026-09-16.
+
 ## Before
 
 ### Recommended lineup
