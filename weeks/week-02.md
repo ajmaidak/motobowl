@@ -63,6 +63,31 @@ lock then. The WR3 decision (#1) must be made before kickoff — after that Sutt
 the only reversal available and only if Shakir *hasn't* played. No free agent in
 that game is worth adding (Tyler Bass K 8, Bills DEF 5).
 
+### Long-term waiver targets (asked 2026-09-16, after the lineup was set)
+
+Screened all 268 free agents on week 1 snap share, targets/carries, age, team
+context and league-wide add/drop trends (Sleeper, 0.1h old). One game of usage —
+these are role bets, not proven roles. Roster math: 16 slots, 6 bench. Going into
+week 2 the bench is Sutton, Harrison, Pittman (Q), Harvey (Q), Allgeier, Steelers.
+
+| Priority | Add | For | Why (all week 1, Sleeper) | Cost |
+|---|---|---|---|---|
+| 1 | **Xavier Worthy** (KC WR, 23) | Michael Pittman Jr. | KC WR2: 77% snaps, 6 targets (Rice 2), Mahomes 22.7 PPR. Pittman was 6th in PIT targets (3) and is Q (foot). On waivers until Sep 19; 56% Ros. | Claim, processes Sat |
+| 2 | **Emmett Johnson** (KC RB, 22, rookie) | Whichever DEF loses after week 2 | KC RB2 behind Kenneth Walker (23 car): 36% snaps, 8 car, 2 rec, 44 rec yds. Only FA RB with both a pass-down role and a handcuff path in a top offense; every other FA RB is a committee back. 23% Ros, trending 358k adds. | FA, after Sunday |
+| 3 | **Dontayvion Wicks** (PHI WR, 25) | Courtland Sutton | PHI WR2: 91% snaps next to DeVonta Smith (95%), 4 targets, 73 yds; Hurts 24.7 PPR. Sutton (30) drew 5 targets in an offense where Nix scored 6.4. 21% Ros. Makai Lemon (rookie, 64% snaps, 67% Ros) is the competition for that role. | FA; wait a week to see the split hold |
+| watch | Caleb Douglas (MIA WR, 23, rookie) | — | 91% snaps, 7 targets, 94 yds; #1 trending add (1.14M). Volume is real but the offense is Malik Willis (17.7). Below Worthy/Wicks on environment. | FA, 24% Ros |
+| watch | KC Concepcion Jr. (CLE WR, 21) | — | Highest preseason rank on the wire (98), CLE WR1 by depth, 69% snaps, 5 tgt + 3 carries. But trending as a *drop* (151k) and Denzel Boston out-snapped him 47–35. | Waivers until Sep 19, 73% Ros |
+| no | C.J. Stroud (HOU QB) | — | Best QB2 available (proj 22, 32% Ros) but a 10-team 1-QB league doesn't reward a bench QB until Lamar's week 13 bye. | — |
+
+Hold for now: Harrison (24, 2nd year, ARI WR1 by depth despite 3 targets),
+Allgeier (17 carries; re-check once Love has two healthy games), Harvey (Q; 51%
+snaps, 4 targets — the pass-down role is worth more here than in most leagues).
+
+RB depth is the structural weakness — behind Taylor and Achane it's all
+committee backs, and no FA RB starts. Neither Taylor's backup (IND, nobody over 6
+snaps) nor Achane's (Wright and Ollie Gordon, 4 snaps each) is identifiable from
+week 1, so there's no handcuff to buy; Johnson is the closest thing to RB upside.
+
 ### What this was decided on
 
 * **Roster/opponent/free agents:** `yahoo_web.py sync 2`, fetched 2026-09-17T03:09Z,
