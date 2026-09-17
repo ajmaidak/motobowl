@@ -101,8 +101,8 @@ Expected volume is a few dozen requests per week during the season.
 ## After approval
 
 Create the app on the Yahoo Developer Network with:
-- Application Type: **Installed Application**
-- Redirect URI: anything URL-shaped (unused — this project uses the `oob` flow)
+- OAuth Client Type: **Confidential Client** (Yahoo removed "Installed Application")
+- Redirect URI: `https://localhost:8080/callback` (Yahoo rejects `oob`; must match `REDIRECT_URI` in `yahoo_api.py`)
 - API Permissions: **Fantasy Sports → Read**
 
 Then follow the setup steps in README.md.

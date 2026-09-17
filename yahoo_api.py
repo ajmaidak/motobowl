@@ -1,6 +1,6 @@
 """Minimal Yahoo Fantasy Sports API client.
 
-Handles the OAuth2 dance (out-of-band flow, suitable for a CLI script) and
+Handles the OAuth2 dance (copy-paste redirect flow, suitable for a CLI script) and
 caches tokens locally so you only authorize once. Read-only scope: fspt-r.
 """
 
@@ -10,6 +10,7 @@ import os
 import sys
 import time
 import webbrowser
+from urllib.parse import parse_qs, quote, urlparse
 
 import requests
 
@@ -17,9 +18,10 @@ AUTH_URL = "https://api.login.yahoo.com/oauth2/request_auth"
 TOKEN_URL = "https://api.login.yahoo.com/oauth2/get_token"
 API_BASE = "https://fantasysports.yahooapis.com/fantasy/v2"
 
-# Yahoo's "out of band" redirect: it shows you the code to paste instead of
-# calling back to a web server. Register the app as an Installed Application.
-REDIRECT_URI = "oob"
+# Yahoo no longer accepts "oob". Nothing listens on this URI: after approving,
+# the browser fails to load it, and the code is copied from the address bar.
+# Must match the redirect URI registered on the app (a Confidential Client).
+REDIRECT_URI = "https://localhost:8080/callback"
 SCOPE = "fspt-r"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,14 +43,14 @@ def _load_credentials():
     if os.path.exists(CREDS_FILE):
         with open(CREDS_FILE) as fh:
             creds = json.load(fh)
-        if creds.get("client_id") and creds.get("client_secret"):
-            return creds["client_id"], creds["client_secret"]
+        if creds.get("yahoo_client_id") and creds.get("yahoo_client_secret"):
+            return creds["yahoo_client_id"], creds["yahoo_client_secret"]
 
     raise AuthError(
         "No Yahoo API credentials found.\n"
         "Set YAHOO_CLIENT_ID and YAHOO_CLIENT_SECRET, or create "
         f"{CREDS_FILE} containing:\n"
-        '  {"client_id": "...", "client_secret": "..."}'
+        '  {"yahoo_client_id": "...", "yahoo_client_secret": "..."}'
     )
 
 
@@ -72,10 +74,31 @@ def _read_tokens():
         return json.load(fh)
 
 
+def _extract_code(pasted):
+    """Pull the auth code out of a pasted redirect URL, or accept a bare code."""
+    pasted = pasted.strip()
+    query = parse_qs(urlparse(pasted).query)
+    if "error" in query:
+        error = query["error"][0]
+        hint = ""
+        if error == "invalid_scope":
+            hint = (
+                "\nThe app lacks Fantasy Sports (fspt-r) permission -- Yahoo hasn't "
+                "provisioned API access yet. Check API Permissions on the app page."
+            )
+        raise AuthError(
+            f"Yahoo refused authorization: {error} "
+            f"({query.get('error_description', [''])[0]}){hint}"
+        )
+    if "code=" in pasted:
+        return parse_qs(urlparse(pasted).query).get("code", [""])[0]
+    return pasted
+
+
 def _authorize(client_id, client_secret):
     """First-run browser authorization; returns a fresh token set."""
     url = (
-        f"{AUTH_URL}?client_id={client_id}&redirect_uri={REDIRECT_URI}"
+        f"{AUTH_URL}?client_id={client_id}&redirect_uri={quote(REDIRECT_URI, safe='')}"
         f"&response_type=code&scope={SCOPE}&language=en-us"
     )
     print("Authorize Motobowl to read your Yahoo fantasy data:\n")
@@ -85,7 +108,9 @@ def _authorize(client_id, client_secret):
     except Exception:
         pass
 
-    code = input("Paste the code Yahoo shows you: ").strip()
+    print("After approving, the browser will fail to load a localhost page.")
+    print("That's expected -- copy the URL from its address bar.\n")
+    code = _extract_code(input("Paste that URL (or just the code= value): "))
     if not code:
         raise AuthError("No code entered.")
 

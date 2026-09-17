@@ -23,8 +23,8 @@ but adds/drops and lineup changes still get clicked in Yahoo by hand.
    application is reviewed by the Yahoo Fantasy Sports team, so describe the
    project and note that it's personal / single-league use.
 2. **Create the app** on the Yahoo Developer Network:
-   * Application Type: **Installed Application**
-   * Redirect URI: anything URL-shaped (unused — this script uses the `oob` flow)
+   * OAuth Client Type: **Confidential Client** (Yahoo removed "Installed Application")
+   * Redirect URI: `https://localhost:8080/callback` (Yahoo rejects `oob`; must match `REDIRECT_URI` in `yahoo_api.py`)
    * API Permissions: **Fantasy Sports → Read**
 3. **Save the credentials**, either as environment variables:
    ```bash
@@ -33,7 +33,7 @@ but adds/drops and lineup changes still get clicked in Yahoo by hand.
    ```
    or in `.credentials.json` (gitignored):
    ```json
-   {"client_id": "...", "client_secret": "..."}
+   {"yahoo_client_id": "...", "yahoo_client_secret": "..."}
    ```
 4. **Install deps:**
    ```bash

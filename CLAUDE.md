@@ -14,16 +14,20 @@ read-only, and no code here should attempt writes. Recommend, don't execute.
 
 ## Two data sources — know which one you're on
 
-Yahoo API access was applied for (see `application.md`) but **not yet granted**.
+Yahoo API access was approved 2026-09-16: agreement signed, app created (Confidential
+Client, credentials in `.credentials.json`), confirmation form submitted. **Waiting
+on Yahoo to provision** Fantasy Sports permissions on the app. A form auto-reply
+quoted 1–2 weeks (so by ~2026-09-30); check the app's API Permissions page for
+Fantasy Sports rather than waiting on email.
 Until it is, everything runs off hand-pasted snapshots in `data/`.
 
 | Source | Status | Entry point |
 |---|---|---|
 | Pasted snapshots in `data/` | **Active now** | `parse_roster.py`, `parse_settings.py` |
-| Yahoo Fantasy API | Pending approval | `yahoo_api.py`, `roster.py` |
+| Yahoo Fantasy API | Approved, awaiting provisioning | `yahoo_api.py`, `roster.py` |
 
 `roster.py` is written and its parsing is verified against a mock payload, but
-it has **never run against the live API** — no credentials exist yet. Treat its
+it has **never run against the live API** — credentials exist, but access isn't provisioned yet. Treat its
 response handling as unproven. When access lands, the first real call may need
 fixes to the JSON shape assumptions in `yahoo_api.py`.
 
