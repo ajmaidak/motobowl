@@ -1,7 +1,7 @@
 # Week 1
 
-**Opponent:** unknown — `data/opponent-roster.txt` not yet pasted
-**Result:** pending · **Final score:** pending
+**Opponent:** Orton's BloodyFinger (Brian) — not known at decision time
+**Result:** **L** · **Final score:** 134 – 159 · Record 0-1-0, 7th
 
 Team: Team Auto Pick · Source: hand-pasted snapshot (Yahoo API not yet approved)
 
@@ -42,9 +42,9 @@ Dowdle at flex, slide Courtland Sutton up to WR3.**
 
 | # | Recommendation | Reasoning at the time | Confidence | Followed? |
 |---|---|---|---|---|
-| 1 | **Start Rico Dowdle (flex) over Marvin Harrison Jr.; Sutton fills WR3** | Four signals lean Dowdle, none decisive: Yahoo proj 11 vs 9; % started 40% vs 29%; ceiling (proj_max) 17 vs 14 at nearly identical floors (5 vs 6); and Harrison draws @ LAC, which FantasyPros ranks **DST2** this week. The case *against* is real — nflverse depth chart (dated 2026-09-09) has Harrison as ARI **WR1** (alpha target share, the thing full PPR pays for) while Dowdle is PIT **RB2** behind Jaylen Warren, which is the classic low-floor committee profile. Tiebreaker: ARI's QB1 on today's depth chart is **Jacoby Brissett**, which caps what a WR1 target share is worth, and Dowdle correlates *positively* with my Steelers DEF (a PIT lead means run volume) where Pittman would correlate negatively. **Close to a coin flip — leaving Harrison in is defensible.** | Low–moderate | TBD |
-| 2 | **No waiver move — including DEF.** | Nothing available clearly beats a starter. Best FA per position by % Ros: WR Deebo Samuel 47% (my WR3 candidates are 81–94%), RB Mike Washington Jr. 55%, TE Hunter Henry 56% (vs Fannin, FP **TE6**), K Will Reichard 65% (vs Bates, FP **K7**; Reichard unranked). **DEF was worked separately below** — Steelers stay. | High | TBD |
-| 3 | **No move on Pittman → WR3.** | Yahoo proj 10 vs Harrison 9 is inside the no-fractional-points noise band, and the market disagrees with the projection (11% started vs 29%). Not a real edge. | High | TBD |
+| 1 | **Start Rico Dowdle (flex) over Marvin Harrison Jr.; Sutton fills WR3** | Four signals lean Dowdle, none decisive: Yahoo proj 11 vs 9; % started 40% vs 29%; ceiling (proj_max) 17 vs 14 at nearly identical floors (5 vs 6); and Harrison draws @ LAC, which FantasyPros ranks **DST2** this week. The case *against* is real — nflverse depth chart (dated 2026-09-09) has Harrison as ARI **WR1** (alpha target share, the thing full PPR pays for) while Dowdle is PIT **RB2** behind Jaylen Warren, which is the classic low-floor committee profile. Tiebreaker: ARI's QB1 on today's depth chart is **Jacoby Brissett**, which caps what a WR1 target share is worth, and Dowdle correlates *positively* with my Steelers DEF (a PIT lead means run volume) where Pittman would correlate negatively. **Close to a coin flip — leaving Harrison in is defensible.** | Low–moderate | Yes |
+| 2 | **No waiver move — including DEF.** | Nothing available clearly beats a starter. Best FA per position by % Ros: WR Deebo Samuel 47% (my WR3 candidates are 81–94%), RB Mike Washington Jr. 55%, TE Hunter Henry 56% (vs Fannin, FP **TE6**), K Will Reichard 65% (vs Bates, FP **K7**; Reichard unranked). **DEF was worked separately below** — Steelers stay. | High | Yes |
+| 3 | **No move on Pittman → WR3.** | Yahoo proj 10 vs Harrison 9 is inside the no-fractional-points noise band, and the market disagrees with the projection (11% started vs 29%). Not a real edge. | High | Yes |
 
 ### DEF: Steelers vs. the wire (worked in detail)
 
@@ -155,31 +155,83 @@ and market consensus.
 
 ## After
 
+Source: Yahoo My Team and Matchup pages, week 1, all games Final — pasted into
+chat 2026-09-16.
+
+**Lost 134–159 to Orton's BloodyFinger.** Yahoo's original projections had it
+as a toss-up (131 vs 132). The opponent beat their projection by 27; I beat
+mine by 3.
+
+| Pos | Opponent starter | Proj | Actual |
+|---|---|---|---|
+| QB | Jalen Hurts | 22 | 30 |
+| RB | Bijan Robinson | 19 | 31 |
+| RB | Javonte Williams | 16 | 24 |
+| WR | Ladd McConkey | 13 | 19 |
+| WR | Jameson Williams | 13 | 8 |
+| WR | Jayden Reed | 11 | 5 |
+| TE | Jake Ferguson | 9 | 2 |
+| W/R/T | Travis Etienne Jr. | 14 | 14 |
+| K | Trey Smack | 7 | 13 |
+| DEF | Jaguars | 8 | 13 |
+
 ### Actual results
 
 | Slot | Player | Proj | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | Lamar Jackson | 22 | 26 | +4 |
+| WR | Chris Olave | 16 | 28 | +12 |
+| WR | Emeka Egbuka | 11 | 11 | 0 |
+| WR | Courtland Sutton | 11 | 3 | −8 |
+| RB | Jonathan Taylor | 17 | 24 | +7 |
+| RB | De'Von Achane | 17 | 10 | −7 |
+| TE | Harold Fannin Jr. | 10 | 4 | −6 |
+| W/R/T | Rico Dowdle | 11 | 3 | −8 |
+| K | Jake Bates | 8 | 7 | −1 |
+| DEF | Steelers | 7 | 18 | +11 |
 
-**Actual total:** — vs projected 130
+**Actual total:** 134 vs projected 130
+
+Bench: Shakir 9, Pittman 8, Allgeier 8, Harvey 7, Harrison 4, Wright 0 (36).
+
+**Best possible lineup: 145** — Shakir at WR3 and Pittman or Allgeier at flex
+instead of Sutton and Dowdle. **11 points left on the bench**, all of it in the
+two slots the week's analysis focused on. **The optimal lineup still loses by
+14**, so no start/sit decision cost this game. The loss came from the
+opponent's QB and two RBs scoring 85 against a 57 projection (+28).
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Rico Dowdle | | Marvin Harrison Jr. | | |
-| Courtland Sutton | | Michael Pittman Jr. | | |
-| Steelers DEF | | Chargers DEF (FA, league-exact EV +0.46) | | |
-| Jake Bates | | Will Reichard (FA) | | |
+| Rico Dowdle | 3 | Marvin Harrison Jr. | 4 | Lost by 1 — a wash inside the no-fractional-points noise. The auto-draft default would have scored 135. |
+| Courtland Sutton | 3 | Michael Pittman Jr. | 8 | Lost by 5. |
+| Courtland Sutton | 3 | Khalil Shakir | 9 | Lost by 6 — the best bench option was the one with the lowest % started (4%). |
+| Steelers DEF | 18 | Chargers DEF (FA, league-exact EV +0.46) | ? | Keeping them was almost certainly right: 18 was DEF2 for the week, and LAC gave up 26 to ARI (0 points-allowed points in this league). LAC's exact total wasn't recovered. |
+| Jake Bates | 7 | Will Reichard (FA) | ? | Not recovered from the pastes; Bates was 1 under projection, so the gap can't be meaningful. |
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
-
-**Specific things to grade:** (1) Did the depth-chart-role signal (Harrison as
-WR1) beat the projection + market signal (Dowdle)? That was the week's only real
-call and it was near a coin flip. (2) Was falling back to Yahoo projections
-sound, given FantasyPros covered none of the contested players? (3) Was standing
-pat on Steelers DEF over the higher-ECR Chargers right?
+* **What the reasoning got right:** Standing pat at DEF (Steelers 18, +11 over
+  projection) and at K. No waiver churn was needed. Keeping Jackson and Olave
+  locked in paid off (+16 combined).
+* **What it got wrong:** Both contested slots busted. Dowdle (RB2 behind Warren,
+  8 carries for 15 yards) scored exactly what his committee role suggested. The
+  "positive correlation with Steelers DEF" tiebreaker was right that PIT won and
+  the defense scored, but Dowdle still got nothing from it. Sutton caught 2 of 5
+  targets on MNF in a 10–31 blowout.
+* **Can't be graded on one week:** Harrison (WR1 by depth chart) scored only 4,
+  so "depth-chart role vs projection+market" came out a 1-point tie and settles
+  nothing. The flex/WR3 pool (Sutton, Dowdle, Harrison, Pittman, Harvey,
+  Allgeier, Shakir) scored 3–9, a 6-point spread among players projected 6–11.
+  A normal week produces that much randomness, so don't overcorrect from it.
+* **Worth tracking going forward:** Real week 1 usage data now exists, which the
+  week 1 analysis lacked. Targets: Shakir 6, Egbuka 6, Sutton 5, Dowdle 5,
+  Harvey 4, Harrison 3, Pittman 3. Carries: Allgeier 17 (behind/alongside Love
+  at ARI), Dowdle 8, Harvey 3. **Allgeier's 17 carries is the most notable
+  bench signal.** Week 2 calls should use target/carry share rather than
+  depth-chart order alone.
+* **New designations in this paste:** Pittman **Q**, Harvey **Q**. Check before
+  week 2.
+* **Process change:** Let 2026 usage data (snaps, targets, carries) take over
+  from depth-chart role as the tiebreaker for bench-slot calls once it exists.

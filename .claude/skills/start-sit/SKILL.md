@@ -31,40 +31,39 @@ plays.
 * `data/league-settings.json` — scoring rules and starting slots
 * `data/free-agents.json` — every available player, by position, with injury
   status and % rostered
-* `data/opponent-roster.json` — this week's opponent, if pasted
+* `data/opponent-roster.json` — this week's opponent
 
-Check `meta.week` matches the week you're advising on. If the snapshot is from a
-previous week, stop and ask for a fresh paste rather than advising on stale
-data — this is the single most likely way to give confidently wrong advice.
-
-Regenerate from raw pastes if needed:
+Check `meta.week` matches the week you're advising on, and `meta.fetched` for
+age. If the snapshot is stale or from a previous week, re-sync rather than
+advising on it — this is the single most likely way to give confidently wrong
+advice:
 
 ```bash
-.venv/bin/python parse_roster.py data/my-roster.txt --json data/my-roster.json
-.venv/bin/python free_agents.py                      # -> data/free-agents.json
+.venv/bin/python yahoo_web.py sync WEEK   # -> my-roster, opponent-roster, free-agents .json
 ```
+
+If it fails on a login redirect, the session cookie expired: ask the user to
+re-copy it (steps at the top of `yahoo_web.py`). Never ask for the cookie in chat.
 
 **Free agents are real options, not background.** The roster was auto-drafted
 and has soft spots; a widely-rostered free agent can beat a current starter
 outright. Load them every time, not only when asked about waivers.
 
-**Know what you're ranking on.** These pastes often carry no `Proj Pts` column —
-only season columns (`Fan Pts`, `Pos Rank`, `% Ros`). When that's the case,
-`% Ros` is the fallback sort, and it is **market consensus, not a projection**.
-Say so rather than presenting it as expected points, and ask for a re-paste with
-Yahoo's weekly projection view if a decision genuinely turns on projected
-scoring.
+**Know what you're ranking on.** `sync` pulls free agents in Yahoo's weekly
+projection view (`meta.stat_view` = `S_PW_<week>`), so `proj_pts` is a real
+weekly projection — but only Yahoo's. `% Ros` is market consensus, not a
+projection; don't present it as expected points. Free agents include players on
+waivers: check `roster_status` (`W (Sep 19)`) before recommending an immediate add.
 
 ### 3. Establish availability
 
 Three sources, in rough order of usefulness:
 
-1. **The pastes themselves.** Yahoo embeds designations in the player detail
-   line and `parse_yahoo_table.py` extracts them to a `status` field (`Q`, `D`,
-   `O`, `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`). Present in both
-   roster and free-agent data. A paste is point-in-time, so check its age.
+1. **The synced Yahoo data.** Each player carries a `status` field (`Q`, `D`,
+   `O`, `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`) in roster,
+   opponent and free-agent data. A sync is point-in-time, so check `meta.fetched`.
 2. **Sleeper** `injury_status` per player (`sleeper_players()` in `sources.py`) —
-   refreshes independently of the paste, so it's the cross-check.
+   refreshes independently of the sync, so it's the cross-check.
 3. **nflverse** `nfl_injuries(season, week)` — richest when populated (practice
    status, injury type), but the 2026 file has been a near-empty stub. Check the
    row count before reading an empty result as "nobody is hurt."

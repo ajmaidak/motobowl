@@ -19,12 +19,35 @@ Client, credentials in `.credentials.json`), confirmation form submitted. **Wait
 on Yahoo to provision** Fantasy Sports permissions on the app. A form auto-reply
 quoted 1–2 weeks (so by ~2026-09-30); check the app's API Permissions page for
 Fantasy Sports rather than waiting on email.
-Until it is, everything runs off hand-pasted snapshots in `data/`.
+Until it is, league data comes from Yahoo's web pages via a logged-in session.
 
 | Source | Status | Entry point |
 |---|---|---|
-| Pasted snapshots in `data/` | **Active now** | `parse_roster.py`, `parse_settings.py` |
+| Yahoo web pages, logged-in session | **Active now** | `yahoo_web.py sync WEEK` |
 | Yahoo Fantasy API | Approved, awaiting provisioning | `yahoo_api.py`, `roster.py` |
+
+### Yahoo web session (replaces pasting)
+
+```bash
+.venv/bin/python yahoo_web.py check      # is the cookie still logged in?
+.venv/bin/python yahoo_web.py sync 2     # fetch + parse -> data/my-roster.json,
+                                         #   data/opponent-roster.json, data/free-agents.json
+```
+
+`yahoo_web.py` GETs the same pages the browser shows, authenticated with the
+browser's session cookie in `.yahoo-cookie` (gitignored — it is a full account
+credential; never print, log or commit it). Raw HTML caches to `cache/yahoo/`;
+`parse_yahoo_html.py` turns it into the usual player records plus `yahoo_id`,
+`opp_rank` and a `stats` dict keyed by column title. Verified 2026-09-16: zero
+discrepancies against the (since deleted) paste parser on the week 2 roster (16 players, 13 fields).
+
+* Free agents come from `status=A` (free agents **and** waivers — check
+  `roster_status`, e.g. `W (Sep 19)`), in the `Week N (proj)` stat view, sorted
+  by projection, top 50 per position. `sync` refuses to write if a page came
+  back in any other stat view, so `proj_pts` there is a real weekly projection.
+* When the cookie expires, fetches fail loudly (login redirect). Re-copy the
+  cookie per the docstring at the top of `yahoo_web.py`.
+* Stopgap only: scraping is against Yahoo's ToS. Retire it once the API works.
 
 `roster.py` is written and its parsing is verified against a mock payload, but
 it has **never run against the live API** — credentials exist, but access isn't provisioned yet. Treat its
@@ -33,66 +56,37 @@ fixes to the JSON shape assumptions in `yahoo_api.py`.
 
 ## Where the league data lives
 
-Raw pastes from the Yahoo web UI (ugly, one table cell per line — that's normal):
+Parsed, normalized JSON in `data/` — **read these**:
 
-| File | Contents | State |
+| File | Contents | Made by |
 |---|---|---|
-| `data/league-settings.txt` | Scoring & Settings page | populated |
-| `data/my-roster.txt` | My Team page, week 1 | populated |
-| `data/opponent-roster.txt` | This week's opponent | **empty** |
-| `data/free-agent-*.txt` | Players → Free Agents, one file per position | all 6 populated (147 players) |
+| `data/my-roster.json` | `{meta: {team_name, week, source, fetched}, players}` | `yahoo_web.py sync WEEK` |
+| `data/opponent-roster.json` | This week's opponent, same shape plus `proj_total` | `yahoo_web.py sync WEEK` |
+| `data/free-agents.json` | Top 50 available per position, week projections | `yahoo_web.py sync WEEK` |
+| `data/league-settings.json` | Scoring rules, roster slots, waiver config | `parse_settings.py` |
 
-Parsed, normalized versions — **prefer these**, don't re-parse the raw text:
+Always check `meta.week` and `meta.fetched` before trusting a file for the
+current week.
 
-* `data/league-settings.json` — scoring rules, roster slots, waiver config
-* `data/my-roster.json` — `{meta: {team_name, week}, players: [...]}`
-
-Regenerate either with:
+The one remaining paste is `data/league-settings.txt` (Scoring & Settings page),
+which rarely changes. Regenerate its JSON with:
 
 ```bash
 .venv/bin/python parse_settings.py data/league-settings.txt --json data/league-settings.json
-.venv/bin/python parse_roster.py   data/my-roster.txt      --json data/my-roster.json
 ```
 
-`parse_yahoo_table.py` is a **generic** parser for any Yahoo table paste — it
-derives columns from the pasted header instead of hardcoding them, handles
-multiple pages concatenated into one file, extracts injury designations, and
-de-duplicates by name+team. Verified to produce identical output to
-`parse_roster.py` on the roster paste (16 players, 8 fields, zero discrepancies).
+The roster/free-agent pastes were retired 2026-09-16 — they lost columns to
+Yahoo's icon glyphs and game-state cells and often lacked weekly projections.
+The paste parsers were deleted along with them. `parse_yahoo_html.py` anchors
+game cells on the trailing `vs/@ TEAM`, because the prefix varies by state —
+`Sun 3:25 pm vs GB` scheduled, `Q4 1:21, 13-10 vs NE` live, `W 20-17 @ NE` final.
 
-Two paste quirks it handles, both of which silently corrupted columns before:
-
-* **Private-use glyphs.** Yahoo's copy embeds icon characters like `\ue231` at
-  the end of cells. They break any regex anchored to end-of-line.
-* **Game cells vary by game state** — `Sun 3:25 pm vs GB` when scheduled,
-  `Q4 1:21, 13-10 vs NE` in progress, `W 20-17 @ NE` when final. Matching only
-  the scheduled form shifts every later column by one.
-
-**Free agents are split one file per position** (`data/free-agent-qb.txt`,
-`-rb`, `-wr`, `-te`, `-k`, `-def`), because Yahoo paginates at 25 rows and uses
-a different column set per position group. On duplicate players the **most
-recently modified file wins** — pastes happen at different times, and a stale
-in-progress row must never beat a finished one. Merge them with:
-
-```bash
-.venv/bin/python free_agents.py     # -> data/free-agents.json
-```
-
-Any `data/free-agent*.txt` is picked up; multiple pages go in one file back to
-back. See `data/README.md` for the copy workflow.
-
-**These pastes may have no `Proj Pts` column.** The default Yahoo Players view
-shows season columns (`GP*`, `Fan Pts`, `Pos Rank`, `% Ros`) and no weekly
-projection. When that's the case, ranking falls back to `% Ros`, which is a
-market-consensus proxy and *not* a projection — say so rather than presenting it
-as one. Ask for a re-paste with the weekly projection stat view if a decision
-needs real projections.
-
-The Yahoo API removes all of this once approved.
+The Yahoo API replaces the web session once approved.
 
 Player records are normalized to: `slot, name, team, pos, opponent, home,
 kickoff, bye, fan_pts, proj_pts, proj_max, proj_min, pos_rank, pct_start,
-pct_rostered`. `roster.py` emits roughly this same shape from the API, so
+pct_rostered`, plus `yahoo_id`, `status` (injury designation), `opp_rank`
+and `stats` from the web pages. `roster.py` emits roughly this same shape from the API, so
 recommendation code should work against either source.
 
 ## External data sources
@@ -251,14 +245,13 @@ bite. All three are **overrides of Yahoo defaults** — don't assume standard:
 
 ## Known gaps
 
-* **Injury designations ARE in the pastes** — corrected finding. Yahoo embeds
-  them in the player detail line (`Zach CharbonnetPUP-RPlayer Note Sea - RB`),
-  and `parse_yahoo_table.py` extracts them to a `status` field (`Q`, `D`, `O`,
-  `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`). The roster paste
-  happened to contain no injured players, which is why this looked absent at
-  first. Cross-check against Sleeper's `injury_status` anyway — a paste is a
-  point-in-time snapshot and designations change through the week.
-* Week 1 pastes have empty `fan_pts` and `pos_rank` (no games played yet).
+* **Injury designations** come through as each player's `status` (`Q`, `D`,
+  `O`, `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`). Cross-check
+  against Sleeper's `injury_status` — a sync is a point-in-time snapshot and
+  designations change through the week.
+* **Sleeper's `yahoo_id` is sparse** (5 of 16 roster players on 2026-09-16), so
+  `yahoo_id` doesn't yet join Yahoo data to Sleeper reliably; fall back to
+  name + team + position, or add an ID crosswalk.
 * Snapshots are point-in-time. Check `meta.week` in `data/my-roster.json` before
   trusting it for the current week.
 * NFL rosters/depth charts move constantly, and model knowledge of the 2026
@@ -269,10 +262,10 @@ bite. All three are **overrides of Yahoo defaults** — don't assume standard:
 
 * Python lives at `.venv/bin/python` (venv is gitignored; `pip install -r
   requirements.txt` to rebuild).
-* `.credentials.json` and `.tokens.json` are gitignored and must never be
+* `.credentials.json`, `.tokens.json` and `.yahoo-cookie` are gitignored and must never be
   committed — this repo is public.
 * After any lineup or waiver recommendation, write it into the current
   `weeks/week-NN.md` before ending the turn.
-* Parsers are defensive by design: Yahoo's paste layout shifts between pages and
+* Parsers are defensive by design: Yahoo's page layout shifts between pages and
   seasons. When a parser can't make sense of input, fail loudly rather than
   silently emitting a partial roster.
