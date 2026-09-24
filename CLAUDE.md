@@ -15,10 +15,17 @@ read-only, and no code here should attempt writes. Recommend, don't execute.
 ## Two data sources — know which one you're on
 
 Yahoo API access was approved 2026-09-16: agreement signed, app created (Confidential
-Client, credentials in `.credentials.json`), confirmation form submitted. **Waiting
-on Yahoo to provision** Fantasy Sports permissions on the app. A form auto-reply
-quoted 1–2 weeks (so by ~2026-09-30); check the app's API Permissions page for
-Fantasy Sports rather than waiting on email.
+Client, credentials in `.credentials.json`), confirmation form submitted. On
+2026-09-23 Yahoo's countersigned copy of the Personal Use Agreement arrived
+("all parties have completed"), so the paperwork is done on both sides. **Still
+waiting on Yahoo to provision** Fantasy Sports permissions on the app — probed
+the same day and `fspt-r` was still rejected. A form auto-reply quoted 1–2 weeks
+(so by ~2026-09-30). Check with:
+
+```bash
+.venv/bin/python yahoo_api.py check    # is fspt-r granted on the app yet? (no login needed)
+```
+
 Until it is, league data comes from Yahoo's web pages via a logged-in session.
 
 | Source | Status | Entry point |

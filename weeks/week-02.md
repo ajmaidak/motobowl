@@ -1,6 +1,6 @@
 # Week 2
 
-**Opponent:** Let go of my Johnson (team 5) · **Result:** — · **Final score:** —
+**Opponent:** Let go of my Johnson (team 5) · **Result:** L · **Final score:** 119–178
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 2` (web session), fetched
 2026-09-17T03:09Z (Wed Sep 16, 10:09 pm CDT). Analysis run 2026-09-16 ~10:20 pm CDT.
@@ -136,25 +136,60 @@ week 1, so there's no handcuff to buy; Johnson is the closest thing to RB upside
 
 ## After
 
+Filled 2026-09-23 from the Yahoo week 2 roster/matchup pages (`fetch_roster(2)`,
+`fetch_matchup(2)`, league-exact points) and Sleeper week 2 stats for players
+not on my roster (approximate — Sleeper's standard scoring, not this league's).
+
 ### Actual results
 
 | Slot | Player | Proj | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | Lamar Jackson | 21 | 16 | −5 |
+| WR | Chris Olave | 15 | 22 | +7 |
+| WR | Emeka Egbuka | 11 | 10 | −1 |
+| WR | Khalil Shakir | 10 | 6 | −4 |
+| RB | Jonathan Taylor | 16 | 29 | +13 |
+| RB | De'Von Achane | 16 | 11 | −5 |
+| TE | Harold Fannin Jr. | 10 | 10 | 0 |
+| W/R/T | Rico Dowdle | 10 | 6 | −4 |
+| K | Jake Bates | 8 | 7 | −1 |
+| DEF | Buccaneers | 8 | 2 | −6 |
 
-**Actual total:** — vs projected —
+**Actual total:** 119 vs projected 125. Opponent scored **178** on a 131
+projection — Jaxon Smith-Njigba 42, Brock Purdy 32, Patriots DEF 21 (vs the
+Steelers). The 59-point margin means no lineup call decided this week.
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Khalil Shakir | | Courtland Sutton | | |
-| Rico Dowdle | | Michael Pittman Jr. / Marvin Harrison Jr. / Tyler Allgeier | | |
-| Buccaneers DEF | | Steelers DEF | | |
-| Jake Bates | | Chase McLaughlin / Harrison Butker (FA) | | |
+| Khalil Shakir | 6 | Courtland Sutton | 5 | Right, by noise. Usage tiebreaker held (6 tgt vs 4). |
+| Rico Dowdle | 6 | Pittman 0 (DNP) / Harrison 0 / Allgeier 3 | — | Right among the options considered. |
+| Rico Dowdle | 6 | **Xavier Worthy** | **13** | **Miss, −7.** Claim cleared Sat Sep 19; flex was never re-examined after it did. |
+| Buccaneers DEF | 2 | Steelers DEF (dropped) | ~10 | **Miss, −8.** The 2.1-pt edge was noise and the variance went the other way. |
+| Jake Bates | 7 | McLaughlin / Butker (FA) | ~16 / ~16 | Miss, −9 — but the projection gap was 1 pt; this is kicker variance, not a reasoning error. |
+
+Net from the calls: about −24 vs the best available choices; roughly −15 vs the
+alternatives that were actually on the table Wednesday (Steelers, Sutton).
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* **What the reasoning got right:** the Shakir-over-Sutton usage tiebreaker (small
+  edge, correct direction), and keeping Pittman/Harvey (both Q) out of the lineup
+  — both sat out entirely.
+* **What it got wrong:**
+  * **The analysis went stale when the roster changed.** Worthy joined Saturday,
+    but the lineup was set Wednesday and nobody re-ran the flex. A roster change
+    after the analysis — a claim clearing, a Q resolving — should trigger a
+    re-check before lock.
+  * **DEF streaming on a 2-point projected edge was noise.** Bucs 2 vs Steelers ~10.
+    One week proves little, but DEF variance (σ ≈ 7–12) swamps a 2-point gap. It
+    only cleared the bar because the move cost nothing; "free" didn't make it right.
+  * Dowdle's role was already shared in week 1 (Warren out-touched him); in week 2
+    it collapsed (26% snaps). The week 1 read of "shared but not a demotion" was
+    too generous.
+* **Anything to change:**
+  * When a waiver claim is pending, write the lineup *conditional on it clearing*
+    ("if Worthy clears, he starts at flex over X").
+  * Treat DEF/K projection gaps of ≤2 as coin flips, even when the swap is free,
+    unless a second signal (opposing QB, implied total) clearly agrees.

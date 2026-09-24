@@ -236,3 +236,49 @@ def numbered_items(collection, wrapper):
 def die(message):
     print(f"error: {message}", file=sys.stderr)
     sys.exit(1)
+
+
+def check_scope(scope=SCOPE):
+    """Ask Yahoo's authorize endpoint whether the app may request `scope`.
+
+    No login needed: Yahoo validates the scope against the app's permissions
+    before showing the login page. An unprovisioned app is bounced straight back
+    to the redirect URI with error=invalid_scope; a provisioned one is sent on to
+    login.yahoo.com. Returns (granted: bool, detail: str).
+    """
+    client_id, _ = _load_credentials()
+    url = (
+        f"{AUTH_URL}?client_id={client_id}&redirect_uri={quote(REDIRECT_URI, safe='')}"
+        f"&response_type=code&scope={quote(scope)}&language=en-us"
+    )
+    resp = requests.get(url, allow_redirects=False, timeout=30)
+    location = urlparse(resp.headers.get("Location", ""))
+    query = parse_qs(location.query)
+    if "error" in query:
+        return False, f"{query['error'][0]}: {query.get('error_description', [''])[0]}"
+    if location.netloc.endswith("login.yahoo.com"):
+        return True, "redirected to Yahoo login"
+    return False, f"unexpected response {resp.status_code} -> {location.netloc or '(no redirect)'}"
+
+
+def main(argv):
+    if argv[1:] == ["check"]:
+        # Control first: a scope every Yahoo app has. If this fails too, the
+        # problem is the client id or Yahoo, not Fantasy Sports provisioning.
+        ok, detail = check_scope("openid")
+        if not ok:
+            die(f"control scope 'openid' rejected ({detail}); check the client id in {CREDS_FILE}")
+        ok, detail = check_scope(SCOPE)
+        if ok:
+            print(f"{SCOPE}: granted ({detail}). Fantasy Sports API is provisioned; "
+                  "run roster.py to authorize and make the first live call.")
+        else:
+            print(f"{SCOPE}: NOT granted ({detail}). Fantasy Sports still not provisioned on the app.")
+            sys.exit(2)
+        return
+    print("usage: yahoo_api.py check", file=sys.stderr)
+    sys.exit(64)
+
+
+if __name__ == "__main__":
+    main(sys.argv)
