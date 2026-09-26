@@ -40,7 +40,7 @@ is on their bench, and Sleeper lists him as NA (personal). Expect a close game.
 | Marvin Harrison Jr. | WR | 9 | @ SF | |
 | Michael Pittman Jr. | WR | 10 | @ CIN | **Q** (foot), DNP week 2 |
 | RJ Harvey | RB | 9 | vs LAR | **Q** (hamstring), DNP week 2 |
-| Tyler Allgeier | RB | 6 | @ SF | |
+| Emanuel Wilson | RB | 3 | @ WAS, Sun 12:00 pm | added for Allgeier |
 
 ### Recommendations made
 
@@ -52,12 +52,15 @@ is on their bench, and Sleeper lists him as NA (personal). Expect a close game.
 | 4 | **No move at K** | Bates 9 vs Butker and Bass (FA) 9, and FantasyPros has Butker 8.8 vs Bates 8.7. No gap. Week 2's −9 vs McLaughlin/Butker was kicker variance on a 1-point projected gap, so it doesn't justify chasing. | High | |
 | 5 | **No move at TE** | Fannin 10 vs Hunter Henry (FA) 10. Fannin's targets rose to 6 in week 2 on 86% snaps. | High | |
 | 6 | **No WR or RB waiver add** | The best FA WRs project 9 (Godwin and Addison are on waivers until Sep 26), and the best FA RB projects 7. None beats Worthy, Shakir or Sutton. | High | |
+| 7 | **Add Emanuel Wilson (SEA RB, FA, 13% Ros), drop Tyler Allgeier. Bench him, don't start him.** | Asked 2026-09-23 after he topped Sleeper's trending adds (2.1M). Sleeper week 2: **21 carries** on 41% snaps (9.2 PPR, no TD), up from 3 snaps in week 1. Every other SEA RB is hurt: Jadarian Price Q (chest), Holani Q (knee), Charbonnet PUP (ACL). Price is also my week 3 opponent's starting RB, so a Price absence helps Wilson and hurts them. **Against:** one game of usage. He had 1 target, which is an early-down role that full PPR pays less for. Yahoo projects only 3 this week (5.8 carries), so it apparently expects Price to play. Allgeier is the cheapest drop: 17 carries in week 1 while Love was hurt, 5 in week 2 once Love returned. Dowdle stays, since his week 1 role could come back once the toe heals. A bet on the role, not a lineup move. | Moderate || **Yes** (2026-09-23), Allgeier dropped |
+| 8 | **Add Xavier Hutchinson (HOU WR, FA, 4% Ros), drop Marvin Harrison Jr. Bench him.** | Asked 2026-09-23. Screened all 50 FA WRs on Sleeper weeks 1–2 usage. Hutchinson has the most targets of any free agent (6 then 9) and played 81% of snaps in week 2. Harrison played 79% and 74% of snaps and still drew only 3 then 1 targets. A healthy full-time player getting no targets is a worse sign than an injury absence, which is why Harrison goes rather than Pittman. **Against:** Yahoo projects Hutchinson at only 7. HOU's QB situation wasn't checked. Harrison is 86% rostered, so the market still values him, and he may be worth more as a trade piece than as a drop. Runners-up: Rashod Bateman (BAL, 93% snaps and 9 targets in week 2 but 1 in week 1), Malik Washington (MIA, 8 then 5 targets, weak offense), and Tre Tucker (trending, 59% snaps, points look TD-driven). Pittman: hold until Friday's PIT practice report. Germie Bernard (8 targets) took his role while he was out. | Low–moderate || **Not yet** (2026-09-23): the user is holding off for now. Revisit after Friday's practice reports. |
 
 ### Transactions
 
 | Add | Drop | Reasoning |
 |---|---|---|
 | Chiefs DEF (FA, 53% Ros) | Buccaneers DEF | See #3. **Done 2026-09-23.** |
+| Emanuel Wilson (SEA RB, FA, 13% Ros) | Tyler Allgeier (ARI RB) | See #7. **Done 2026-09-23.** |
 
 **Lock timing:** nobody on either lineup plays Thursday (GB @ ATL). The first
 lock is **Sun 12:00 pm CDT**, covering Taylor, Achane, Shakir, Fannin, Worthy,
