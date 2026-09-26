@@ -110,12 +110,14 @@ recommendation code should work against either source.
 
 ## External data sources
 
-`sources.py` wraps three sources. Everything caches under `cache/` (gitignored,
+`sources.py` wraps these sources. Everything caches under `cache/` (gitignored,
 ~60MB) with an age check — don't re-download inside a week.
 
 ```bash
-.venv/bin/python sources.py check      # health-check all three
+.venv/bin/python sources.py check      # health-check every source
 .venv/bin/python sources.py trending   # league-wide waiver adds, named
+.venv/bin/python sources.py games      # lines, implied team totals, kickoff weather
+.venv/bin/python sources.py qbert      # Silver Bulletin QB ratings
 ```
 
 | Source | Auth | Status | What it's for |
@@ -123,6 +125,20 @@ recommendation code should work against either source.
 | **Sleeper** | none | working | Player dump (12k players), waiver trends, weekly stats |
 | **nflverse** | none | working | Injuries, depth charts, rosters, snaps, stats, pbp |
 | **FantasyPros** | API key | working, **free tier: top 10/position** | Projections with PPR points, consensus rankings (ECR) |
+| **Sleeper projections** | none | working | Weekly projections for *every* player (Rotowire), scored under league rules (`league_pts`) |
+| **DynastyProcess IDs** | none | working | Yahoo ↔ Sleeper ↔ gsis ID crosswalk (`yahoo_to_sleeper()`) |
+| **ffopportunity** | none | working | Actual vs expected fantasy points from pbp — TD luck vs earned volume |
+| **ESPN scoreboard** | none | working | Spreads, totals, implied team totals, venues |
+| **Open-Meteo** | none | working | Kickoff-hour wind/rain for outdoor games |
+| **QBERT** | none (free preview) | working | Nate Silver's QB ratings; paywalled half of the post not reachable |
+
+**Sleeper projections are the default projection source** — full coverage, and
+`league_points()` scores the raw components with `data/league-settings.json`
+(6-pt pass TDs, -2 INTs), which Sleeper's own `pts_ppr` gets wrong for QBs. A
+rostered player **missing** from the projections usually means he's not
+expected to play (bye, or ruled out) — check his status rather than treating it
+as a data gap. `league_scoring()` raises on a scoring rule it can't map, so a
+settings change can't silently zero out a stat.
 
 ### Refreshing the cache
 
@@ -137,7 +153,8 @@ invalidation step.
 ```
 
 Targets: `sleeper-players`, `sleeper-trending`, `injuries`, `depth-charts`,
-`rosters`, `fp-rankings`. In code, any fetcher takes `max_age_hours=0` to force
+`rosters`, `fp-rankings`, `sleeper-projections`, `player-ids`,
+`expected-points`, `lines`, `weather`, `qbert`. In code, any fetcher takes `max_age_hours=0` to force
 a re-fetch.
 
 | Source | TTL | Refresh when |
@@ -148,6 +165,12 @@ a re-fetch.
 | `depth-charts` | 12h | Weekly, or after a reported role change |
 | `rosters` | 12h | Weekly |
 | `sleeper-players` | 24h | Weekly — it's 14MB, don't churn it |
+| `sleeper-projections` | 6h | Before lineup and waiver decisions |
+| `lines` | 6h | Before streaming QB/K/DEF; lines move through the week |
+| `weather` | 3h | Near kickoff — forecasts beyond ~3 days are rough |
+| `expected-points` | 24h | After each week's games (it's built from pbp) |
+| `qbert` | 24h | Weekly; the post is republished in place |
+| `player-ids` | 7d | Weekly; rookies lag, name fallback covers them |
 
 **The TTL is a ceiling, not permission.** Cached-and-fresh is not the same as
 current: availability news breaks continuously and inactives land ~90 minutes
@@ -268,9 +291,10 @@ bite. All three are **overrides of Yahoo defaults** — don't assume standard:
   `O`, `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`). Cross-check
   against Sleeper's `injury_status` — a sync is a point-in-time snapshot and
   designations change through the week.
-* **Sleeper's `yahoo_id` is sparse** (5 of 16 roster players on 2026-09-16), so
-  `yahoo_id` doesn't yet join Yahoo data to Sleeper reliably; fall back to
-  name + team + position, or add an ID crosswalk.
+* **Yahoo → Sleeper joins go through `yahoo_to_sleeper()`**: DEF → team
+  abbreviation, then the DynastyProcess crosswalk, then Sleeper's own (sparse)
+  `yahoo_id`, then a unique name + position + team match. 16 of 16 roster
+  players mapped on 2026-09-25. Unmatched players are omitted, so compare counts.
 * Snapshots are point-in-time. Check `meta.week` in `data/my-roster.json` before
   trusting it for the current week.
 * NFL rosters/depth charts move constantly, and model knowledge of the 2026

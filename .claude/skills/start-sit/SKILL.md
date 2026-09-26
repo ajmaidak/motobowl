@@ -16,8 +16,9 @@ locations and source caveats all live there and are assumed below.
 ### 1. Refresh what decays
 
 ```bash
-.venv/bin/python sources.py refresh injuries sleeper-trending fp-rankings
+.venv/bin/python sources.py refresh injuries sleeper-trending fp-rankings sleeper-projections lines weather
 .venv/bin/python sources.py cache
+.venv/bin/python sources.py games          # implied totals + kickoff weather
 ```
 
 Note the age of what you're using. If the lineup locks within a few hours,
@@ -80,6 +81,17 @@ ask** rather than assuming healthy.
 Use the league's actual scoring, not generic rankings. Full PPR, 6-point passing
 TDs, -2 interceptions, **no fractional points**.
 
+* **Sleeper projections are the primary source**: `sleeper_projections(2026, week)`
+  covers every player and carries `league_pts`, already scored under league
+  rules. Join Yahoo records with `yahoo_to_sleeper(records)`. A rostered player
+  with no projection is probably not expected to play — check status.
+* **Matchup context**: implied team totals (`implied_totals()`) for QB/K/DEF
+  streaming — a DEF facing a low implied total is the signal. Wind above ~15 mph
+  (`game_weather()`) hurts kickers and deep passing.
+* **Luck vs volume**: `expected_points(2026)` — a player well above his expected
+  points is running hot on TDs; one below with high expected points is due.
+* **QBs**: `qbert()` ratings are a second opinion on QB quality, not a weekly
+  projection.
 * FantasyPros projections carry `points_ppr` plus raw components, so
   league-exact points can be computed from components.
 * Free tier only returns the **top 10 per position** — historically covering the
