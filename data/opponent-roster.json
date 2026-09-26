@@ -2,24 +2,24 @@
   "meta": {
     "team_id": 10,
     "team_name": "Team Turf Toe",
-    "proj_total": 133,
-    "fan_total": 0,
+    "proj_total": 127,
+    "fan_total": 28,
     "week": 3,
     "source": "yahoo-web",
-    "fetched": "2026-09-24T01:20:11+00:00"
+    "fetched": "2026-09-26T02:29:27+00:00"
   },
   "players": [
     {
-      "name": "Jordan Love",
-      "yahoo_id": "32696",
-      "team": "GB",
+      "name": "Joe Burrow",
+      "yahoo_id": "32671",
+      "team": "CIN",
       "pos": "QB",
       "status": null,
-      "opponent": "ATL",
-      "home": true,
-      "kickoff": "Thu 7:15 pm",
+      "opponent": "PIT",
+      "home": false,
+      "kickoff": "Sun 12:00 pm",
       "game_state": null,
-      "opp_rank": 12,
+      "opp_rank": null,
       "slot": "QB",
       "proj_pts": 19,
       "fan_pts": null
@@ -36,7 +36,7 @@
       "game_state": null,
       "opp_rank": 13,
       "slot": "RB",
-      "proj_pts": 13,
+      "proj_pts": 12,
       "fan_pts": null
     },
     {
@@ -44,14 +44,14 @@
       "yahoo_id": "42654",
       "team": "SEA",
       "pos": "RB",
-      "status": "Q",
+      "status": null,
       "opponent": "WAS",
       "home": false,
       "kickoff": "Sun 12:00 pm",
       "game_state": null,
       "opp_rank": null,
       "slot": "RB",
-      "proj_pts": 12,
+      "proj_pts": 10,
       "fan_pts": null
     },
     {
@@ -66,7 +66,7 @@
       "game_state": null,
       "opp_rank": 31,
       "slot": "WR",
-      "proj_pts": 20,
+      "proj_pts": 19,
       "fan_pts": null
     },
     {
@@ -77,12 +77,12 @@
       "status": null,
       "opponent": "GB",
       "home": false,
-      "kickoff": "Thu 7:15 pm",
-      "game_state": null,
+      "kickoff": null,
+      "game_state": "Final W 35-14",
       "opp_rank": 12,
       "slot": "WR",
       "proj_pts": 14,
-      "fan_pts": null
+      "fan_pts": 28
     },
     {
       "name": "Jaylen Waddle",
@@ -111,7 +111,7 @@
       "game_state": null,
       "opp_rank": null,
       "slot": "TE",
-      "proj_pts": 16,
+      "proj_pts": 15,
       "fan_pts": null
     },
     {
@@ -126,7 +126,7 @@
       "game_state": null,
       "opp_rank": 13,
       "slot": "W/R/T",
-      "proj_pts": 12,
+      "proj_pts": 11,
       "fan_pts": null
     },
     {
@@ -134,7 +134,7 @@
       "yahoo_id": "28227",
       "team": "CHI",
       "pos": "K",
-      "status": null,
+      "status": "Q",
       "opponent": "PHI",
       "home": true,
       "kickoff": "Mon 7:15 pm",
@@ -160,6 +160,21 @@
       "fan_pts": null
     },
     {
+      "name": "Jordan Love",
+      "yahoo_id": "32696",
+      "team": "GB",
+      "pos": "QB",
+      "status": null,
+      "opponent": "ATL",
+      "home": true,
+      "kickoff": null,
+      "game_state": "Final L 14-35",
+      "opp_rank": 12,
+      "slot": "BN",
+      "proj_pts": 20,
+      "fan_pts": 22
+    },
+    {
       "name": "Stefon Diggs",
       "yahoo_id": "28534",
       "team": "WAS",
@@ -175,21 +190,6 @@
       "fan_pts": null
     },
     {
-      "name": "Joe Burrow",
-      "yahoo_id": "32671",
-      "team": "CIN",
-      "pos": "QB",
-      "status": null,
-      "opponent": "PIT",
-      "home": false,
-      "kickoff": "Sun 12:00 pm",
-      "game_state": null,
-      "opp_rank": null,
-      "slot": "BN",
-      "proj_pts": 21,
-      "fan_pts": null
-    },
-    {
       "name": "Josh Jacobs",
       "yahoo_id": "31856",
       "team": "GB",
@@ -197,12 +197,12 @@
       "status": "CEL",
       "opponent": "ATL",
       "home": true,
-      "kickoff": "Thu 7:15 pm",
-      "game_state": null,
+      "kickoff": null,
+      "game_state": "Final L 14-35",
       "opp_rank": 27,
       "slot": "BN",
       "proj_pts": 0,
-      "fan_pts": null
+      "fan_pts": 0
     },
     {
       "name": "Devaughn Vele",
@@ -246,7 +246,7 @@
       "game_state": null,
       "opp_rank": 9,
       "slot": "BN",
-      "proj_pts": 6,
+      "proj_pts": 5,
       "fan_pts": null
     }
   ]

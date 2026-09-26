@@ -98,6 +98,87 @@ trending). Decide after this week's practice reports, not now.
   noon. If any starter picks up a designation, Sutton is the WR fallback and
   Dowdle is not.
 
+### Friday re-check (2026-09-25)
+
+Run 2026-09-25 by Claude Opus 5.5 via `/start-sit`, to close the questions left
+for Friday's practice reports. **No lineup change.** The lineup above stands:
+Worthy at flex and the Chiefs DEF.
+
+**Inputs.** Refreshed injuries, sleeper-trending, fp-rankings,
+sleeper-projections, lines and weather (all under 0.1h old at analysis time).
+`yahoo_web.py sync 3` **failed with a login redirect**, meaning the cookie
+expired. Roster, opponent and FA data are therefore still Wednesday's snapshot
+(2026-09-24T01:20Z). That snapshot predates the Wednesday moves: it still shows
+Dowdle at flex, plus Allgeier and the Bucs. The analysis applied those moves on
+paper. **They have not been verified against Yahoo.** nflverse week 3 now has
+290 rows covering all 32 teams, with practice status but no game status except
+GB/ATL. The practice day isn't recorded in the file.
+
+| Player | Wed | Now (Sleeper / nflverse practice) | Sleeper league pts | Effect |
+|---|---|---|---|---|
+| Rico Dowdle | Q (toe) | **Out** / DNP | none | Benched already. Worthy flex confirmed. |
+| RJ Harvey | Q (hamstring) | healthy / **Full** | 10.6 | Now a flex option. See below. |
+| Michael Pittman Jr. | Q (foot) | Q / Limited | 9.4 | Trending toward playing. Bench. |
+| DJ Moore, Keon Coleman (BUF) | Q | DNP / DNP | — | Strengthens Shakir at WR3 (10.5 Sleeper, BUF implied 28.8). |
+| All ten starters | — | no designation on any source | — | — |
+
+**Flex: Worthy over Harvey, moderate–high.** Sleeper has them level (10.5 vs
+10.6) and Yahoo has Worthy 10 vs Harvey 9, so the projections don't decide it.
+Worthy played 86% of snaps with 7 targets last week, in the league's
+second-highest implied total (KC 27.8). Harvey's only game was 51% snaps, 4
+targets and 3 carries, and he's coming off a hamstring that cost him week 2. He
+also plays in 18 mph wind at DEN. Jonah Coleman (DEN RB) DNP'd, which could
+widen Harvey's role. That is the case for Harvey, and it isn't enough to bench
+the steadier volume.
+
+**No waiver move for the lineup.** Using Sleeper league-scored projections on
+Wednesday's FA pool, no free agent clears a starter by 2 points. The closest are
+Hunter Henry TE 10.2 vs Fannin 9.5, Spencer Shrader K 9.1 vs Bates 8.8, and
+Bateman WR 10.5 vs Egbuka 9.7. KC DEF 8.3 is the best DEF on the list, with
+Seattle 8.5 and Philadelphia 8.3 comparable.
+
+**Pending #8 (Hutchinson for Harrison): still a lean, not urgent.** Pittman's
+Limited practice argues for keeping him over Harrison, so if a WR goes, it's
+still Harrison. Sleeper projects Hutchinson 7.8 (5.2 targets) vs Harrison 7.5,
+with C.J. Stroud projected as HOU's QB. Neither would start this week, so this is
+a roster-quality call that can wait until the Tuesday waivers. Low–moderate,
+unchanged.
+
+**Opponent, Thursday.** Drake London scored about 28 and Jordan Love about 19
+(Sleeper's generic PPR, not league-exact). Yahoo had London at 14. Turf Toe
+starts Sunday with a lead of roughly 10–15 points over projection. Jadarian
+Price was Limited, and Cairo Santos (their K) DNP and is Q on Sleeper. Nothing
+here changes my lineup, which maximizes points either way.
+
+**Re-sync, Fri evening.** The cookie was re-copied and `yahoo_web.py sync 3`
+was re-run (fetched 2026-09-26T02:29Z). Injuries and projections were refreshed
+at the same time. Findings:
+
+* **Roster verified on Yahoo.** Worthy is at flex, the Chiefs are at DEF, and
+  Wilson is on the bench in Allgeier's place. The Wednesday moves all took.
+* **Dowdle is now O on Yahoo as well.** No starter carries a designation.
+  Pittman is still Q. Harvey is clear, Yahoo 10 / Sleeper 10.6, and remains the
+  flex alternative. Worthy stays at flex for the reasons above.
+* **Correction on the opponent.** Turf Toe benched Jordan Love and is starting
+  Joe Burrow. Only London's 28 counted (`fan_total` 28). Yahoo projects **133
+  (me) vs 127 (them)**, with London's actual included.
+* **Free agents re-scanned** on the fresh pool. Still nothing beats a starter by
+  2 points (Henry 10.2 vs Fannin 9.5, Bateman 10.5 vs Egbuka 9.7, Shrader 9.1 vs
+  Bates 8.8). No move.
+
+**Roster move (asked Fri evening): none now.** No add would start in week 3,
+and Hutchinson (4% Ros) won't be claimed out from under us. Re-evaluate Tuesday
+with week 3 usage. **The first drop candidate is now Dowdle, not Harrison.** He
+is Out, fell to 26% of snaps last game behind Warren, and has been the fifth RB
+since Harvey got healthy. Harrison is healthy and full-time and still 86%
+rostered. If he draws targets again, he has more value to keep or trade than
+Dowdle. If a move is made before Sunday anyway, make it Dowdle → Hutchinson.
+Low–moderate.
+
+**Still to do Sunday morning:** refresh `injuries` before the 12:00 pm CDT lock.
+If any starter picks up a designation, Harvey is the flex/RB fallback and Sutton
+the WR fallback.
+
 ## After
 
 ### Actual results
