@@ -11,6 +11,18 @@ the project's own data rather than recalled NFL knowledge.
 Read `CLAUDE.md` first if it isn't already in context — league rules, data
 locations and source caveats all live there and are assumed below.
 
+## Recommended model
+
+**Opus 5.5 (`claude-opus-5-5`) at high effort.** This task fails on process
+(stale syncs, missed availability), not raw reasoning, and high effort gives
+room to cross-check sources without max's cost. Step up to Fable 5.1 or max
+effort only for a genuinely hard week — several questionable starters, an
+add/drop with a real tradeoff, a Thursday deadline.
+
+Hold the model constant for 4–6 weeks so the weekly log can grade the advice
+rather than the model; record it on the "Analysis by" line as usual. Set on
+2026-09-25.
+
 ## Procedure
 
 ### 1. Refresh what decays
