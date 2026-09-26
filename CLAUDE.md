@@ -17,21 +17,33 @@ read-only, and no code here should attempt writes. Recommend, don't execute.
 Yahoo API access was approved 2026-09-16: agreement signed, app created (Confidential
 Client, credentials in `.credentials.json`), confirmation form submitted. On
 2026-09-23 Yahoo's countersigned copy of the Personal Use Agreement arrived
-("all parties have completed"), so the paperwork is done on both sides. **Still
-waiting on Yahoo to provision** Fantasy Sports permissions on the app — probed
-the same day and `fspt-r` was still rejected. A form auto-reply quoted 1–2 weeks
-(so by ~2026-09-30). Check with:
+("all parties have completed"), so the paperwork is done on both sides.
+
+On 2026-09-25 Yahoo emailed that access was live, but the original app still
+rejected `fspt-r`: apps created before Fantasy access was turned on can't be
+fixed by editing — a **new app** is required. Created one (Fantasy Sports: Read
+only, no OpenID) and put its credentials in `.credentials.json`. On the new app
+`fspt-r` is granted and OAuth login completed (`.tokens.json` saved), but every
+API call — even public `game/nfl` — returns **403 "This application is not
+authorized to perform this action."** That's the app not yet enabled on the
+Fantasy API side. The new Client ID was submitted via the
+application-confirmation form 2026-09-25; **waiting on Yahoo to enable it.**
 
 ```bash
-.venv/bin/python yahoo_api.py check    # is fspt-r granted on the app yet? (no login needed)
+.venv/bin/python yahoo_api.py check    # is fspt-r granted? (no login needed)
+.venv/bin/python roster.py             # the real test: a live call
 ```
+
+`check` passing is **not** proof the API works — it passed while every call
+still 403'd. Only a successful `roster.py` call is. No re-login needed once
+enabled; the saved token refreshes itself.
 
 Until it is, league data comes from Yahoo's web pages via a logged-in session.
 
 | Source | Status | Entry point |
 |---|---|---|
 | Yahoo web pages, logged-in session | **Active now** | `yahoo_web.py sync WEEK` |
-| Yahoo Fantasy API | Approved, awaiting provisioning | `yahoo_api.py`, `roster.py` |
+| Yahoo Fantasy API | New app authorized, API calls 403 until Yahoo enables it | `yahoo_api.py`, `roster.py` |
 
 ### Yahoo web session (replaces pasting)
 
