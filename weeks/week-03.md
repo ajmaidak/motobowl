@@ -175,9 +175,77 @@ rostered. If he draws targets again, he has more value to keep or trade than
 Dowdle. If a move is made before Sunday anyway, make it Dowdle → Hutchinson.
 Low–moderate.
 
+**Upside screen (asked Fri evening, supersedes the "none now" above).** Every
+RB/WR/TE in the fresh FA pool was screened on Sleeper weeks 1–2 usage
+(`research/week-03/fa-upside-screen.md`). **Hutchinson and Wicks are no longer
+available.** They were rostered since Wednesday, so Dowdle → Hutchinson is off.
+Trending adds are the reason to act before week 3 rather than wait.
+
+| # | Add | Drop | Reasoning at the time | Confidence |
+|---|---|---|---|---|
+| 1 | **Terrance Ferguson** (LAR TE, 23, FA, 26% Ros) | Rico Dowdle | Week 2: 9 targets on 58% snaps, 17.4 PPR. He is the #2 trending add on all of Sleeper (245k), so he's the one likely to be gone by Tuesday. A TE with 9 targets is the scarcest thing in full PPR, and Fannin is the only TE on the roster (bye cover). **Against:** week 1 was 1 target on 51% snaps, so this is one spike game. Snaps are still under 60%. Colby Parkinson (Q) shares the room. Dowdle is Out, fell to 26% snaps and is the fifth RB, so he costs nothing. | Moderate |
+| 2 | **Malik Washington** (MIA WR, 25, FA, 17% Ros) | Marvin Harrison Jr. | The highest-floor WR available: 98% then 73% snaps, 8 then 5 targets. Caleb Douglas (MIA WR) is Out on Sleeper, which should push more volume his way. Trending (93k). Harrison drew 3 then 1 targets on 79/74% snaps. Sleeper projects Washington 10.1 vs Harrison 7.5. **Against:** MIA's offense is weak (implied 17.8 this week), and Harrison is 86% rostered, so he'll be claimed the moment he's dropped. Trading him gets a return; dropping him doesn't. | Low–moderate |
+| — | Watch, don't add yet | — | **Rashod Bateman** (BAL, 93% snaps / 9 tgt week 2 but 1 week 1). **Germie Bernard** (PIT rookie, 79% / 8 tgt, but only while Pittman is out, and Pittman practiced Limited). **Woody Marks** (HOU RB, ~50% snaps, 6 tgt week 2, waivers clear Sep 26). **Roman Wilson** (PIT, 79% / 6 tgt, 0% Ros). **Malachi Fields** (NYG rookie, 81% / 6 tgt). | — |
+| — | Faded | — | **Emmett Johnson** (KC RB, snaps 36% → 18%), last week's target #2, is off the list. Makai Lemon (1 tgt week 2). Tre Tucker's 22.9 was TD-driven on 59% snaps. | — |
+
+Neither add starts in week 3.
+
+**Revised drop for #1 (user pushback): Emanuel Wilson, not Dowdle.** The user
+pointed out that Dowdle is 85% rostered and plays RB, the thinnest position
+here. That's fair: RB depth behind Taylor and Achane is the structural weakness,
+and the best FA RB projects about 8. Dowdle's 10% start rate says the market is
+holding him for a role comeback, not starting him. Holding him costs only a
+bench spot. Wilson is the cheapest asset on the roster (26% Ros, 2% start). His
+21-carry week 2 came with every other SEA RB hurt. For week 3, Holani practiced
+Full and Price practiced Limited, and Sleeper projects Price 10 vs Wilson 6.6.
+Wilson also had 1 target, which full PPR pays little for. Giving up the Wilson
+role bet is worth it to secure Ferguson before he's claimed. This reverses
+"keep Wilson through week 3". If Price is ruled out Sunday, Wilson would have
+been a flex option. That's the risk accepted. Second choice: Pittman (69% Ros,
+2% start, Q, 3 targets in his only game, Bernard took his role). Keep Sutton
+(WR fallback) and Harvey (RB fallback).
+
+**Followed? No (2026-09-25).** The user declined both Wilson → Ferguson and
+Harrison → Washington. No reason was given. Roster unchanged. Grade it in the
+After section: Ferguson vs Wilson, Washington vs Harrison, and whether Ferguson
+was still available Tuesday.
+
 **Still to do Sunday morning:** refresh `injuries` before the 12:00 pm CDT lock.
 If any starter picks up a designation, Harvey is the flex/RB fallback and Sutton
 the WR fallback.
+
+### Sunday re-check (2026-09-27, 11:00 am CDT)
+
+Run by Claude Opus 5.5 via `/start-sit`, one hour before the 12:00 pm CDT lock.
+**No change. The lineup set Wednesday stands.**
+
+**Inputs, all fetched ~11:00 am CDT.** Refreshed injuries, sleeper-trending,
+sleeper-projections, lines and weather, plus `sleeper-players` (it was 38h old,
+too stale to trust for game-day `injury_status`). `yahoo_web.py sync 3`
+**succeeded** (the cookie still works). Yahoo now projects **134 (me) vs 132
+(Turf Toe)**, including London's 28. That's up from 127 for them on Friday.
+nflverse week 3 has 301 rows covering 32 teams: the final Friday reports, with
+no inactives. Sleeper and Yahoo are the most current source of game-day status.
+
+* **All ten starters are clean on Yahoo, Sleeper and nflverse**, and Sleeper
+  projects every one of them to play. Six lock at noon: Taylor, Achane, Shakir,
+  Fannin, Worthy and Bates. The Chiefs DEF also locks at noon.
+* **Bench.** Dowdle is **O** on Yahoo and Sleeper. Pittman is still Q/Limited on
+  Friday's nflverse report, but Yahoo and Sleeper now show no designation. He
+  stays benched. Harvey is clear (10.7 Sleeper) and plays SNF, so he
+  can still be swapped in all afternoon.
+* **Opponent.** Jadarian Price practiced Full and has no designation, so
+  Emanuel Wilson (6.6) stays a bench stash with no path to a role this week.
+  Josh Jacobs is still out (CEL/NA).
+* **Weather.** Bates is indoors (DET). BUF wind 14 mph (gust 20) is a mild
+  ding to Shakir's deep targets. CLE wind 12 mph doesn't matter for Fannin. None
+  of this changes a call.
+* **Free agents rescanned** (Sleeper league pts vs the weakest starter at each
+  position). Nothing clears by 2. The closest were Henry 10.3 vs Fannin 9.5,
+  Bateman 10.8 vs Worthy 10.4, and Shrader 9.1 vs Bates 8.9. No move.
+
+If a noon starter is ruled out after this check, Sutton (WR) and Harvey (RB)
+are the fallbacks. Both play later games and can still be swapped in.
 
 ## After
 
@@ -197,6 +265,8 @@ the WR fallback.
 | Khalil Shakir | | Courtland Sutton | | |
 | Chiefs DEF | | Buccaneers DEF | | |
 | Chiefs DEF | | Steelers DEF / Vikings DEF (considered, FA) | | |
+| Emanuel Wilson (kept, bench) | | Terrance Ferguson (declined add) | | |
+| Marvin Harrison Jr. (kept, bench) | | Malik Washington (declined add) | | |
 
 ### What to learn
 
