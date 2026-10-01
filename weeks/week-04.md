@@ -93,6 +93,30 @@ Sleeper trending over 24h: CHI DEF 146k adds vs GB 49k.
 |---|---|---|---|---|
 | 10 | **Stay with the Packers over the Bears, but it's a coin flip** | The projections are tied (0.2 apart). The Bears adds most likely reflect the Jets' injury list. The Bears' own defense has been better (avg 7.7 vs 1.3 for GB, though three DEF weeks is mostly noise), and they're at home. The Packers win on the signals that are about this week's opponent: TB's implied 17.5 vs NYJ's 20.0, which is the market pricing *both* the backup QB and the Jets' injuries; a QB making his first start behind a line that has given up sacks and takeaways all season (11.7 DEF pts/game, vs 4.0 for NYJ's offense). The Egbuka overlap slightly reduces variance, which suits a team projected ahead (Yahoo 125 vs 119). **Taking the Bears is fully defensible.** | Low | **Yes** (2026-09-30) |
 
+### Season outlook at 0–3 (asked Wed evening)
+
+Full analysis: `research/season/outlook-2026-09-30.md`. Each team's best lineup
+was projected for weeks 5–14 from Sleeper projections on its current roster,
+then the schedule was simulated 20,000 times (sd 30, measured on weeks 1–3).
+
+* **Luck:** all-play record 9–18 (7th), so expected wins were ~1.0 against 0
+  actual. Unlucky by about one win, not three. PA 472 is 2nd-highest.
+* **Roster:** projects **last** for weeks 5–14 (126/wk vs a league median of
+  ~139). The gaps are **WR −6.8/wk** (38.9 vs 45.7), **RB −4.6**, **FLEX −2.8**.
+  The WR room is five interchangeable 8–10 pt players with no WR2.
+* **Playoff odds:** **~11%**. **Week 4 swings it: 16% with a win, 6% with a
+  loss.** Seven wins (7–4 the rest of the way) makes it ~80% of the time; six
+  wins ~14%.
+* **What improvement buys:** +2/wk → 14%, +4 → 17%, +6 → 21%, +10 → 30%.
+
+| # | Recommendation | Reasoning at the time | Confidence | Followed? |
+|---|---|---|---|---|
+| 11 | **Offer Marvin Harrison Jr. for Matthew Golden (We Stinks, GB WR, bench)**. Fallback: Carnell Tate (We Stinks, TEN WR, bench). | Harrison projects 5.8/wk and never makes the optimal lineup, but he's 79% rostered, so his name is worth more than his projection. Golden: 82–86% snaps, **12/6/12 targets**, 10.4/wk projected. We Stinks benches him, and the model says the trade costs their lineup ~0.2/wk, so it's acceptable on the merits. Worth **+1.9/wk** to me. Tate: 88% snaps, 6/5/9 targets, +1.6/wk. **Against:** We Stinks is a rival at 2–1, and they may value Golden (their bench) higher than the model does. | Moderate | **Offered** (2026-09-30), pending |
+| 12 | **Then try Courtland Sutton (+ a sweetener) for DJ Moore (Hay Ho)** | Moore projects 12.9/wk vs Sutton's 9.2. That's **+3.6/wk**, the largest gain a near-fair deal produced. Hay Ho's lineup loses ~1.4/wk. **Against:** Moore is Q (shoulder) and had a 0-target week 2. Hay Ho is 2–1 and my week 6 opponent. They'll likely want Shakir or Pittman added, which the model can afford (both start ≤6 of 10 weeks). | Low–moderate | **Offered** (2026-09-30), pending |
+| 13 | **Don't chase "3 depth pieces for a stud"** | Projected-points parity makes these look fair (e.g. Harvey + Shakir + Harrison for Gibbs), but the partner's lineup loses ~10/wk. No sensible manager accepts that, and offering it wastes the goodwill needed for #11–12. | High | |
+| 14 | **Plan the bye weeks now** | **Week 13: Lamar and Taylor both off.** Stream a QB, with the add made by that Tuesday. **Week 10: Egbuka, Sutton and Harvey off.** Week 8: Olave. Keep one bench spot liquid for these. | High | |
+| 15 | **As an underdog, break close calls toward ceiling** | The roster projects below most opponents, so variance helps. When two options are within noise, prefer the higher-upside one. This is a tiebreaker, not a reason to start a worse projection. | Moderate | |
+
 ### Transactions
 
 | Add | Drop | Reasoning |
