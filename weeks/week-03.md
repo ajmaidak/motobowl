@@ -1,6 +1,6 @@
 # Week 3
 
-**Opponent:** Team Turf Toe (team 10) · **Result:** — · **Final score:** —
+**Opponent:** Team Turf Toe (team 10) · **Result:** L · **Final score:** 107–135
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 3` (web session), fetched
 2026-09-24T01:20Z (Wed Sep 23, 8:20 pm CDT). Analysis run 2026-09-23 ~8:30 pm CDT.
@@ -249,27 +249,66 @@ are the fallbacks. Both play later games and can still be swapped in.
 
 ## After
 
+Filled 2026-09-30 from the Yahoo week 3 matchup page (`fetch_matchup(3)`,
+league-exact points). Players not on either roster come from Sleeper week 3 stats
+scored with `league_points()` (KC DEF computes to 8, matching Yahoo).
+
+**Result: lost 107–135** to Team Turf Toe. On Sunday morning Yahoo projected
+134 vs 132.
+
 ### Actual results
 
 | Slot | Player | Proj | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | Lamar Jackson | 26 | 24 | −2 |
+| WR | Chris Olave | 17 | 19 | +2 |
+| WR | Emeka Egbuka | 11 | 11 | 0 |
+| WR | Khalil Shakir | 9 | 1 | −8 |
+| RB | Jonathan Taylor | 17 | 8 | −9 |
+| RB | De'Von Achane | 17 | 1 | −16 (left early: **torn ACL**, now IR) |
+| TE | Harold Fannin Jr. | 10 | 24 | +14 |
+| W/R/T | Xavier Worthy | 10 | 4 | −6 |
+| K | Jake Bates | 9 | 7 | −2 |
+| DEF | Chiefs | 8 | 8 | 0 |
 
-**Actual total:** — vs projected —
+**Actual total:** 107 vs projected 134. Turf Toe scored 135 on 133: Burrow 28,
+Chase 24, London 28. Their bench had Love 22 and Raymond 21.
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Xavier Worthy | | Rico Dowdle | | |
-| Khalil Shakir | | Courtland Sutton | | |
-| Chiefs DEF | | Buccaneers DEF | | |
-| Chiefs DEF | | Steelers DEF / Vikings DEF (considered, FA) | | |
-| Emanuel Wilson (kept, bench) | | Terrance Ferguson (declined add) | | |
-| Marvin Harrison Jr. (kept, bench) | | Malik Washington (declined add) | | |
+| Xavier Worthy | 4 | Rico Dowdle | 0 (Out) | Right vs the Wednesday option. |
+| Xavier Worthy | 4 | RJ Harvey (Friday alternative) | 10 | **Miss, −6.** Harvey had 7 targets on 36% snaps. The "steadier volume" call went the wrong way: Worthy drew 2 targets. |
+| Khalil Shakir | 1 | Courtland Sutton | 7 | **Miss, −6.** The usage tiebreaker failed. DJ Moore played through his Q (64% snaps, 10 targets) and Shakir drew 3. |
+| Chiefs DEF | 8 | Buccaneers DEF | 5 | Right, +3. |
+| Chiefs DEF | 8 | Steelers 3 / Vikings 11 (considered, FA) | — | Right vs PIT, −3 vs MIN. Noise either way. |
+| Emanuel Wilson (kept, bench) | 1 | Terrance Ferguson (declined add) | 2 | Wash. Ferguson played 22 snaps, and he's **Doubtful** for week 4. Declining was right. |
+| Marvin Harrison Jr. (kept, bench) | 7 | Malik Washington (declined add) | 11 | +4 to Washington, but both were bench players, so no points were lost. |
+
+Net from the lineup calls: −12 vs the best on-roster choices (Harvey, Sutton).
+The loss was by 28, so even the best lineup (119) loses. **No call decided the
+week.** Achane's injury (−16) and Taylor's dud (−9) did.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* **What the reasoning got right:** the DEF stream (+3 vs TB). Holding off on
+  Ferguson, whose spike game didn't repeat and who is now Doubtful. Benching
+  Dowdle, who was Out.
+* **What it got wrong:**
+  * **The Shakir-over-Sutton usage tiebreaker went the wrong way (−6).** It had
+    counted on BUF's Q receivers sitting, but DJ Moore played and took 10
+    targets. A tiebreaker that rests on someone *else* being out is weak until
+    that player is ruled out. The Sunday check saw Moore still Q and didn't
+    revisit it.
+  * **Worthy over Harvey (−6).** Harvey's week 1 had 4 targets on 51% snaps, and
+    the analysis discounted that as a thin sample. He drew 7 targets on 36% snaps
+    as DEN's passing-down back, a full-PPR role. Low snap share on a
+    receiving back is not the same as low volume.
+  * Neither miss was large relative to noise. Both went against calls rated
+    "coin flip with a lean" or "moderate". Two weeks of the Shakir/Sutton
+    tiebreaker are now 1–1.
+* **Anything to change:**
+  * When a lean depends on a teammate being out, re-check it at the last status
+    update. If the teammate is active, drop the lean back to the projections.
+  * Judge RBs in full PPR on targets per game, not snap share.
