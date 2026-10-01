@@ -58,8 +58,8 @@ advice:
 If it fails on a login redirect, the session cookie expired: ask the user to
 re-copy it (steps at the top of `yahoo_web.py`). Never ask for the cookie in chat.
 
-**Free agents are real options, not background.** The roster was auto-drafted
-and has soft spots; a widely-rostered free agent can beat a current starter
+**Free agents are real options, not background.** The roster was drafted
+by Claude Fable (not Yahoo autodraft, despite the team name) and has soft spots; a widely-rostered free agent can beat a current starter
 outright. Load them every time, not only when asked about waivers.
 
 **Know what you're ranking on.** `sync` pulls free agents in Yahoo's weekly
