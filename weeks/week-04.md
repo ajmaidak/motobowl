@@ -161,6 +161,46 @@ then the schedule was simulated 20,000 times (sd 30, measured on weeks 1–3).
 * **Re-check Sunday before 8:30 am** (Taylor's lock), with a final injuries
   refresh around 10:30 am for Lamar.
 
+### Thursday re-check (2026-10-01, ~9:30 pm CDT)
+
+Run by Claude Opus 5.5 via `/start-sit`. PIT @ CLE was already in progress, so
+Fannin (9 pts at sync), Pittman and Dowdle were locked. **No change. The lineup
+above stands.**
+
+**Inputs.** Refreshed injuries, sleeper-trending, fp-rankings,
+sleeper-projections, lines, weather and sleeper-players (all under 0.1h old).
+`yahoo_web.py sync 4` wrote `data/my-roster.json` (fetched 2026-10-02T02:23Z)
+but **failed on the matchup page**. Yahoo served a "Who's Got the Skills?"
+manager-comparison page at the matchup URL instead, twice in a row. The cookie
+is fine, since the roster fetch succeeded logged-in. Opponent and free-agent
+files are therefore still Wednesday's (2026-10-01T01:10Z). The scraper was not
+debugged mid-lock. Check whether this persists on Sunday or was a live-game quirk.
+
+* **Roster on Yahoo matches Wednesday's moves:** Gordon in, Achane out,
+  Packers DEF. Harrison and Sutton are still rostered, so **both trade offers
+  (#11, #12) are still pending.**
+* **Lamar: full practice Thursday** after Limited Wednesday (CBS Sports, the
+  Ravens' site, via web search). The Q is gone on both Yahoo and Sleeper. nflverse
+  still shows Limited, but that row is Wednesday's. Per #9's trigger, **no
+  backup QB.** Sleeper 24.1.
+* **Packers DEF:** Mayfield is still **Out (thumb)**, DNP. Godwin DNP, Irving
+  Q. The #8 reasoning holds.
+* **Sutton over Shakir:** DJ Moore is Q but practicing Limited, so expect him
+  to play. Per the week 3 lesson that keeps Shakir's case at the projections,
+  and Sutton is still ahead (9.9 vs 8.2).
+* **All ten starters are clean** on Yahoo and Sleeper, and nflverse lists none
+  of them except Lamar. nflverse has 257 rows covering 30 teams (NO not reported yet; Olave plays MNF).
+* **Free agents rescanned** (Wednesday's pool, refreshed Sleeper projections,
+  PIT/CLE excluded). Nothing clears a starter by 2: Shrader K 9.6 vs Bates 8.1,
+  Bears DEF 7.7 vs Packers 7.5, Schultz TE 10.5 vs Fannin 11.7 (and Schultz is
+  on waivers anyway). The pool can only have shrunk since Wednesday, so this is
+  an upper bound.
+
+**Still to do Sunday:** re-check before the 8:30 am CDT Taylor lock. Refresh
+injuries again around 10:30 am for the noon games (Lamar, Egbuka, Packers). If a
+starter is ruled out, the fallbacks are Shakir (WR, noon), Gordon (RB,
+3:05 pm) and Wilson (RB, 3:25 pm). Swap before the benched player's own kickoff.
+
 ## After
 
 ### Actual results
