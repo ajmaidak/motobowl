@@ -1,6 +1,6 @@
 # Week 4
 
-**Opponent:** Six Axis (team 8) · **Result:** — · **Final score:** —
+**Opponent:** Six Axis (team 8) · **Result:** L (record 0–4) · **Final score:** 133–162
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 4` (web session), fetched
 2026-10-01T00:51Z (Wed Sep 30, 7:51 pm CDT). Analysis run 2026-09-30 ~8 pm CDT.
@@ -203,25 +203,65 @@ starter is ruled out, the fallbacks are Shakir (WR, noon), Gordon (RB,
 
 ## After
 
+Filled 2026-10-07 from Yahoo's final week 4 matchup page (`yahoo_web.py`
+matchup fetch, 2026-10-07T23:50Z). These are official league scores. Yahoo's own
+projection is shown alongside Sleeper's.
+
 ### Actual results
 
-| Slot | Player | Proj | Actual | Δ |
+| Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ vs Yahoo |
 |---|---|---|---|---|
-| | | | | |
+| QB | Lamar Jackson | 23 / 24.0 | 22 | −1 (left at half, ankle; 33/64 snaps) |
+| WR | Chris Olave | 18 / 19.1 | 19 | +1 |
+| WR | Emeka Egbuka | 11 / 10.3 | 3 | −8 (4 tgt, Daniels at QB) |
+| WR | Courtland Sutton | 11 / 10.0 | 1 | −10 |
+| RB | Jonathan Taylor | 20 / 21.4 | 22 | +2 |
+| RB | RJ Harvey | 10 / 11.2 | 18 | +8 (10 tgt) |
+| TE | Harold Fannin Jr. | 11 / 12.1 | 11 | 0 |
+| W/R/T | Xavier Worthy | 8 / 9.7 | 11 | +3 |
+| K | Jake Bates | 8 / 8.1 | 18 | +10 |
+| DEF | Packers | 7 / 7.5 | 8 | +1 |
 
-**Actual total:** — vs projected —
+**Actual total:** 133 vs projected 127 (Yahoo, final page) / 132.5 (Sleeper).
+**Six Axis scored 162 vs 128 projected**: Kyren Williams 36 (proj 13), Puka
+Nacua 27 (proj 18; Q, and on their bench at Wednesday's sync, but they started him), Kraft 16, Michael Wilson 16. Drake Maye (31)
+and Romeo Doubs (23) scored on their bench.
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Courtland Sutton | | Khalil Shakir | | |
-| Xavier Worthy | | Michael Pittman Jr. | | |
-| DEF started (Packers if #8 followed) | | Chiefs / Steelers DEF | | |
-| Ollie Gordon II (bench) | | — | | |
+| Courtland Sutton | 1 | Khalil Shakir | 13 | **Miss, −12** (#2) |
+| Xavier Worthy | 11 | Michael Pittman Jr. | 3 | Hit, +8 (#3) |
+| Xavier Worthy (flex) | 11 | Emanuel Wilson / Ollie Gordon II | 26 / 18 | Miss, −15. Not considered: Wilson projected 5–6 |
+| Packers DEF | 8 | Chiefs / Steelers / Bears DEF | 2 / 6 / 7 | Hit, +6 vs keeping the Chiefs (#8); +1 vs the Bears (#10) |
+| RJ Harvey (for Achane, IR) | 18 | Achane | 0 | Hit (#1) |
+| Ollie Gordon II (add, bench) | 18 | — | — | Good add (#4) |
+| Lamar, no backup QB (#9) | 22 | — | — | Right: he scored 22 before leaving |
+
+**Could it have been won?** The best possible lineup from this roster scored
+~168 (Wilson and Gordon/Harvey at RB/flex, Shakir at WR), which beats 162. But
+that needs Wilson, projected 5–6, at flex. With only the
+calls actually on the table fixed (Shakir for Sutton), the score is 145, still a
+17-point loss. The loss came from Six Axis beating its projection by 34, not from
+the lineup decisions.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* **What the reasoning got right:** the Achane → Harvey/Gordon moves (Harvey's
+  passing-down role drew 10 targets; Gordon 18 off the bench), the DEF stream
+  (#8: Packers 8 vs Chiefs 2), Worthy over Pittman, and not burning a roster
+  spot on a backup QB for Lamar.
+* **What it got wrong:** Sutton over Shakir (−12). It was flagged
+  low–moderate with a 1.8-point gap, and two sources agreeing on a gap that
+  small still left a coin flip. Sutton has now scored 3, 6, 8, 1 against
+  projections of ~10–11 every week. Separately, Emanuel Wilson's 26 off the
+  bench came from a 21-carry workload nobody projected (5–6). That wasn't a
+  process miss, but it is a signal for week 5 (he's SEA's RB1 now).
+* **Anything to change:** (1) Treat Sutton's projections skeptically until his
+  output catches up. Four weeks of under-delivery is starting to be a pattern,
+  not noise. (2) Check depth-chart and carry changes on *bench* RBs, not only
+  the starters, before setting the flex. Wilson's week 2 had 21 carries too.
+* **Season:** 0–4. The week 4 outlook put playoff odds at ~6% with a loss.
+  Every remaining week is close to must-win, which strengthens the
+  break-ties-toward-ceiling rule (#15).

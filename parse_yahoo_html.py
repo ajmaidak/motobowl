@@ -139,11 +139,17 @@ def parse_stat_table(table):
     titles = header_titles(table)
     players = []
     for tr in table.select("tbody > tr"):
-        cells = tr.find_all("td", recursive=False)
+        tds = tr.find_all("td", recursive=False)
+        # Bye-week rows merge the stat columns into one colspan "Bye" cell;
+        # the columns it spans carry no value, so they become None.
+        cells = []
+        for td in tds:
+            span = int(td.get("colspan") or 1)
+            cells.extend([td] if span == 1 else [None] * span)
         if len(cells) != len(titles):
             raise ParseError(f"row has {len(cells)} cells, header has {len(titles)}")
         player_td = tr.select_one("td.player") or next(
-            (td for td in cells if td.select_one("a.name")), None)
+            (td for td in tds if td.select_one("a.name")), None)
         player = parse_player_cell(player_td) if player_td else None
         if player is None:
             continue
@@ -153,7 +159,7 @@ def parse_stat_table(table):
         for title, td in zip(titles, cells):
             if td is player_td or title in SKIP:
                 continue
-            value = to_value(text(td))
+            value = None if td is None else to_value(text(td))
             if title in COLUMNS:
                 player[COLUMNS[title]] = value
             else:
