@@ -1,6 +1,6 @@
 # Week 5
 
-**Opponent:** Pipefitters 309 (team 7) · **Result:** — · **Final score:** —
+**Opponent:** Pipefitters 309 (team 7) · **Result:** L · **Final score:** 107–109
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 5` (web session), fetched
 2026-10-07T23:35Z (Wed Oct 7, 6:35 pm CDT). Analysis run 2026-10-07 ~6:45 pm CDT.
@@ -117,32 +117,67 @@ through week 7.
 | # | Recommendation | Reasoning at the time | Confidence | Followed? |
 |---|---|---|---|---|
 | 7 | **Waiver claim: Stefon Diggs (WAS WR), drop Michael Pittman Jr.** | Turf Toe dropped him today; on waivers until **Sat Oct 10** (my priority: 4th). Full-PPR volume: **9, 6, 7, 9 targets**, WAS's No. 1 receiver with McLaurin (hamstring) out. Gains +10.6 / +11.9 ROS in the two modes, the only free agent that helps in both. **Against:** Q (undisclosed) on Yahoo/Sleeper, and no source found explains it. WAS QB is shaky (Daniels elbow, Mariota knee). Pittman: Q (foot), 3–4 pts the last three weeks, starts 1 of 9 weeks in the model. | Moderate | **Yes**: claim placed 2026-10-07, processes Sat Oct 10 |
-| 8 | **Trade: offer RJ Harvey for George Pickens (Six Axis)** | Six Axis are RB-starved (26.2/wk, 2nd-worst) and WR-rich (Pickens, Nacua, Burden, M. Wilson, Boston, Doubs, Meyers, Godwin). In current mode **both lineups improve** (me +19.9, them +2.9). In future mode Pickens for Gordon is +21.7 / −11.6. Pickens: 6, 8, 11, 3 targets; 10–15 pts in 3 of 4 weeks. Harvey's RB2 job goes to Wilson/Gordon. **Fallbacks:** Michael Wilson (ARI, **17 and 13 targets** in weeks 3–4) for Harvey (+17–21 me, −10–11 them, so a harder sell), or Pickens for Gordon. **Against:** Pickens is the bigger name, so expect them to ask for more. | Low–moderate (acceptance) | **Offered** 2026-10-07, pending |
+| 8 | **Trade: offer RJ Harvey for George Pickens (Six Axis)** | Six Axis are RB-starved (26.2/wk, 2nd-worst) and WR-rich (Pickens, Nacua, Burden, M. Wilson, Boston, Doubs, Meyers, Godwin). In current mode **both lineups improve** (me +19.9, them +2.9). In future mode Pickens for Gordon is +21.7 / −11.6. Pickens: 6, 8, 11, 3 targets; 10–15 pts in 3 of 4 weeks. Harvey's RB2 job goes to Wilson/Gordon. **Fallbacks:** Michael Wilson (ARI, **17 and 13 targets** in weeks 3–4) for Harvey (+17–21 me, −10–11 them, so a harder sell), or Pickens for Gordon. **Against:** Pickens is the bigger name, so expect them to ask for more. | Low–moderate (acceptance) | **Offered** 2026-10-07; **declined** (reported 2026-10-14). Harvey then scored 0 in week 5. |
 | 9 | **Trade: offer Khalil Shakir for Carnell Tate (We Stinks bench), or for Matthew Golden** | Tate sits on their bench, so it costs them nothing (current +15.4 / −1.6; future mode values him even higher). He had 22 pts on 12 targets in week 4. Golden is better for me (+21.8 / −4.8; 12, 6, 12, 7 targets) but starts for them. Check first whether week 4's Harrison-for-Golden offer (#11) is still open; re-offering with Shakir is a bigger ask. **Against:** Tate plays for TEN (implied 15.0 this week). We Stinks are 3–1, a rival. | Low–moderate | **No**: the user judged We Stinks' manager wouldn't accept Shakir for Tate. The model's acceptance signal (they lose ~0 in projected points) ignores how managers value their players. |
 | 10 | **Hold Brissett while Lamar is out; sell him when Lamar returns** | Lamar out through week 7 costs ~1.5 points of playoff odds. Brissett covers it, and also covers the week 13 bye (Lamar + Taylor). Once Lamar is back, Brissett is surplus. **Pipefitters 309** (Shough Q hand, Herbert) are QB-needy: Davante Adams for Brissett + Shakir modelled +20 / −7.5. Revisit then, not now. | Moderate | |
 | 11 | **Not recommended:** Puka Nacua for Jonathan Taylor (+22.9 / +0.8) and McCaffrey for Brissett + Harvey | The models like both, but each strips the RB room (Taylor is my only workhorse) or the QB cover, and they rest on current mode only. The model doesn't price risk, so these numbers overstate them. | — | |
 
 ## After
 
+Filled 2026-10-14 from Yahoo's final week 5 matchup page (`fetch_matchup(5)`,
+2026-10-15T01:50Z). These are official league scores. Bench DEF alternatives are
+from Sleeper week 5 stats, scored with `league_points()`.
+
 ### Actual results
 
-| Slot | Player | Proj | Actual | Δ |
+| Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ vs Yahoo |
 |---|---|---|---|---|
-| | | | | |
+| QB | Jacoby Brissett | 22 / 21.5 | 29 | +7 |
+| WR | Chris Olave | 17 / 16.2 | 8 | −9 (6 tgt) |
+| WR | Emeka Egbuka | 11 / 10.0 | 16 | +5 (9 tgt, Daniels at QB) |
+| WR | Khalil Shakir | 11 / 9.9 | 11 | 0 |
+| RB | Jonathan Taylor | 17 / 18.9 | 10 | −7 (15 carries) |
+| RB | RJ Harvey | 10 / 11.7 | **0** | −10 (23/62 snaps, 3 carries, 1 target; Dobbins 18 carries) |
+| TE | Harold Fannin Jr. | 10 / 11.0 | 1 | −9 (4 tgt) |
+| W/R/T | Emanuel Wilson | 12 / 12.0 | 13 | +1 (20 carries, lost fumble) |
+| K | Jake Bates | 9 / 8.5 | 10 | +1 |
+| DEF | Bengals | 7 / 7.9 | 9 | +2 |
 
-**Actual total:** — vs projected —
+**Actual total:** 107 vs projected 126 (Yahoo, final page) / 127.6 (Sleeper).
+**Pipefitters 309 scored 109 vs 131 projected.** Shough scored −1 and Higgins 4,
+but Myers (K) 23 and the Texans DEF 15 covered it.
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Brissett (QB) | | Lamar Jackson | | |
-| Emanuel Wilson | | Ollie Gordon II | | |
-| Khalil Shakir | | Courtland Sutton | | |
-| Bengals DEF | | Packers DEF | | |
+| Brissett (QB) | 29 | Lamar Jackson | 0 (inactive) | **Hit, +29** (#1) |
+| Emanuel Wilson | 13 | Ollie Gordon II | 14 | Noise, −1 (#2) |
+| Khalil Shakir | 11 | Courtland Sutton | 9 | Hit, +2 (#3) |
+| Bengals DEF | 9 | Packers DEF (dropped) | 18 | **Miss, −9** (#4) |
+| RJ Harvey (RB2) | 0 | Ollie Gordon II | 14 | **Miss, −14.** Not considered: Harvey was treated as locked in at RB2 |
+
+**Could it have been won?** Yes, by either of two changes: Gordon over Harvey
+(+14) or keeping the Packers (+9). Each one alone flips a 2-point loss. With both,
+the score is 130.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* **What the reasoning got right:** the Brissett add and the timing logic around
+  Lamar's Sunday-night game (#1) were the week's biggest edge: +29 against a zero.
+  The Diggs claim (#7) went through.
+* **What it got wrong:** (1) **Harvey at RB2 was never questioned.** The
+  week 5 analysis compared flex candidates (Wilson vs Gordon) but took Harvey's
+  RB2 slot as given, even though Sleeper had Gordon above him (12.5 vs 11.7). Harvey
+  is a passing-down back: 23–29 snaps a game, 2–7 carries, so his PPR value
+  depends on targets (4, 7, 10, 1). When the targets don't come, he scores 0.
+  (2) The DEF swap cost 9 against a matchup-based case that two signals
+  supported (MIA implied 18.0 vs CHI 24.0). DEF scoring is very noisy (GB had
+  scored 1, 5, −2, 8), so this is closer to bad variance than bad process, but
+  it was the margin.
+* **Anything to change:** (1) **Rank every eligible player for every
+  non-locked slot together** (RB2 and flex as a pool), not just the slot that
+  changed. (2) Treat Harvey as a committee back. His floor is near zero, and
+  his snap share should be checked weekly. (3) No change to the DEF process.
+  One week of variance isn't evidence against a matchup-based stream.
+* **Season:** 0–5. Lost by 2 points.
