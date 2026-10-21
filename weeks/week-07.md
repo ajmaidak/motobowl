@@ -73,6 +73,13 @@ Claim Stroud first; the K and DEF claims don't compete with it.
 | 4 | Will Reichard (K, MIN) | Tyler Bass | #5. Backup: Jake Bates |
 | 5 (optional) | Omar Cooper Jr. (WR, NYJ) | ~~Marvin Harrison Jr.~~ **Emanuel Wilson** (revised) | #7 |
 
+**As entered (Yahoo "Pending Transactions" box, read 2026-10-21T01:45Z):**
+1. Cooper Jr. / drop Wilson, 2. Stroud / drop Brissett, 3. Browns / drop Colts,
+4. Reichard / drop Bass. No Rodgers backup. Recommended swapping 1 and 2:
+rolling waivers drop the winner to last priority, so Stroud (more contested,
+more valuable this week) should be processed first, at priority 8. **Not followed:** user kept
+Cooper first (2026-10-20).
+
 ### Lock timing
 
 * **Wed Oct 21:** waivers process. The claims must be in before then.
