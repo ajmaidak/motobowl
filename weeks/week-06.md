@@ -1,6 +1,6 @@
 # Week 6
 
-**Opponent:** Hay Ho (team 4) · **Result:** — · **Final score:** —
+**Opponent:** Hay Ho (team 4) · **Result:** L · **Final score:** 110–111
 
 Team: Team Auto Pick (0–5) · Source: `yahoo_web.py sync 6` (web session),
 fetched 2026-10-15T01:46Z (Wed Oct 14, 8:46 pm CDT). Analysis run 2026-10-14
@@ -128,26 +128,68 @@ week old and don't reflect week 5 moves.
 
 ## After
 
+Filled 2026-10-20 from Yahoo's final week 6 matchup page (`fetch_matchup(6)`,
+2026-10-21T01:20Z). These are official league scores. The alternatives that
+weren't rostered (Rodgers, Folk, Panthers DEF) come from Sleeper week 6 stats,
+scored with `league_points()`.
+
+All recommendations were followed: the final lineup matches the Before table.
+Lamar was inactive, so Brissett stayed in.
+
 ### Actual results
 
-| Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ |
+| Slot | Player | Proj (Yahoo final / Sleeper) | Actual | Δ vs Yahoo |
 |---|---|---|---|---|
-| | | | | |
+| QB | Jacoby Brissett | 18 / 16.8 | **6** | −12 (xFP 16.6) |
+| WR | Chris Olave | 16 / 17.4 | 14 | −2 (7 tgt) |
+| WR | Emeka Egbuka | 11 / 10.3 | 17 | +6 (16 tgt, xFP 25.3) |
+| WR | Xavier Worthy | 11 / 9.9 | 14 | +3 (7 tgt) |
+| RB | Jonathan Taylor | 19 / 22.8 | 20 | +1 |
+| RB | Emanuel Wilson | 11 / 12.8 | **5** | −6 (27/85 snaps; Holani 49) |
+| TE | Harold Fannin Jr. | 11 / 10.4 | **1** | −10 (3 tgt, second straight 1) |
+| W/R/T | RJ Harvey | 9 / 10.1 | 14 | +5 (6 car, 4 tgt) |
+| K | Tyler Bass | 9 / 8.2 | 17 | +8 |
+| DEF | Colts | 7 / 8.1 | 2 | −5 |
 
-**Actual total:** — vs projected —
+**Actual total:** 110 vs projected 122 (Yahoo, final page) / 126.8 (Sleeper).
+**Hay Ho scored 111 vs 112 projected.**
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| QB (Brissett/Lamar) | | the other | | |
-| Xavier Worthy | | Khalil Shakir | | |
-| RJ Harvey (flex) | | Shakir / Sutton | | |
-| Colts DEF | | Panthers DEF | | |
-| Tyler Bass | | Nick Folk | | |
+| QB Brissett | 6 | Lamar Jackson | 0 (inactive) | Hit vs Lamar (#1) |
+| QB Brissett | 6 | Aaron Rodgers (FA, not added, #8) | 20 | **Miss, −14** |
+| Xavier Worthy | 14 | Khalil Shakir | 13 | Noise, +1 (#4) |
+| RJ Harvey (flex) | 14 | Shakir / Sutton | 13 / 3 | Hit, +1 / +11 (#5, #10) |
+| Emanuel Wilson (RB2) | 5 | Harvey at RB2, Shakir at flex | 13 | **Miss, −8.** Not considered: Wilson projected 2–4 over Shakir |
+| Colts DEF | 2 | Panthers DEF | 4 | Noise, −2 (#2) |
+| Tyler Bass | 17 | Nick Folk | 1 | Hit, +16 (#3) |
+| Stefon Diggs (bench, Q) | 16 | Worthy | 14 | Noise, −2 (#6) |
+
+**Could it have been won?** Yes: it was a one-point loss, so any one of Rodgers at QB (+14),
+Shakir over Wilson (+8), or the Panthers DEF (+2) flips it.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* **What the reasoning got right:** the Sunday-morning Lamar setup worked as
+  designed. He was inactive, and there was no zero. The K pick (#3) and the
+  Harvey flex (#5/#10) were both right, and the Bates-not-Harrison drop cost
+  nothing.
+* **What it got wrong:** (1) **The QB fallback was judged against the hope
+  that Lamar would play, not on its own.** Rodgers was 2.6 / 1 ahead of
+  Brissett and was passed over partly because "adding a QB costs a roster spot
+  for a one-week edge that may not be needed if Lamar plays." Lamar didn't play,
+  and that edge became 14 points in a 1-point loss. (2) **Wilson's role
+  collapsed** (27 of 85 snaps, with Holani on 49) after 20+ carries in weeks 4–5.
+  Nothing in the data before the game flagged it, so this is closer to variance
+  than to bad process. (3) **Fannin has scored 1 point in two straight weeks** (4
+  and 3 targets), and no TE alternative was screened either week.
+* **Anything to change:** (1) When the starter's availability is uncertain,
+  **choose the fallback as if he is out**, because that's the only case in which
+  the fallback matters. (2) Add a **usage check for every starter**, covering
+  snap share and targets over the last two weeks, alongside the projection,
+  especially for TE and committee RBs. (3) At 0–6, a close loss is the expensive
+  outcome. Take marginal edges (+2–3) at the weakest slots rather than
+  defaulting to no change.
+* **Season:** 0–6. Lost by 1 point.
