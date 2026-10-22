@@ -2,11 +2,11 @@
   "meta": {
     "team_id": 2,
     "team_name": "Dak to the Future",
-    "proj_total": 135,
+    "proj_total": 134,
     "fan_total": 0,
     "week": 7,
     "source": "yahoo-web",
-    "fetched": "2026-10-21T01:39:18+00:00"
+    "fetched": "2026-10-22T02:45:12+00:00"
   },
   "players": [
     {
@@ -59,7 +59,7 @@
       "yahoo_id": "33989",
       "team": "GB",
       "pos": "WR",
-      "status": null,
+      "status": "Q",
       "opponent": "DET",
       "home": false,
       "kickoff": "Sun 3:25 pm",
@@ -89,14 +89,14 @@
       "yahoo_id": "32692",
       "team": "MIN",
       "pos": "WR",
-      "status": null,
+      "status": "Q",
       "opponent": "IND",
       "home": true,
       "kickoff": "Sun 12:00 pm",
       "game_state": null,
       "opp_rank": 20,
       "slot": "WR",
-      "proj_pts": 18,
+      "proj_pts": 17,
       "fan_pts": null
     },
     {
@@ -130,16 +130,16 @@
       "fan_pts": null
     },
     {
-      "name": "Spencer Shrader",
-      "yahoo_id": "41499",
-      "team": "IND",
+      "name": "Chris Boswell",
+      "yahoo_id": "28188",
+      "team": "PIT",
       "pos": "K",
       "status": null,
-      "opponent": "MIN",
+      "opponent": "NO",
       "home": false,
-      "kickoff": "Sun 12:00 pm",
+      "kickoff": "Sun 8:30 am",
       "game_state": null,
-      "opp_rank": 28,
+      "opp_rank": 12,
       "slot": "K",
       "proj_pts": 8,
       "fan_pts": null
@@ -157,36 +157,6 @@
       "opp_rank": 5,
       "slot": "DEF",
       "proj_pts": 6,
-      "fan_pts": null
-    },
-    {
-      "name": "Tyler Allgeier",
-      "yahoo_id": "34107",
-      "team": "ARI",
-      "pos": "RB",
-      "status": null,
-      "opponent": "DEN",
-      "home": true,
-      "kickoff": "Sun 3:05 pm",
-      "game_state": null,
-      "opp_rank": 6,
-      "slot": "BN",
-      "proj_pts": 8,
-      "fan_pts": null
-    },
-    {
-      "name": "Tre Tucker",
-      "yahoo_id": "40114",
-      "team": "LV",
-      "pos": "WR",
-      "status": null,
-      "opponent": "LAR",
-      "home": true,
-      "kickoff": "Sun 3:25 pm",
-      "game_state": null,
-      "opp_rank": 29,
-      "slot": "BN",
-      "proj_pts": 9,
       "fan_pts": null
     },
     {
@@ -221,21 +191,6 @@
       "fan_pts": null
     },
     {
-      "name": "Dak Prescott",
-      "yahoo_id": "29369",
-      "team": "DAL",
-      "pos": "QB",
-      "status": null,
-      "opponent": "PHI",
-      "home": false,
-      "kickoff": "Mon 7:15 pm",
-      "game_state": null,
-      "opp_rank": 12,
-      "slot": "BN",
-      "proj_pts": 20,
-      "fan_pts": null
-    },
-    {
       "name": "Jared Goff",
       "yahoo_id": "29235",
       "team": "DET",
@@ -248,6 +203,51 @@
       "opp_rank": 28,
       "slot": "BN",
       "proj_pts": 22,
+      "fan_pts": null
+    },
+    {
+      "name": "Travis Etienne Jr.",
+      "yahoo_id": "33413",
+      "team": "NO",
+      "pos": "RB",
+      "status": "IR",
+      "opponent": "PIT",
+      "home": true,
+      "kickoff": "Sun 8:30 am",
+      "game_state": null,
+      "opp_rank": 19,
+      "slot": "BN",
+      "proj_pts": 0,
+      "fan_pts": null
+    },
+    {
+      "name": "David Montgomery",
+      "yahoo_id": "31905",
+      "team": "HOU",
+      "pos": "RB",
+      "status": "Q",
+      "opponent": "NYG",
+      "home": true,
+      "kickoff": "Sun 12:00 pm",
+      "game_state": null,
+      "opp_rank": 15,
+      "slot": "BN",
+      "proj_pts": 3,
+      "fan_pts": null
+    },
+    {
+      "name": "Jordan Mason",
+      "yahoo_id": "34320",
+      "team": "MIN",
+      "pos": "RB",
+      "status": "IR-R",
+      "opponent": "IND",
+      "home": true,
+      "kickoff": "Sun 12:00 pm",
+      "game_state": null,
+      "opp_rank": 7,
+      "slot": "BN",
+      "proj_pts": 0,
       "fan_pts": null
     }
   ]
