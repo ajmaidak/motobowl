@@ -1,6 +1,6 @@
 # Week 7
 
-**Opponent:** Dak to the Future (team 2) · **Result:** — · **Final score:** —
+**Opponent:** Dak to the Future (team 2) · **Result:** W · **Final score:** 132–121
 
 Team: Team Auto Pick (0–6) · Source: `yahoo_web.py sync 7` (web session),
 fetched 2026-10-21T01:16Z (Tue Oct 20, 8:16 pm CDT). Analysis run 2026-10-20
@@ -162,29 +162,53 @@ gone if #12 is followed, so stream K again.
 
 ## After
 
+Filled 2026-10-29 from the Yahoo week 7 matchup page (actuals) and Sleeper week 7
+stats scored with `league_points()` (alternatives not on my roster).
+
+**Result: Won 132–121** over Dak to the Future. First win, now 1–6.
+
 ### Actual results
 
 | Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | C.J. Stroud | 22 / 22.4 | 20 | −2 |
+| WR | Chris Olave | 17 / 17.1 | 11 | −6 |
+| WR | Omar Cooper Jr. | 8 / 9.5 | 22 | +13 |
+| WR | Xavier Worthy | 9 / 9.0 | 4 | −5 |
+| RB | Jonathan Taylor | 15 / 17.4 | 18 | +1 |
+| RB | Ollie Gordon II | 10 / 13.1 | 17 | +4 |
+| TE | Harold Fannin Jr. | 9 / 11.0 | 13 | +2 |
+| W/R/T | RJ Harvey | 10 / 11.6 | 13 | +1 |
+| K | Jake Bates | 9 / 8.6 | 9 | 0 |
+| DEF | Browns | 7 / 7.6 | 5 | −3 |
 
-**Actual total:** — vs projected —
+**Actual total:** 132 vs projected 120 (Yahoo, at lock) / 127.3 (Sleeper).
+Opponent: 121 vs 140 projected.
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| QB (Stroud/Lamar) | | Brissett / the other | | |
-| Ollie Gordon II | | Emanuel Wilson | | |
-| Xavier Worthy | | Courtland Sutton | | |
-| RJ Harvey (flex) | | Sutton | | |
-| Browns DEF | | Vikings / Jets DEF | | |
-| K (Bates, since Reichard claim lost) | | Matt Gay / Reichard | | |
-| Harold Fannin Jr. | | Tyler Higbee / Hunter Henry | | |
-| Omar Cooper Jr. (or Egbuka) | | Courtland Sutton | | |
+| QB Stroud (Lamar was Out) | 20 | Brissett (dropped) | 18.5 | Right, +1.5. Noise-sized |
+| Ollie Gordon II | 17 | Emanuel Wilson (dropped, SEA) | 18.5 | Wash, −1.5. Gordon's xFP was 27 on 25 carries, so the process was right |
+| Xavier Worthy | 4 | Courtland Sutton | 7.5 | Wrong, −3.5. Worthy drew 6 targets (xFP 8) and did not convert |
+| RJ Harvey (flex) | 13 | Sutton | 7.5 | Right, +5.5. But Harvey's xFP was 4 (3 carries, 2 targets): luck, not role |
+| Browns DEF | 5 | Vikings / Jets DEF | 10 / 1 | Wrong vs Vikings (−5), right vs Jets (+4). The correlation tiebreaker cost 5 |
+| K Bates (Reichard claim lost) | 9 | Reichard / Gay | 13 / 9 | Even with Gay. Reichard was the first choice |
+| Harold Fannin Jr. | 13 | Henry / Higbee | 14.1 / 3.4 | Wash vs Henry (−1), right vs Higbee. Fannin drew 9 targets |
+| Omar Cooper Jr. (for Egbuka) | 22 | Egbuka (Out) / Sutton | 0 / 7.5 | **Right, +22 vs a zero.** The move was made Wednesday, before Egbuka was ruled out |
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* What the reasoning got right: **putting the fallback in early** (Cooper for
+  Egbuka) turned a likely 0 into 22. It was the margin of victory. The Fannin
+  call held: his target drop followed the schedule and reversed (9 targets).
+  Stroud over Brissett and Gordon over Wilson were right on process and a wash
+  on outcome.
+* What it got wrong: the DEF correlation tiebreaker cost 5 (Browns 5, Vikings
+  10). That is one sample, so it is not a reason to drop the rule. Worthy over
+  Sutton lost 3.5 on a coin flip. Harvey's 13 came on xFP 4. Do not read it as
+  a returning role.
+* Anything to change in how recommendations are made: no rule change. Keep the
+  rule "choose the fallback as if the questionable player is out, and put it in
+  now". It was worth a win this week.
