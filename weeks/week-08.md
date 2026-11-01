@@ -72,13 +72,56 @@ played), ffopportunity usage weeks 5–7, and Sleeper trending adds. Full table:
 |---|---|---|---|---|
 | 7 | **Add Brenton Strange (TE, JAX, FA, immediate), drop Marvin Harrison Jr.** | Strange: ROS 11.2 ppg vs Fannin 10.8. Weeks 5–7: 7.7 targets and xFP 12.7, against Fannin's 5.3 and 6.7. He is #9 in Sleeper trending adds. He also covers Fannin's **week 11 bye**. Harrison: Sleeper projects **1.5 ppg for weeks 9–14** (about 1 target a game, behind Collins, Boutte and Noel). He is healthy, so the reason for the projection is not in the data. His weeks 5–7 were 7.4 actual on 4 targets, the lowest on the bench. HOU is on bye now, so the drop costs nothing this week. | Moderate–high | **Yes:** verified by re-sync 2026-10-29T04:00Z |
 | 8 | **Week 8 TE: lean Strange over Fannin if #7 is done** | Projections tie (10.5 / 10 vs 10.7 / 10). Two tiebreakers point to Strange: volume (7.7 vs 5.3 targets) and environment (JAX implied 28.25 vs CLE 18.0). Fannin did draw 9 targets in week 7. Both play at noon. | Low (coin flip) | **Yes:** Strange at TE, Fannin on the bench (re-sync 2026-10-29T04:00Z) |
-| 9 | **Claim Wan'Dale Robinson (WR, TEN, `W (Oct 31)`), drop Courtland Sutton** | Robinson: ROS 11.7 ppg, ahead of every WR on the roster except Olave (17.1) and Diggs (12.3). 6.7 targets a game. Weeks 5–7 actual 7.1 vs xFP 9.1, so he is due, not hot. Calvin Ridley is Q (hip). Sutton: ROS 8.6 ppg on 3.7 targets. He is the 8th WR. The claim processes Sat Oct 31, in time for Sunday. If it wins, start Robinson at flex over Harvey in week 8 (11.1 vs 8.3, past the noise line). **Against:** TEN is a weak offense (18.25 implied), and he is 50% rostered, so the claim can lose. | Moderate | **Claim entered:** "Waiver 1 (Oct 31): Add Wan'Dale Robinson, Drop Courtland Sutton" (Pending Transactions, read 2026-10-29T04:00Z) |
+| 9 | **Claim Wan'Dale Robinson (WR, TEN, `W (Oct 31)`), drop Courtland Sutton** | Robinson: ROS 11.7 ppg, ahead of every WR on the roster except Olave (17.1) and Diggs (12.3). 6.7 targets a game. Weeks 5–7 actual 7.1 vs xFP 9.1, so he is due, not hot. Calvin Ridley is Q (hip). Sutton: ROS 8.6 ppg on 3.7 targets. He is the 8th WR. The claim processes Sat Oct 31, in time for Sunday. If it wins, start Robinson at flex over Harvey in week 8 (11.1 vs 8.3, past the noise line). **Against:** TEN is a weak offense (18.25 implied), and he is 50% rostered, so the claim can lose. | Moderate | **Claim entered:** "Waiver 1 (Oct 31): Add Wan'Dale Robinson, Drop Courtland Sutton" (Pending Transactions, read 2026-10-29T04:00Z). **Won:** Robinson is on the roster (re-sync 2026-11-01T14:46Z) |
 | 10 | **Add Spencer Shrader (K, IND, FA, immediate), drop Jake Bates** | Shrader ROS 10.0 ppg vs Bates 8.4. That is +1.6 a week, under the weekly noise line but consistent over six weeks (~10 pts). Week 8: 9.2 vs 8.5. IND has a week 13 bye, so stream then. Low cost: kickers are re-streamed in any case. | Low–moderate | **Yes:** Shrader at K (re-sync 2026-10-29T04:00Z) |
 | 11 | **No QB, RB or DEF add** | QB: Darnold 19.3 ppg vs Stroud 18.9 is noise. Lamar is 24.4. RB: the best free agent is 7.5 ppg (Spears, Q), below Harvey's 10.8. RB depth stays thin (3 RBs). Watch Vidal and K. Mitchell if Taylor or Gordon gets hurt. DEF: Commanders project 4.9 ppg after week 8, so keep streaming weekly. The Eagles (7.1 ppg ROS, FA) are a week 9 candidate. | High | |
 
 **Byes ahead (weeks 9–14), if #7 and #9 are done:** wk 10 Harvey, Egbuka;
 wk 11 Fannin (Strange covers); wk 13 Lamar (Stroud covers), Taylor, Cooper,
 Shrader. Robinson and Strange have no bye left.
+
+### Update: Sun Nov 1 ~9:00 am CST, pre-lock re-check
+
+Re-synced 2026-11-01T14:46Z, `meta.week` = 8 ✓. Refreshed injuries, Sleeper
+trending, Sleeper projections, lines and weather at ~14:45Z. nflverse week 8 now
+has **320 rows**, a real report this time, and it was used.
+
+What changed since Wednesday:
+
+* **#9 won:** Wan'Dale Robinson is on the roster and Sutton is gone.
+* **RJ Harvey is on IR (knee):** Yahoo `IR`, Sleeper `IR`, nflverse Out/Knee/DNP.
+  He was the flex. The user has since moved **Fannin to flex**. A web search
+  found no dated report on the injury; it rests on the three feeds.
+* **Egbuka is Out:** Yahoo `O`, Sleeper Out, nflverse Out (Foot), DNP. The
+  concussion trigger in #2 never came into play; Shakir started as the fallback.
+* **Lamar and Diggs are cleared:** both logged full practice per nflverse, and
+  neither carries a designation on Yahoo or Sleeper. #1's Geno fallback and #3's
+  3:25 pm Diggs bench are no longer needed unless something changes at inactives.
+* Seth McGowan (Taylor's backup) is the #1 Sleeper trending add. No Taylor news
+  was found: no designation on any of the three feeds, and Sleeper still projects
+  him at 16.4. Read as handcuff buying, not as an injury.
+
+| # | Recommendation | Reasoning at the time | Confidence | Followed? |
+|---|---|---|---|---|
+| 12 | **Start Robinson at WR, bench Shakir** | Robinson is Sleeper 10.9 / Yahoo 11, against Shakir's 9.2 / 9. That +1.7 / +2 sits right at the noise line, but three things point the same way. Volume: 6.7 targets a game over weeks 5–7, against Shakir's 5.7. Game script: TEN is a 12.5-point dog (16.5 implied), so it should be passing late. **Correlation:** We Stinks start Josh Allen (26.6) and James Cook (17.3). Shakir pays off in the same games they do, which makes him a hedge, and a 19-point underdog (Yahoo 115 vs 134) should not hedge. **Against:** Shakir's xFP was higher (10.0 vs 9.1), and BUF's 28.8 implied total is the bigger environment. Both play at noon. | Low–moderate || **Yes:** Robinson at WR, Shakir benched (re-sync 2026-11-01T15:15Z) |
+| 13 | **Keep Fannin at flex, Worthy on the bench** | Fannin 10.6 / 10, Worthy 9.1 / 8, Shakir 9.2 / 9. Fannin's weeks 5–7 volume is the weakest of the group (5.3 targets, xFP 6.7), and CLE is implied for only 17.5. But Worthy also trails on both projections, and his game (KC @ DEN, 41.5) is low too. No edge big enough to move off the projection order. | Low (coin flip) || **Yes:** Fannin at flex, Worthy benched (re-sync 2026-11-01T15:15Z) |
+| 14 | **Drop Harvey (IR), add Seth McGowan (RB, IND, FA, 30%) before noon** | The league has **no IR slot**, so Harvey takes up a bench spot. An NFL IR stint is at least 4 games, which keeps him out through week 11 at the earliest (his bye is week 10). At 1–6 the season is being decided now. Taylor and Gordon are the only healthy RBs left. McGowan is Taylor's direct backup (Sleeper depth 2; RotoBaller, Oct 6: 20+ touches when Taylor sits) and is the #1 trending add, so he may not last. He projects 4.9 and would not start this week: this is insurance on the RB1. Perine (9.1 this week, #3 trending) is the alternative if a playable body is preferred, but his role swings week to week (14 carries in week 5, 4 in week 7) and he insures nobody I roster. **Do it before IND kicks off at noon:** after that his game is underway. | Moderate || **Replaced by #17:** McGowan added, but Stroud dropped instead of Harvey |
+| 15 | **No other changes** | QB: Lamar 23.0 vs Geno 20.1 (best FA). TE: Strange 10.4 vs Freiermuth 9.2 (best FA). K: Shrader 9.2 is above every FA (Stevens 8.9). DEF: Commanders 7.7 vs Chiefs 7.3; PHI's 17.0 implied total is still the slate's lowest. No FA WR beats Cooper (Addison 9.6). Weather is no factor: the one windy game, LAC @ LAR (17 mph), has none of my players. | High || **Yes:** no other changes (re-sync 2026-11-01T15:15Z) |
+
+| 16 | **Harvey's long-term replacement: Seth McGowan. Kimani Vidal is the second choice** (user asked "best long-term add") | No free-agent RB replaces Harvey's output. The best weeks 9–14 projection is Mitchell at 7.0 ppg, and none of them would start over the ~10–11 flex options. So the roster spot's value is what it pays if something goes wrong. **McGowan** is the direct backup to Taylor, my RB1, who carries 15–24 times a game. McGowan got 11 carries in week 7 and is the #1 trending add, so if Taylor goes down he won't be on the wire to claim afterward. Standalone value is low (4.9 ppg). **Vidal** is the best standalone option: the steadiest LAC role (7–8 carries and 2–4 targets in weeks 4–6), and Hampton's carries have been falling. **Not chosen:** Mitchell (best ppg, but 2 carries / 1 target in week 6), Gainwell (Q, behind Irving), Perine (one big week). **Limits:** McGowan's bye is week 13, the same as Taylor's, so he doesn't cover that bye; stream an RB then. Sleeper's future-week projections ignore injuries (Harvey still shows 9.3), so the ppg column is a role baseline. Full table: `research/week-08/sun-rb-ros.md`. | Moderate || **Yes:** McGowan added (re-sync 2026-11-01T15:15Z) |
+
+| 17 | **Revises #14: drop Stroud instead of Harvey. Add McGowan, hold Harvey** (user's suggestion) | It comes down to which player the waiver wire can replace. **Stroud can be replaced:** his weeks 9–14 projection is 18.8 ppg, against Darnold's 19.3 and Shough's 18.7 (both FA). For Lamar's week 13 bye, four FA QBs project ≥18.9 (Ward 20.3, Darnold 19.8, Shough 19.5, Penix 19.2) against Stroud's 18.4. If Lamar gets hurt, the wire offers a Stroud-level QB too. **Harvey can't be replaced:** the best FA RB projects about 7 ppg, against his pre-injury baseline of 9.3. Stroud is on bye this week, so dropping him costs nothing now. **Against:** I found no timeline for the knee. If it is season-ending, the spot is wasted, although an empty spot only costs a wire-level QB. When Harvey returns, Dobbins and Coleman will both be in the backfield (Coleman projects 11.7 this week). Harvey is not a starter at about 9 ppg; he is RB depth. **Week 13:** pick up a streaming QB, dropping Harvey if he is still out. | Moderate || **Yes:** Stroud dropped, McGowan added, Harvey held (re-sync 2026-11-01T15:15Z) |
+
+**Sunday lineup:** QB Lamar · WR Diggs, Robinson, Cooper · RB Taylor, Gordon ·
+TE Strange · W/R/T Fannin · K Shrader · DEF Commanders. Bench: Shakir, Worthy,
+Olave (bye), Egbuka (O), Harvey (IR), McGowan. Stroud dropped (#17). Projected
+Sleeper 124.1 / Yahoo 115, against We Stinks' Yahoo 134 (two of their starters,
+Hubbard and Golden, played Thursday).
+
+**Before noon:** check inactives at ~10:30 am for Lamar, Taylor, Cooper,
+Robinson, Strange, Fannin and Shrader. Fallbacks: Geno Smith (FA) for Lamar;
+Shakir for Robinson, Cooper or Fannin; Worthy (3:25 pm) for Diggs, decided
+before 3:25 pm.
 
 ### Transactions
 
@@ -88,6 +131,7 @@ Shrader. Robinson and Strange have no bye left.
 | Brenton Strange (TE, FA, immediate) | Marvin Harrison Jr. | #7 |
 | Wan'Dale Robinson (WR, claim, Sat Oct 31) | Courtland Sutton | #9 |
 | Spencer Shrader (K, FA, immediate) | Jake Bates | #10 |
+| Seth McGowan (RB, FA, Sun Nov 1) | C.J. Stroud | #14 → #17 |
 | *Sunday only, if Lamar is inactive:* Geno Smith (QB, NYJ, FA) | Courtland Sutton | #1. Second choice: Sam Darnold (Mon night) |
 
 ### Lock timing
