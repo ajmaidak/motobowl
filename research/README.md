@@ -3,7 +3,8 @@
 Cache of external research used for lineup and waiver decisions — projections,
 injury reports, matchup analysis, beat-writer notes.
 
-One subfolder per week: `research/week-NN/`.
+One subfolder per week: `research/week-NN/`. Season-level studies (draft
+review, standings vs draft slot, outlooks) go in `research/season/`.
 
 ## Why cache it
 
@@ -29,6 +30,15 @@ week: 1
 
 A cached page with no source and no timestamp is worse than nothing — it looks
 authoritative while being unattributable and possibly stale.
+
+## A web search that changes a call gets a file
+
+If a recommendation cites a report (a practice status, a beat-writer note, an
+injury timeline, a trade rumor), write what it said and where it came from to
+`research/week-NN/`. One file per session is fine, for example
+`week-09/09-web-availability.md`, with one entry per player. The weekly log
+links to it under "What this was decided on". A search that is not written
+down cannot be graded later.
 
 ## Staleness
 

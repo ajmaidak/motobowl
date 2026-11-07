@@ -8,177 +8,202 @@ description: Refresh cached NFL data, read the league roster and settings, and r
 Produce a starting-lineup recommendation for the Moto Bowl league, grounded in
 the project's own data rather than recalled NFL knowledge.
 
-Read `CLAUDE.md` first if it isn't already in context — league rules, data
-locations and source caveats all live there and are assumed below.
+Read `CLAUDE.md` first if it isn't already in context. League rules, data
+locations and source caveats all live there and are assumed below. Then read
+`weeks/LESSONS.md`: every rule below that cites a number refers to it.
 
 ## Recommended model
 
-**Opus 5.5 (`claude-opus-5-5`) at high effort.** This task fails on process
-(stale syncs, missed availability), not raw reasoning, and high effort gives
-room to cross-check sources without max's cost. Step up to Fable 5.1 or max
-effort only for a genuinely hard week — several questionable starters, an
-add/drop with a real tradeoff, a Thursday deadline.
+**Opus 5.5 (`claude-opus-5-5`) at high effort.** Set 2026-09-25, held through
+week 9. The log shows the misses were process (unexamined slots, a missed
+lock), not reasoning, so there is no case for switching. Re-evaluate after
+week 12 against `weeks/scorecard.md`. Step up to Fable 5.1 or max effort only
+for a genuinely hard week: several questionable starters, an add/drop with a
+real tradeoff, a trade offer. Record the model on the "Analysis by" line.
 
-Hold the model constant for 4–6 weeks so the weekly log can grade the advice
-rather than the model; record it on the "Analysis by" line as usual. Set on
-2026-09-25.
+## Where the points are
+
+Eight graded weeks say the advice earns its keep on **availability** (a
+fallback for an Out or IR starter: +41 net) and loses it on **slots nobody
+examined** (−44 net). Bench-tier WR3 and flex tiebreaks are coin flips (15
+calls, net −10). Spend the effort in that order: steps 0–3 before step 4, and
+state tiebreaks as coin flips rather than arguing them.
 
 ## Procedure
 
-### 1. Refresh what decays
+### 0. Grade last week
+
+If the most recent completed week's `After` section is empty, run
+`/week-review` first. If there is no time, say so in "What this was decided
+on" and read that week's `Before` section anyway. Then read `weeks/LESSONS.md`
+and any `weeks/*review*.md`.
+
+### 1. Sync and run the zero check
 
 ```bash
-.venv/bin/python sources.py refresh injuries sleeper-trending fp-rankings sleeper-projections lines weather
+.venv/bin/python yahoo_web.py sync WEEK   # -> my-roster, opponent-roster, free-agents .json
+.venv/bin/python lineup_check.py          # starters that score 0 unless changed
+```
+
+Check `meta.week` matches the week you're advising on. If the sync fails on a
+login redirect, the session cookie expired: ask the user to re-copy it (steps
+at the top of `yahoo_web.py`). Never ask for the cookie in chat.
+
+**Lead the answer with the zero check (LESSONS rule 1).** Any starter that is
+IR, O, D or Q with a lock before the user's next session gets reported first,
+with the lock time and the one move that prevents a 0. The user may not have
+time for the full analysis before Thursday, so this part must stand alone.
+
+A **locked** player (`kickoff` None, `opponent` set, `fan_pts` filled) cannot
+be moved or dropped until next week. A locked IR starter scores 0 and the
+replacement can only help next week. Say so before building the lineup.
+
+### 2. Refresh what decays
+
+```bash
+.venv/bin/python sources.py refresh injuries sleeper-trending sleeper-projections lines weather expected-points depth-charts
 .venv/bin/python sources.py cache
 .venv/bin/python sources.py games          # implied totals + kickoff weather
 ```
 
 Note the age of what you're using. If the lineup locks within a few hours,
-refresh `injuries` again immediately before recommending — inactives land ~90
-minutes before kickoff and a file inside its TTL can still be wrong about who
-plays.
-
-### 2. Load the league's own data
-
-* `data/my-roster.json` — roster, slots, Yahoo projections, matchups, byes
-* `data/league-settings.json` — scoring rules and starting slots
-* `data/free-agents.json` — every available player, by position, with injury
-  status and % rostered
-* `data/opponent-roster.json` — this week's opponent
-
-Check `meta.week` matches the week you're advising on, and `meta.fetched` for
-age. If the snapshot is stale or from a previous week, re-sync rather than
-advising on it — this is the single most likely way to give confidently wrong
-advice:
-
-```bash
-.venv/bin/python yahoo_web.py sync WEEK   # -> my-roster, opponent-roster, free-agents .json
-```
-
-If it fails on a login redirect, the session cookie expired: ask the user to
-re-copy it (steps at the top of `yahoo_web.py`). Never ask for the cookie in chat.
-
-**Check for locked players.** A player whose team has already played this week
-(Thursday, or an early international game) is locked. He cannot be moved out of his
-slot or dropped until the next week starts, even if he was inactive. In the
-synced data, his `kickoff` is `None` and `fan_pts` is filled. A locked IR/Out
-player in a starting slot scores 0 for the week. Say so before building a lineup
-around that slot (week 9: Lamar locked at QB, so the QB add could only help in week 10).
-
-**Read past lessons.** Read the most recent completed `weeks/week-NN.md` and any
-`weeks/*review*.md` for what earlier reasoning got wrong.
-
-**Free agents are real options, not background.** The roster was drafted
-by Claude Fable (not Yahoo autodraft, despite the team name) and has soft spots; a widely-rostered free agent can beat a current starter
-outright. Load them every time, not only when asked about waivers.
-
-**Know what you're ranking on.** `sync` pulls free agents in Yahoo's weekly
-projection view (`meta.stat_view` = `S_PW_<week>`), so `proj_pts` is a real
-weekly projection — but only Yahoo's. `% Ros` is market consensus, not a
-projection; don't present it as expected points. Free agents include players on
-waivers: check `roster_status` (`W (Sep 19)`) before recommending an immediate add.
+refresh `injuries` again immediately before recommending. Inactives land ~90
+minutes before kickoff, and a file inside its TTL can still be wrong.
 
 ### 3. Establish availability
 
-Three sources, in rough order of usefulness:
+Sources, in order of usefulness:
 
 1. **The synced Yahoo data.** Each player carries a `status` field (`Q`, `D`,
-   `O`, `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`) in roster,
-   opponent and free-agent data. A sync is point-in-time, so check `meta.fetched`.
-2. **Sleeper** `injury_status` per player (`sleeper_players()` in `sources.py`) —
-   refreshes independently of the sync, so it's the cross-check.
-3. **nflverse** `nfl_injuries(season, week)` — richest when populated (practice
-   status, injury type), but the 2026 file has been a near-empty stub. Check the
-   row count before reading an empty result as "nobody is hurt."
+   `O`, `IR`, `IR-R`, `PUP-R`, `PUP-P`, `NFI-R`, `SUSP`, `GTD`). Point-in-time:
+   check `meta.fetched`.
+2. **Sleeper** `injury_status` (`sleeper_players()`), which refreshes
+   independently of the sync. `lineup_check.py` prints both.
+3. **nflverse** `nfl_injuries(season, week)`: practice status and injury type
+   when populated. Check the row count before reading an empty result as
+   "nobody is hurt".
+4. **Web search** for anything the decision hinges on. **Write what it said
+   to `research/week-NN/`** with source and time. An uncached search cannot be
+   graded.
 
 **Never recommend a player carrying `IR`, `IR-R`, `PUP-R`, `PUP-P` or `NFI-R`
-as a starter** — they are ineligible to play, not merely risky. `Q`/`D`/`GTD`
-are judgment calls; say which way you're leaning and why.
+as a starter.** They are ineligible, not merely risky. `Q`/`D`/`GTD` are
+judgment calls.
 
-If no source has usable status for a player the decision hinges on, **say so and
-ask** rather than assuming healthy.
+**For every Q or D starter, choose the fallback as if he is out, and put it in
+now (rule 2).** Judge the fallback on its own merits, not against the hope that
+the starter plays. Give the time by which the swap must be made, which is the
+earlier of the starter's inactives and the fallback's kickoff. If the starter
+clears, swap back.
 
-### 4. Score the options
+**Do not roster a backup QB (rule 3).** The free-agent pool is the backup, if
+the add happens before the lock.
 
-Use the league's actual scoring, not generic rankings. Full PPR, 6-point passing
-TDs, -2 interceptions, **no fractional points**.
+If no source has usable status for a player the decision hinges on, say so and
+ask rather than assuming healthy.
 
-* **Sleeper projections are the primary source**: `sleeper_projections(2026, week)`
-  covers every player and carries `league_pts`, already scored under league
-  rules. Join Yahoo records with `yahoo_to_sleeper(records)`. A rostered player
-  with no projection is probably not expected to play — check status.
-* **Matchup context**: implied team totals (`implied_totals()`) for QB/K/DEF
-  streaming — a DEF facing a low implied total is the signal. Wind above ~15 mph
-  (`game_weather()`) hurts kickers and deep passing.
-* **DEF: stream every week for ceiling (user decision, 2026-11-07).** Always
-  screen free-agent DEFs, and recommend the best one even when the gap is under
-  the 2-point noise bar. Rank by: opponent implied total (≤ 18 is the target), the
-  opposing QB (backup, rookie, turnover- or sack-prone), then home favorite. Wind
-  and rain are a bonus. Scoring pays 4–10 for holding an offense under 14, plus
-  INT 2, FR 2, sack 1 and TD 6. Kickers: change only for a bye, weather or a large
-  implied-total gap.
-* **Luck vs volume**: `expected_points(2026)` — a player well above his expected
-  points is running hot on TDs; one below with high expected points is due.
-* **QBs**: `qbert()` ratings are a second opinion on QB quality, not a weekly
-  projection.
-* FantasyPros projections carry `points_ppr` plus raw components, so
-  league-exact points can be computed from components.
-* Free tier only returns the **top 10 per position** — historically covering the
-  obvious starters and *none* of the bench players a flex decision turns on.
-  Check membership before relying on it; fall back to Yahoo projections in
-  `data/my-roster.json`, which cover the whole roster.
+### 4. Score every slot as a pool
+
+Load `data/my-roster.json`, `data/free-agents.json`,
+`data/opponent-roster.json` and `data/league-settings.json`.
+
+**Rank every eligible player for every unlocked slot together (rule 4).** RB2
+and flex are one pool; WR2, WR3 and flex are one pool. Do not take any slot as
+given because it did not change. The three most expensive misses were slots
+nobody compared.
+
+**Check usage for every starter (rule 5).** Targets, carries, snap share and
+xFP (`expected_points(2026)`) over the last two weeks, alongside the
+projection. A starter whose volume collapsed is a swap candidate even if his
+projection has not moved. For RBs in full PPR, targets per game decide, not
+snap share (rule 10).
+
+**Free agents are real options, not background.** A widely-rostered free agent
+can beat a current starter outright. `proj_pts` there is Yahoo's weekly
+projection (`meta.stat_view` = `S_PW_<week>`). `% Ros` is market consensus,
+not a projection. Check `roster_status` (`W (Sep 19)`) before recommending an
+immediate add. A free agent whose game has kicked off is on waivers until
+Tuesday.
+
+Scoring inputs, under the league's actual rules (full PPR, 6-point passing
+TDs, -2 INT, no fractional points):
+
+* **Sleeper projections are the primary source**: `sleeper_projections(2026,
+  week)` covers every player and carries `league_pts`. Join with
+  `yahoo_to_sleeper(records)` and compare counts. A rostered player with no
+  projection is probably not expected to play.
+* **Yahoo projections** in `data/*.json` are the second opinion and cover the
+  whole roster.
+* **Matchup context**: implied team totals (`implied_totals()`) for QB/K/DEF.
+  Wind above ~15 mph (`game_weather()`) hurts kickers and deep passing.
+* **Luck vs volume**: xFP well above actual means due; actual well above xFP
+  means TD luck, not role.
+* **QBERT** is broken as of 2026-11-07. Skip it unless `sources.py qbert` works.
+* **FantasyPros** needs a key that is not in this checkout. When it is, the
+  free tier returns only the top 10 per position, which never includes the
+  players a flex call turns on.
+
+**DEF: stream every week for ceiling (rule 8, user decision 2026-11-07).**
+Screen free-agent DEFs every week and recommend the best one even inside the
+noise bar. Rank by opponent implied total (18 or under is the target), the
+opposing QB (backup, rookie, turnover- or sack-prone), then home favorite. Wind
+and rain are a bonus. **K (rule 9):** change only for a bye, weather, or a
+large implied-total gap.
 
 ### 5. Recommend
 
 Fill every starting slot: `QB, WR, WR, WR, RB, RB, TE, W/R/T, K, DEF`.
 
-For each change, give: the swap, the reason, and your confidence. Say plainly
-when a call is close to a coin flip.
+For each change: the swap, the reason, the confidence. Say plainly when a call
+is a coin flip, then pick a side and move on.
 
-Then check the waiver wire against the weakest starting slots. Recommend an
-add/drop only when the free agent clearly beats the current starter — the bar is
-higher than a bench swap because it costs a roster spot. The league has
-**unlimited acquisitions and continual rolling waivers**, so there's no scarcity
-cost to churning, but that is a reason streaming is *viable*, not a reason to
-churn for its own sake.
+**Default to no change.** With no fractional points, gaps under about 2 points
+are noise. A swap needs a real edge.
 
-Flag anyone whose game locks earliest — a Thursday player must be added before
-kickoff, and that deadline binds well before the Sunday lineup does.
+**Exception: underdog by 10 or more (rule 7).** Then a close loss and a big
+loss count the same. Break coin flips toward the higher-ceiling player at the
+weakest slots, and say that this rule is why.
 
-**Starter on IR/Out with an early lock.** If a starter has an IR, O or D
-status and his game locks before Sunday, lead the answer with it, and give the
-lock time and the replacement. The user may not have time for a full lineup
-session before Thursday, so give the one move that prevents a 0 first. Do not
-recommend carrying a backup QB for this: the free-agent pool is the backup, if
-the add happens before the lock (week 9 review, 2026-11-07).
+**Conditional lineups (rule 6).** If a claim is pending or a status is
+unresolved, write the lineup both ways: "if X clears, he starts at flex over
+Y". If the roster changes after the analysis, re-run the affected pool.
+
+**Waivers.** Recommend an add/drop only when the free agent clearly beats the
+current starter. The bar is higher than a bench swap because it costs a roster
+spot. Unlimited acquisitions make streaming viable, not mandatory. Flag the
+earliest lock: a Thursday player must be added before Thursday kickoff.
+
+**Trades.** When an offer is on the table, score it as rest-of-season points
+per game from Sleeper projections, split into regular season (through week 14)
+and playoffs (weeks 15–17), with byes left and targets over the last four
+games. Value a QB against the best free-agent QB, not against zero. Net the
+starting lineup before and after, say what the counter would be, and say
+whether the other side is likely to accept. The trade processes for next week.
 
 ### 6. Record it
 
-Write the recommendation into `weeks/week-NN.md` **before** the games — the
-reasoning is the part worth grading later, and it's worthless if reconstructed
-after the outcome. Log recommendations that were not followed too.
+Write the recommendation into `weeks/week-NN.md` **before** the games, using
+`weeks/TEMPLATE.md`. Fill "Lock timing" and "What this was decided on",
+including which sources were not used and whether last week was graded. Log
+recommendations that were not followed too.
 
 ## Judgment rules
 
-**Default to no change.** Projections are noisy and the roster is already
-reasonable. A swap needs a real edge, not a rounding artifact. With no
-fractional points in this league, gaps under about 2 points are noise — do not
-recommend churn to chase them.
-
-**Separate what you read from what you recall.** Model knowledge of the 2026
-season is unreliable, and player roles change constantly. Base recommendations
-on `data/` and the cached sources; when something rests on recalled knowledge of
-a player, say so explicitly so the user can discount it. Never invent a depth
-chart position, snap share, or injury.
+**Separate what you read from what you recall (rule 12).** Model knowledge of
+the 2026 season is unreliable. Base recommendations on `data/` and the cached
+sources; when something rests on recalled knowledge, say so. Never invent a
+depth chart position, snap share, or injury.
 
 **Volume beats upside in full PPR.** A reception is a guaranteed point, so a
-high-target possession receiver has a higher floor than a boom/bust deep threat
-with the same projection. Weight target share accordingly — this is the most
-common way generic advice goes wrong for this league.
+high-target receiver has a higher floor than a deep threat with the same
+projection. Use it as the tiebreaker, and know that it has gone about 50/50
+between players projected 8–11. It is a tiebreaker, not an edge.
 
-**Name the uncertainty.** Every recommendation should be checkable: which source
-said what, and how old it was. "Start X over Y" is not useful; "start X over Y —
-Sleeper shows Y questionable as of 2h ago, and X has the higher floor in PPR" is.
+**A lean that rests on a teammate being out is weak until he is ruled out
+(rule 11).** Re-check it at the last status update.
 
-**Don't hedge into uselessness.** After stating the uncertainty, still commit to
-a specific lineup. The user needs a lineup, not a list of considerations.
+**Name the uncertainty.** Every recommendation should be checkable: which
+source said what, and how old it was.
+
+**Don't hedge into uselessness.** After stating the uncertainty, commit to a
+specific lineup. The user needs a lineup, not a list of considerations.

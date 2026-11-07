@@ -24,4 +24,6 @@ the written record distinguishes them later.
   reasoning is the part worth grading.
 * Note when a recommendation was *not* followed, and why. That's a data point.
 
-Start from `TEMPLATE.md`.
+Start from `TEMPLATE.md`. Fill `After` with `/week-review`. Rules go to
+`LESSONS.md` and graded calls to `scorecard.md`; a lesson that only lives in one
+week file is lost.
