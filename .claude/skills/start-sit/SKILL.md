@@ -58,6 +58,16 @@ advice:
 If it fails on a login redirect, the session cookie expired: ask the user to
 re-copy it (steps at the top of `yahoo_web.py`). Never ask for the cookie in chat.
 
+**Check for locked players.** A player whose team has already played this week
+(Thursday, or an early international game) is locked. He cannot be moved out of his
+slot or dropped until the next week starts, even if he was inactive. In the
+synced data, his `kickoff` is `None` and `fan_pts` is filled. A locked IR/Out
+player in a starting slot scores 0 for the week. Say so before building a lineup
+around that slot (week 9: Lamar locked at QB, so the QB add could only help in week 10).
+
+**Read past lessons.** Read the most recent completed `weeks/week-NN.md` and any
+`weeks/*review*.md` for what earlier reasoning got wrong.
+
 **Free agents are real options, not background.** The roster was drafted
 by Claude Fable (not Yahoo autodraft, despite the team name) and has soft spots; a widely-rostered free agent can beat a current starter
 outright. Load them every time, not only when asked about waivers.
@@ -100,6 +110,13 @@ TDs, -2 interceptions, **no fractional points**.
 * **Matchup context**: implied team totals (`implied_totals()`) for QB/K/DEF
   streaming — a DEF facing a low implied total is the signal. Wind above ~15 mph
   (`game_weather()`) hurts kickers and deep passing.
+* **DEF: stream every week for ceiling (user decision, 2026-11-07).** Always
+  screen free-agent DEFs, and recommend the best one even when the gap is under
+  the 2-point noise bar. Rank by: opponent implied total (≤ 18 is the target), the
+  opposing QB (backup, rookie, turnover- or sack-prone), then home favorite. Wind
+  and rain are a bonus. Scoring pays 4–10 for holding an offense under 14, plus
+  INT 2, FR 2, sack 1 and TD 6. Kickers: change only for a bye, weather or a large
+  implied-total gap.
 * **Luck vs volume**: `expected_points(2026)` — a player well above his expected
   points is running hot on TDs; one below with high expected points is due.
 * **QBs**: `qbert()` ratings are a second opinion on QB quality, not a weekly
@@ -127,6 +144,13 @@ churn for its own sake.
 
 Flag anyone whose game locks earliest — a Thursday player must be added before
 kickoff, and that deadline binds well before the Sunday lineup does.
+
+**Starter on IR/Out with an early lock.** If a starter has an IR, O or D
+status and his game locks before Sunday, lead the answer with it, and give the
+lock time and the replacement. The user may not have time for a full lineup
+session before Thursday, so give the one move that prevents a 0 first. Do not
+recommend carrying a backup QB for this: the free-agent pool is the backup, if
+the add happens before the lock (week 9 review, 2026-11-07).
 
 ### 6. Record it
 
