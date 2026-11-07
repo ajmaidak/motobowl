@@ -25,7 +25,7 @@ Check this table before trusting anything below. Update the date when it changes
 | FantasyPros | **Unusable here** (no key) | Free tier only covers the top 10 per position anyway |
 | QBERT (`qbert()`) | **Broken**, parse error on 2026-11-07 | Silver Bulletin changed the post layout. Fix or skip |
 | Sleeper, nflverse, ffopportunity, ESPN lines, Open-Meteo | Working | See "External data sources" |
-| `weeks/week-08.md` After | **Empty** | Grade it before the next lineup (`/week-review`) |
+| `weeks/week-08.md` After | Filled 2026-11-07 | Lost 83–143. `week-09.md` After waits for Mon Nov 9 |
 
 ## League data: the Yahoo web session
 

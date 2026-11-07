@@ -4,19 +4,24 @@ Every graded lineup call, by type. Net = points the call scored minus what the
 alternative scored, from the `After` sections. Update this when an `After`
 section is filled. Gaps under 2 are noise and count as neither hit nor miss.
 
-Season: 1–8 after week 9 (week 9 pending). Losses by 2 (week 5) and 1 (week 6).
+Season: 1–7 after week 8. Week 9 is in progress (QB slot locked at 0). Losses by 2 (week 5) and 1 (week 6).
 
 ## By type
 
+Recounted from the rows below on 2026-11-07. Before the recount, the
+Availability and Tiebreak rows did not match the rows.
+
 | Type | Calls | Hit | Miss | Noise | Net | Read |
 |---|---|---|---|---|---|---|
-| Availability: fallback for an Out/Q/IR starter | 5 | 3 | 2 | 0 | **+41** | Where the advice earns its keep. Both misses were process (rules 1 and 2) |
-| Unexamined slot (no call made) | 4 | 0 | 4 | 0 | **−44** | Rule 4. The most expensive category |
-| WR3 / flex tiebreak between examined players | 15 | 4 | 5 | 6 | −10 | Coin flips. Do not over-invest |
-| DEF stream | 7 | 3 | 3 | 1 | −1 | Break-even. Streaming for ceiling from week 10 (rule 8) |
+| Availability: fallback for an Out/Q/IR starter | 9 | 5 | 3 | 1 | **+34** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
+| Unexamined slot (no call made) | 5 | 0 | 5 | 0 | **−44** | Rule 4. The most expensive category. Week 8's points are in the TE row |
+| WR3 / flex tiebreak between examined players | 18 | 5 | 6 | 7 | −16 | Coin flips. Do not over-invest |
+| DEF stream | 7 | 3 | 3 | 1 | −1 | Break-even, vs the DEF replaced (LESSONS rule 8). Streaming for ceiling from week 10 |
 | K change | 4 | 1 | 2 | 1 | +1 | All of the gain was a bye cover |
-| TE | 1 | 0 | 0 | 1 | −1 | Fannin vs Henry, week 7 |
+| TE | 2 | 0 | 1 | 1 | −17 | Week 8 tiebreak, Strange over Fannin |
+| Add / claim | 1 | 1 | 0 | 0 | +6 | Robinson for Sutton |
 | Declined add | 2 | 1 | 0 | 1 | 0 | Ferguson (right), Washington (bench, no cost) |
+| User change (not a recommendation) | 1 | 1 | 0 | 0 | +12 | Fannin to flex, week 8 |
 
 ## Every call
 
@@ -59,8 +64,16 @@ Season: 1–8 after week 9 (week 9 pending). Losses by 2 (week 5) and 1 (week 6)
 | 7 | K | Bates (Reichard claim lost) | Gay | 0 | Noise |
 | 7 | TE | Fannin | Henry | −1 | Noise |
 | 7 | Availability | Cooper in for Egbuka (Out) on Wednesday | Egbuka | +22 | Hit (rule 2). Margin of victory |
-| 8 | DEF | Commanders for Browns | Browns | +10 | Hit (from the add/drop review; `After` not filled) |
-| 8 | K | Shrader for Bates | Bates | −6 | Miss (from the add/drop review) |
-| 8 | | Other week 8 calls | | | **Ungraded.** Fill `week-08.md` After |
+| 8 | Availability | Lamar started (full practice, active) | Geno Smith (FA) | −22 | Miss on points. Process right: hurt on his first snap |
+| 8 | Availability | Egbuka (Q) benched on Wednesday, Shakir in | Egbuka (inactive) | +11 | Hit (rule 2) |
+| 8 | Availability | Diggs started through a Wednesday rest day | Worthy (Harvey went IR) | +8 | Hit |
+| 8 | Tiebreak | Worthy at flex (not followed: Harvey) | Harvey (IR Oct 31) | +4 | Hit, but moot. Fannin took the flex |
+| 8 | DEF | Commanders for Browns | Browns | +10 | Hit |
+| 8 | TE | Strange at TE, Fannin to bench | Fannin at TE | −16 | Miss. The user put Fannin at flex, so the played lineup lost 4 |
+| 8 | Unexamined | Fannin (10.7) benched by the TE call, not ranked for flex | Fannin at flex | (in TE row) | Miss (rule 4). The user caught it |
+| 8 | User change | Fannin at flex, Shakir benched | Written plan (Shakir WR3, Fannin bench) | +12 | Hit |
+| 8 | Tiebreak | Cooper kept over Shakir in the user's re-run (9.8 vs 9.3) | Shakir | −11 | Miss. 0 targets on 50 snaps. Coin flip |
+| 8 | Add / claim | Robinson claim for Sutton | Sutton | +6 | Hit |
+| 8 | K | Shrader for Bates | Bates | −6 | Miss (rule 9, noise) |
 | 9 | Availability | Lamar (IR) left in the locked QB slot | Shough / Willis (FA) | about −18 | Miss (rule 1). No lineup session before Thursday |
 | 9 | | Other week 9 calls | | | Pending |

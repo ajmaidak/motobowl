@@ -28,8 +28,9 @@ If the starter clears, swap back.
 
 * Origin: week 6 (Rodgers passed over because "Lamar might play"; Lamar sat,
   Brissett 6, Rodgers 20, lost by 1). Confirmed week 7 (Cooper in for Egbuka
-  on Wednesday; Egbuka Out, Cooper 22, margin of victory). Followed week 8 (Shakir for Egbuka).
-* Tally: 1 miss (−14), 1 hit (+22).
+  on Wednesday; Egbuka Out, Cooper 22, margin of victory). Confirmed week 8
+  (Shakir in for Egbuka on Wednesday; Egbuka inactive).
+* Tally: 1 miss (−14), 2 hits (+22, +11).
 
 ### 3. The waiver wire is the backup QB
 
@@ -40,17 +41,24 @@ happen before the lock.
 * Origin: week 4 (no backup for Lamar, Q), confirmed week 5 (Brissett add +29
   vs Lamar inactive) and the add/drop review.
 * Tally: 3 right, 0 wrong. The week 9 zero was a rule 1 failure, not a rule 3 failure.
+  Week 8 did not test it: Lamar was active and was hurt on his first snap. No
+  backup, rostered or free agent, can replace a starter after his lock.
 
 ### 4. Rank every eligible player for every unlocked slot, as one pool
 
 Do not take any slot as given. RB2 and flex are one pool; WR2, WR3 and flex are
 one pool. The biggest misses came from slots nobody examined.
 
+A player benched by a swap at his own position stays in the flex pool. Rank him
+for flex before the analysis ends (week 8: Fannin).
+
 * Origin: week 5 (Harvey 0 at RB2, Gordon 14 on the bench, never compared;
   lost by 2). Repeated week 6 (Wilson 5 at RB2 vs Shakir 13; lost by 1) and
   week 4 (Wilson 26 on the bench, projected 5).
-* Tally: 4 misses from unexamined slots, −44 (weeks 2, 4, 5, 6). Zero hits,
-  because an unexamined slot cannot be a hit.
+* Tally: 5 misses from unexamined slots, −44 (weeks 2, 4, 5, 6, 8). Zero hits,
+  because an unexamined slot cannot be a hit. Week 8: the TE call benched Fannin
+  (10.7) and the flex stayed with Worthy or Harvey (9.0, 8.3). The user moved
+  Fannin to flex, and he scored 23. The points are in the TE tally.
 
 ### 5. Check usage for every starter, not only the contested ones
 
@@ -71,7 +79,9 @@ before lock.
 
 * Origin: week 2 (Worthy claim cleared Saturday, flex never re-examined,
   Dowdle 6 vs Worthy 13).
-* Tally: 1 miss (−7).
+* Tally: 1 miss (−7), 1 confirmed. Week 8: the Robinson claim cleared and
+  Harvey went on IR on Oct 31. The user re-ran the slots (Fannin to flex),
+  +12 over the written plan. The re-run is not in the log.
 
 ### 7. Break ties toward ceiling when the projection says underdog by 10 or more
 
@@ -80,7 +90,8 @@ where the projected margin is large: then a close loss and a big loss count the
 same, so take the higher-variance side of a coin flip at the weakest slots.
 
 * Origin: week 4 outlook, applied in weeks 6, 8 and 9.
-* Tally: not yet graded as a rule. Needs the week 8 and 9 `After` sections.
+* Tally: not yet graded as a rule. Week 8 cannot grade it: lost by 60, so no
+  tiebreak mattered. Needs the week 9 `After` section.
 
 ### 8. Stream DEF every week for ceiling (user decision, 2026-11-07)
 
@@ -92,14 +103,16 @@ Recommend the best one even inside the noise bar.
   for holding the Steelers. About break-even.
 * Tally vs the DEF replaced: wk2 −8, wk3 +3, wk4 +6, wk5 −9, wk6 −2, wk7 −1,
   wk8 +10. **Net −1 over 7 streams.** The implied-total signal was right in
-  weeks 4 and 8 and wrong in week 5.
+  weeks 4 and 8 and wrong in week 5. Week 8 confirmed in the `After` section
+  (Commanders 13, Browns 3).
 
 ### 9. Kicker churn is noise
 
 Change kickers only for a bye, a dome-vs-wind gap, or a large implied-total gap.
 
 * Origin: add/drop review. Five K moves, net about +11, all from the week 6 bye cover.
-* Tally: wk2 −9 (1-point gap, variance), wk6 +16 (bye), wk7 0, wk8 −6 (rest-of-season bet).
+* Tally: wk2 −9 (1-point gap, variance), wk6 +16 (bye), wk7 0, wk8 −6
+  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8.
 
 ### 10. Judge RBs in full PPR on targets per game, not snap share
 
@@ -128,9 +141,10 @@ memory. Never invent a depth chart, snap share or injury.
 
 ## What the tally says
 
-**Bench-tier WR3 and flex tiebreaks are coin flips.** Fifteen graded calls in
-weeks 1–7 between players projected 8–11 netted about −10, with 7 right and 8
-wrong. The usage tiebreaker (targets) went 1–1 on Shakir vs Sutton, then 1–1
+**Bench-tier WR3, TE and flex tiebreaks are coin flips.** Eighteen graded WR3
+and flex calls in weeks 1–8 between players projected 8–11 netted −16: 5 right,
+6 wrong, 7 noise. The week 8 TE tiebreak (Strange over Fannin, tied
+projections) lost 16. The usage tiebreaker (targets) went 1–1 on Shakir vs Sutton, then 1–1
 again. Spend the analysis on rules 1–5. Make the tiebreak call, state it as a
 coin flip, and move on.
 
