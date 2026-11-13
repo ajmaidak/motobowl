@@ -18,7 +18,10 @@ move that prevents a 0. Run `lineup_check.py` before any analysis.
 
 * Origin: week 9 and the add/drop review (2026-11-07). Lamar Jackson (IR)
   stayed in the QB slot through the Thursday lock. **0 at QB against the first-place team.**
-* Tally: 1 miss, about −18 (Shough or Willis projected 17–20).
+* Tally: 1 miss, −22 (Shough scored 21.7). Week 9 was lost by 14.
+* Added week 9: when the roster has no healthy QB, do not defer the add. Enter
+  the add or the claim in the same session. The week 9 plan to add a QB on
+  Tue/Wed was not carried out. Lamar was still at QB on Thu Nov 12.
 
 ### 2. Choose the fallback as if the questionable starter is out, and put it in now
 
@@ -91,7 +94,7 @@ same, so take the higher-variance side of a coin flip at the weakest slots.
 
 * Origin: week 4 outlook, applied in weeks 6, 8 and 9.
 * Tally: not yet graded as a rule. Week 8 cannot grade it: lost by 60, so no
-  tiebreak mattered. Needs the week 9 `After` section.
+  tiebreak mattered. Week 9: not applied, no coin flip was broken toward ceiling.
 
 ### 8. Stream DEF every week for ceiling (user decision, 2026-11-07)
 
@@ -103,7 +106,8 @@ Recommend the best one even inside the noise bar.
   for holding the Steelers. About break-even.
 * Tally vs the DEF replaced: wk2 −8, wk3 +3, wk4 +6, wk5 −9, wk6 −2, wk7 −1,
   wk8 +10. **Net −1 over 7 streams.** The implied-total signal was right in
-  weeks 4 and 8 and wrong in week 5. Week 8 confirmed in the `After` section
+  weeks 4, 8 and 9 and wrong in week 5. Week 9: Giants 13 vs Commanders 6, +7.
+  **Net +6 over 8 streams.** Week 8 confirmed in the `After` section
   (Commanders 13, Browns 3).
 
 ### 9. Kicker churn is noise
@@ -112,7 +116,7 @@ Change kickers only for a bye, a dome-vs-wind gap, or a large implied-total gap.
 
 * Origin: add/drop review. Five K moves, net about +11, all from the week 6 bye cover.
 * Tally: wk2 −9 (1-point gap, variance), wk6 +16 (bye), wk7 0, wk8 −6
-  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8.
+  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8. Week 9: Shrader held, 16.
 
 ### 10. Judge RBs in full PPR on targets per game, not snap share
 

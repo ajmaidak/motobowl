@@ -1,6 +1,6 @@
 # Week 9
 
-**Opponent:** Cougar Slayers (team 3) · **Result:** — · **Final score:** —
+**Opponent:** Cougar Slayers (team 3) · **Result:** L · **Final score:** 96–110
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 9` (web session), fetched
 2026-11-07T18:04Z (Sat Nov 7, 12:04 pm CST). Analysis run Sat Nov 7 ~12:30 pm CST.
@@ -147,24 +147,52 @@ Revised projection: Sleeper ~106.5 / Yahoo 98 vs Cougar Slayers ~119.
 
 ## After
 
+Filled 2026-11-12 from the Yahoo matchup page (`cache/yahoo/matchup_w9.json`).
+Free agents come from Sleeper week 9 stats, league-scored. (`/week-review`)
+
 ### Actual results
 
 | Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | Lamar Jackson (IR, locked) | 0 / — | 0 | 0 |
+| WR | Chris Olave | 15 / 15.4 | 16 | +1. 12 targets, xFP 20.8 |
+| WR | Omar Cooper Jr. | 12 / 14.1 | 13 | 0. 11 targets, xFP 15.6 |
+| WR | Stefon Diggs | 13 / 12.8 | 8 | −5. 5 targets |
+| RB | Jonathan Taylor | 16 / 17.7 | 8 | −9. 13 carries, 5 targets, xFP 14.0 |
+| RB | Ollie Gordon II | 11 / 13.9 | 6 | −7. 16 carries, 1 target |
+| TE | Brenton Strange | 9 / 9.7 | 4 | −5. 2 targets, second week in a row |
+| W/R/T | Harold Fannin Jr. | 11 / 11.4 | 12 | +1. 2 targets, xFP 2.1: a touchdown, not volume |
+| K | Spencer Shrader | 9 / 9.8 | 16 | +7 |
+| DEF | Giants | 7 / 7.4 | 13 | +6 |
 
-**Actual total:** — vs projected —
+**Actual total:** 96 vs projected 98 (Yahoo, QB at 0). Opponent: 110 vs projected 119.
+Bench: McGowan 11, Worthy 10, Shakir 9, Egbuka 6.
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Tyler Shough | | Malik Willis / Drew Lock | | |
-| Harold Fannin Jr. (flex) | | Egbuka / Worthy / Singletary | | |
-| Giants DEF | | Commanders DEF | | |
+| Lamar Jackson (IR, locked Thursday) | 0 | Tyler Shough (#1, FA) | 21.7 | **−22. Miss (rule 1). It decided the week.** Lock 14.6, Penix 15.5 and Geno 7.4 also win or tie it. Willis 3.8 does not |
+| Olave for Robinson (bye) (#2) | 16 | — | — | Forced. Right |
+| Fannin at flex (#3, #10) | 12 | Worthy 10, Shakir 9, Egbuka 6, Singletary 5.9 | | +2 to +6. Hit on points, luck on usage (2 targets) |
+| Giants DEF (#4) | 13 | Commanders 6, Saints 5 | | +7. Hit. The lowest implied total was right again |
+| No change at RB or K (#6) | Taylor 8, Gordon 6, Shrader 16 | McGowan (bench, proj 4 / 6.8) | 11 | −5 at RB2. No projection supported the swap. Not a miss |
+| Reject the Love and Waddle trade (#7) | Olave 16, Shakir 9 (bench) | Love 42.2, Waddle 3.2 | | Did not apply to week 9. Grade it at season end |
+| Wait until Tue/Wed for a QB (#11) | — | Add Shough on Sat Nov 7 | — | **Miss.** No QB was added. On Thu Nov 12 Lamar was still at QB and Shough was no longer a free agent |
+| Diggs at WR3 (no call) | 8 | Worthy | 10 | −2. Noise |
+
+**Could it have been won?** Yes. Lost by 14, and any 15-point QB wins it.
+Shough makes it 118–110. With the QB locked, the best legal lineup scores 103
+(McGowan for Gordon, Worthy for Diggs) and still loses.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
-* Anything to change in how recommendations are made:
+* What the reasoning got right: the Giants stream (+7), Fannin over Egbuka, and no K change.
+* What it got wrong: the analysis ran on Saturday, two days after the Thursday
+  lock. Then #11 agreed to wait for a QB add, and the add did not happen.
+* Anything to change in how recommendations are made: when the roster has no
+  healthy QB, the add is not deferred. Enter the add or the claim in the same
+  session (added to LESSONS rule 1).
+* Rules confirmed or contradicted this week: rule 1 confirmed (−22, the
+  margin). Rule 8 confirmed (+7). Rule 9 confirmed (Shrader held, 16). Rule 7
+  was not applied: no coin flip was broken toward ceiling.

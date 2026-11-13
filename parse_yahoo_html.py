@@ -87,7 +87,10 @@ def parse_player_cell(td):
     if link is None:
         return None  # empty lineup slot
     team_pos = text(td.select_one("span.D-b span.Fz-xxs"))
-    m = re.match(r"^([A-Za-z]{2,3}) - (QB|RB|WR|TE|K|DEF)$", team_pos)
+    # A player can have two positions ("Sea - WR,RB"). The first is primary.
+    m = re.match(
+        r"^([A-Za-z]{2,3}) - (QB|RB|WR|TE|K|DEF)(?:,(?:QB|RB|WR|TE|K|DEF))*$", team_pos
+    )
     if not m:
         raise ParseError(f"no team/position for {text(link)!r}: {team_pos!r}")
 

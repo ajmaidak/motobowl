@@ -4,19 +4,19 @@ Every graded lineup call, by type. Net = points the call scored minus what the
 alternative scored, from the `After` sections. Update this when an `After`
 section is filled. Gaps under 2 are noise and count as neither hit nor miss.
 
-Season: 1–7 after week 8. Week 9 is in progress (QB slot locked at 0). Losses by 2 (week 5) and 1 (week 6).
+Season: week 9 lost 96–110 with the QB slot locked at 0. Close losses: by 2 (week 5), by 1 (week 6), by 14 with no QB (week 9).
 
 ## By type
 
-Recounted from the rows below on 2026-11-07. Before the recount, the
+Recounted from the rows below on 2026-11-07. Week 9 added 2026-11-12 (the week 9 QB row moved from about −18 to −22). Before the recount, the
 Availability and Tiebreak rows did not match the rows.
 
 | Type | Calls | Hit | Miss | Noise | Net | Read |
 |---|---|---|---|---|---|---|
-| Availability: fallback for an Out/Q/IR starter | 9 | 5 | 3 | 1 | **+34** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
+| Availability: fallback for an Out/Q/IR starter | 9 | 5 | 3 | 1 | **+30** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
 | Unexamined slot (no call made) | 5 | 0 | 5 | 0 | **−44** | Rule 4. The most expensive category. Week 8's points are in the TE row |
-| WR3 / flex tiebreak between examined players | 18 | 5 | 6 | 7 | −16 | Coin flips. Do not over-invest |
-| DEF stream | 7 | 3 | 3 | 1 | −1 | Break-even, vs the DEF replaced (LESSONS rule 8). Streaming for ceiling from week 10 |
+| WR3 / flex tiebreak between examined players | 19 | 6 | 6 | 7 | −14 | Coin flips. Do not over-invest |
+| DEF stream | 8 | 4 | 3 | 1 | +6 | About break-even, vs the DEF replaced (LESSONS rule 8). Streaming for ceiling from week 10 |
 | K change | 4 | 1 | 2 | 1 | +1 | All of the gain was a bye cover |
 | TE | 2 | 0 | 1 | 1 | −17 | Week 8 tiebreak, Strange over Fannin |
 | Add / claim | 1 | 1 | 0 | 0 | +6 | Robinson for Sutton |
@@ -75,5 +75,9 @@ Availability and Tiebreak rows did not match the rows.
 | 8 | Tiebreak | Cooper kept over Shakir in the user's re-run (9.8 vs 9.3) | Shakir | −11 | Miss. 0 targets on 50 snaps. Coin flip |
 | 8 | Add / claim | Robinson claim for Sutton | Sutton | +6 | Hit |
 | 8 | K | Shrader for Bates | Bates | −6 | Miss (rule 9, noise) |
-| 9 | Availability | Lamar (IR) left in the locked QB slot | Shough / Willis (FA) | about −18 | Miss (rule 1). No lineup session before Thursday |
-| 9 | | Other week 9 calls | | | Pending |
+| 9 | Availability | Lamar (IR) left in the locked QB slot | Shough (FA) | −22 | Miss (rule 1). Lost by 14 |
+| 9 | Availability | QB add deferred to Tue/Wed (#11), never made | Add Shough on Sat | 0 in week 9 | Miss on process. Shough was gone by week 10 |
+| 9 | Tiebreak | Fannin at flex | Worthy | +2 | Hit on a touchdown (2 targets) |
+| 9 | DEF | Giants for Commanders | Commanders | +7 | Hit |
+| 9 | K | Hold Shrader | Fairbairn (FA) | + | Hit (16) |
+| 9 | Unexamined | Diggs at WR3, no call | Worthy | −2 | Noise |
