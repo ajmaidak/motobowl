@@ -22,6 +22,7 @@ move that prevents a 0. Run `lineup_check.py` before any analysis.
 * Added week 9: when the roster has no healthy QB, do not defer the add. Enter
   the add or the claim in the same session. The week 9 plan to add a QB on
   Tue/Wed was not carried out. Lamar was still at QB on Thu Nov 12.
+* Week 10: confirmed. Geno was added for Lamar before the Sunday lock (+5 vs a 0).
 
 ### 2. Choose the fallback as if the questionable starter is out, and put it in now
 
@@ -33,7 +34,8 @@ If the starter clears, swap back.
   Brissett 6, Rodgers 20, lost by 1). Confirmed week 7 (Cooper in for Egbuka
   on Wednesday; Egbuka Out, Cooper 22, margin of victory). Confirmed week 8
   (Shakir in for Egbuka on Wednesday; Egbuka inactive).
-* Tally: 1 miss (−14), 2 hits (+22, +11).
+* Tally: 1 miss (−14), 3 hits (+22, +11, +6). Week 10: Shakir in for Cooper
+  (Q), and Cooper was Out.
 
 ### 3. The waiver wire is the backup QB
 
@@ -46,6 +48,12 @@ happen before the lock.
 * Tally: 3 right, 0 wrong. The week 9 zero was a rule 1 failure, not a rule 3 failure.
   Week 8 did not test it: Lamar was active and was hurt on his first snap. No
   backup, rostered or free agent, can replace a starter after his lock.
+* Week 10: a 17–21 point QB was available (Watson 21.4 and Lock 19.6 as immediate
+  adds), as the rule says. The pick, Geno, scored 5. Lost by 3.
+* **Picking among streaming QBs (added week 10):** when several are inside the
+  noise line, certainty (immediate add vs claim) decides only between a
+  claim and an add. Between immediate adds, break the tie on implied team total
+  and wind, then on the last two weeks of xFP. Tally: 0–1 (week 10, −15).
 
 ### 4. Rank every eligible player for every unlocked slot, as one pool
 
@@ -62,6 +70,9 @@ for flex before the analysis ends (week 8: Fannin).
   because an unexamined slot cannot be a hit. Week 8: the TE call benched Fannin
   (10.7) and the flex stayed with Worthy or Harvey (9.0, 8.3). The user moved
   Fannin to flex, and he scored 23. The points are in the TE tally.
+* Week 10: McGowan (RB, flex-eligible, bench) was left out of the flex pool
+  and scored 13 to Robinson's 4. He projected last (6.8), so the result was
+  luck, but the pool must list every flex-eligible bench player, RBs included.
 
 ### 5. Check usage for every starter, not only the contested ones
 
@@ -82,7 +93,8 @@ before lock.
 
 * Origin: week 2 (Worthy claim cleared Saturday, flex never re-examined,
   Dowdle 6 vs Worthy 13).
-* Tally: 1 miss (−7), 1 confirmed. Week 8: the Robinson claim cleared and
+* Tally: 1 miss (−7), 2 confirmed. Week 10: "Fannin to TE if active" was
+  written as a conditional and followed (+8). Week 8: the Robinson claim cleared and
   Harvey went on IR on Oct 31. The user re-ran the slots (Fannin to flex),
   +12 over the written plan. The re-run is not in the log.
 
@@ -116,7 +128,7 @@ Change kickers only for a bye, a dome-vs-wind gap, or a large implied-total gap.
 
 * Origin: add/drop review. Five K moves, net about +11, all from the week 6 bye cover.
 * Tally: wk2 −9 (1-point gap, variance), wk6 +16 (bye), wk7 0, wk8 −6
-  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8. Week 9: Shrader held, 16.
+  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8. Week 9: Shrader held, 16. Week 10: held, 8.
 
 ### 10. Judge RBs in full PPR on targets per game, not snap share
 

@@ -1,6 +1,6 @@
 # Week 10
 
-**Opponent:** Orton's BloodyFinger (team 6) · **Result:** — · **Final score:** —
+**Opponent:** Orton's BloodyFinger (team 6) · **Result:** Lost · **Final score:** 96–99
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 10` (web session), fetched
 2026-11-13T06:07Z (Thu Nov 12, 11:07 pm MST). Analysis run Thu Nov 12 ~11:30 pm MST.
@@ -108,26 +108,78 @@ actuals. Opponent: Yahoo 130 / Sleeper 133. **About even.** Rule 7 (underdog by
 
 ## After
 
+Filled 2026-11-21 from the Yahoo matchup page (`cache/yahoo/matchup_w10.json`).
+Free agents come from Sleeper week 10 stats, league-scored. Usage from
+ffopportunity. (`/week-review`)
+
+The lineup played matched the recommendation. Fannin was active, so he took
+TE and Strange went to the bench (#3). Robinson played WR3 and Shakir played
+flex. Yahoo shows those two slots the other way round, which does not change the
+score. The optional Corum claim (#5) was not made. McGowan was still rostered.
+
 ### Actual results
 
 | Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | Geno Smith (add) | 19 / 19.7 | 5 | −14. xFP 8.1: low volume as well as bad results |
+| WR | Chris Olave | 17 / 16.4 | 6 | −11. **4 targets** (12 in week 9), xFP 5.8 |
+| WR | Stefon Diggs | 10 / 10.2 | 20 | +10. 10 targets |
+| WR | Wan'Dale Robinson | 11 / 9.7 | 4 | −6. 4 targets. Now IR (ankle) |
+| RB | Jonathan Taylor | 16 / 16.6 | 12 | −4. 16 carries, 4 targets |
+| RB | Ollie Gordon II | 12 / 13.3 | 14 | +2 |
+| TE | Harold Fannin Jr. | 10 / 10.5 | 16 | +6 |
+| W/R/T | Khalil Shakir | 10 / 10.5 | 6 | −4. 3 targets, 3 carries |
+| K | Spencer Shrader | 9 / 10.7 | 8 | −1 |
+| DEF | Giants (locked Thu) | 6 / 6.9 | 5 | −1 |
 
-**Actual total:** — vs projected —. Opponent: — vs projected —.
+**Actual total:** 96 vs projected 120 (Yahoo). Opponent: 99 vs projected 133.
+Bench: McGowan 13, Strange 8, Cooper 0 (Out), Worthy 0 (3 targets).
 
 ### Counterfactual
 
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Geno Smith | | Stafford / Penix / Watson | | |
-| Khalil Shakir (WR3) | | Cooper | | |
-| Wan'Dale Robinson (flex) | | Fannin / Strange / Worthy / Cooper | | |
-| TE (Strange or Fannin) | | the other | | |
+| Add a QB for Lamar (IR) (#1) | Geno 5 | Leave Lamar at QB | 0 | +5. Hit on process (rule 1). The add happened before the lock |
+| Geno as the QB (#1) | 5 | Stafford 25.8 (claim), Watson 21.4, Lock 19.6, Penix 12.3 (Sleeper) | | **−15 to −21. Miss. It decided the week.** All four were inside the noise line, and Geno was chosen because the add was certain. Any of the other three wins the week |
+| Shakir in, Cooper (Q) to the bench (#2) | 6 | Cooper (Out, inactive) | 0 | +6. Hit (rule 2) |
+| Robinson at flex/WR3 (#3) | 4 | Strange 8, Worthy 0, Cooper 0 | | −4 vs Strange. Coin flip, lost. Strange at flex wins the week 100–99 |
+| Fannin at TE when active (#3) | 16 | Strange | 8 | +8. Coin flip, won |
+| No change at RB or K (#4) | Taylor 12, Gordon 14, Shrader 8 | McGowan (bench, proj 4 / 6.8) | 13 | Noise vs Taylor. No projection supported a swap |
+| Corum claim, optional (#5), not made | McGowan 13 (bench) | Corum 20.9 | | Bench only. No effect on the week |
+| No Stafford claim (#6) | — | — | — | Rule 3 held. The cost was in the choice of QB (#1), not in rostering one |
+| McGowan not ranked for flex (unexamined) | Robinson 4 | McGowan | 13 | −9. He was flex-eligible and left out of the #3 pool. On projection (6.8) he would have ranked last, so this is the rule 4 process gap, not a lost call |
+
+**Could it have been won?** Yes, by 3 points, in two ways:
+
+* **QB.** Watson (21.4) or Lock (19.6) instead of Geno wins it by about 12.
+  Stafford by about 18.
+* **Flex.** Strange for Robinson wins it 100–99. The best legal lineup from the
+  roster (McGowan at flex) scores 105.
+
+Olave's 4 targets (−11) and Geno's xFP 8.1 hurt as much as any call, and no
+data available before the game pointed to either.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
+* What the reasoning got right: the zero check. Lamar was replaced before the
+  lock, which fixes week 9's failure. Rule 2 again: Cooper sat and was Out.
+  The conditional TE plan (Fannin if active) worked (+8).
+* What it got wrong: the QB pick. The "Against" column already listed wind
+  (14, gusts 20), BUF 10th vs QB and a week 9 dud. The choice came down to
+  certainty, and it scored 5. Watson, Lock (Q) and Penix were also immediate
+  adds (`roster_status` `FA` in the week 10 `free-agents.json`; only Stafford
+  was `W (Nov 14)`), so certainty did not separate Geno from them. One week is
+  not a pattern. Logged as a coin flip that lost.
 * Anything to change in how recommendations are made:
-* Rules confirmed or contradicted this week:
+  * **QB stream tiebreak.** When the free-agent QBs are inside the noise line
+    and more than one is an immediate add, break the tie on implied team
+    total and wind, not on certainty alone. Certainty only decides between a
+    claim and an immediate add. Added to LESSONS rule 3.
+  * **Rule 4: bench RBs belong in the flex pool.** McGowan was flex-eligible
+    and not listed. It cost nothing on projection, but the pool must be complete.
+* Rules confirmed or contradicted this week: rule 1 confirmed (QB added
+  in time). Rule 2 confirmed (+6). Rule 3: a QB was available, as the rule
+  says, but the pick missed. Rule 4: a gap, no cost on projection. Rule 6
+  confirmed (the TE conditional). Rule 9 held (Shrader 8, no alternative
+  screened). Rule 8 was not graded: the Giants were set before this analysis
+  and locked Thursday.

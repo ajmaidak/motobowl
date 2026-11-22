@@ -4,23 +4,24 @@ Every graded lineup call, by type. Net = points the call scored minus what the
 alternative scored, from the `After` sections. Update this when an `After`
 section is filled. Gaps under 2 are noise and count as neither hit nor miss.
 
-Season: week 9 lost 96–110 with the QB slot locked at 0. Close losses: by 2 (week 5), by 1 (week 6), by 14 with no QB (week 9).
+Season: week 10 lost 96–99. Close losses: by 2 (week 5), by 1 (week 6), by 14 with no QB (week 9), by 3 (week 10, on the QB stream pick).
 
 ## By type
 
-Recounted from the rows below on 2026-11-07. Week 9 added 2026-11-12 (the week 9 QB row moved from about −18 to −22). Before the recount, the
+Recounted from the rows below on 2026-11-07. Week 9 added 2026-11-12 (the week 9 QB row moved from about −18 to −22). Week 10 added 2026-11-21. Before the recount, the
 Availability and Tiebreak rows did not match the rows.
 
 | Type | Calls | Hit | Miss | Noise | Net | Read |
 |---|---|---|---|---|---|---|
-| Availability: fallback for an Out/Q/IR starter | 9 | 5 | 3 | 1 | **+30** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
-| Unexamined slot (no call made) | 5 | 0 | 5 | 0 | **−44** | Rule 4. The most expensive category. Week 8's points are in the TE row |
-| WR3 / flex tiebreak between examined players | 19 | 6 | 6 | 7 | −14 | Coin flips. Do not over-invest |
+| Availability: fallback for an Out/Q/IR starter | 11 | 7 | 3 | 1 | **+41** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
+| Unexamined slot (no call made) | 6 | 0 | 6 | 0 | **−53** | Rule 4. The most expensive category. Week 8's points are in the TE row. Week 10's (McGowan) ranked last on projection |
+| WR3 / flex tiebreak between examined players | 20 | 6 | 7 | 7 | −18 | Coin flips. Do not over-invest |
 | DEF stream | 8 | 4 | 3 | 1 | +6 | About break-even, vs the DEF replaced (LESSONS rule 8). Streaming for ceiling from week 10 |
 | K change | 4 | 1 | 2 | 1 | +1 | All of the gain was a bye cover |
-| TE | 2 | 0 | 1 | 1 | −17 | Week 8 tiebreak, Strange over Fannin |
+| TE | 3 | 1 | 1 | 1 | −9 | Week 8 tiebreak, Strange over Fannin. Week 10 Fannin when active, +8 |
+| QB stream pick (among free agents inside the noise line) | 1 | 0 | 1 | 0 | −15 | Week 10, Geno over Watson. Net vs the best other immediate add |
 | Add / claim | 1 | 1 | 0 | 0 | +6 | Robinson for Sutton |
-| Declined add | 2 | 1 | 0 | 1 | 0 | Ferguson (right), Washington (bench, no cost) |
+| Declined add | 3 | 1 | 0 | 2 | 0 | Ferguson (right), Washington and Corum (bench, no cost) |
 | User change (not a recommendation) | 1 | 1 | 0 | 0 | +12 | Fannin to flex, week 8 |
 
 ## Every call
@@ -81,3 +82,10 @@ Availability and Tiebreak rows did not match the rows.
 | 9 | DEF | Giants for Commanders | Commanders | +7 | Hit |
 | 9 | K | Hold Shrader | Fairbairn (FA) | + | Hit (16) |
 | 9 | Unexamined | Diggs at WR3, no call | Worthy | −2 | Noise |
+| 10 | Availability | Geno added for Lamar (IR) before the lock | Lamar at QB | +5 | Hit (rule 1) |
+| 10 | QB stream | Geno Smith | Watson 21.4 (FA), Stafford 25.8 (claim) | −15 | Miss. Inside noise. Decided the week (lost by 3) |
+| 10 | Availability | Shakir in, Cooper (Q) to the bench | Cooper (Out) | +6 | Hit (rule 2) |
+| 10 | Tiebreak | Robinson at flex | Strange (bench) | −4 | Miss. Coin flip. Strange wins the week 100–99 |
+| 10 | TE | Fannin at TE when active, Strange to the bench | Strange | +8 | Hit. Coin flip |
+| 10 | Unexamined | McGowan (flex-eligible) not ranked for flex | McGowan 13 | −9 | Miss on process (rule 4). Projected last (6.8) |
+| 10 | Declined add | Corum claim (optional) not made | Corum 20.9 | 0 | Bench only |

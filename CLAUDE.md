@@ -13,19 +13,19 @@ The project reads league data and recommends waiver pickups and weekly lineups.
 **All roster moves are made by hand in the Yahoo app.** The Yahoo API is
 read-only, and no code here should attempt writes. Recommend, don't execute.
 
-## Status, 2026-11-12
+## Status, 2026-11-21
 
 Check this table before trusting anything below. Update the date when it changes.
 
 | Thing | State | Note |
 |---|---|---|
-| Yahoo web session (`yahoo_web.py`) | **Active, the only league data source** | Cookie in `.yahoo-cookie`. Re-copy when a fetch hits a login redirect |
+| Yahoo web session (`yahoo_web.py`) | **Active, the only league data source** | Cookie in `.yahoo-cookie`, re-copied 2026-11-21 after it expired. Re-copy when a fetch hits a login redirect |
 | Yahoo Fantasy API (`yahoo_api.py`, `roster.py`) | **Blocked.** Every call 403s | Waiting on Yahoo since 2026-09-25. History: `docs/yahoo-api-history.md` |
 | `.credentials.json` | **Absent in this checkout** | Holds Yahoo app and FantasyPros keys when present. Gitignored |
 | FantasyPros | **Unusable here** (no key) | Free tier only covers the top 10 per position anyway |
 | QBERT (`qbert()`) | **Broken**, parse error on 2026-11-07 | Silver Bulletin changed the post layout. Fix or skip |
 | Sleeper, nflverse, ffopportunity, ESPN lines, Open-Meteo | Working | See "External data sources" |
-| `weeks/week-09.md` After | Filled 2026-11-12 | Lost 96–110. `week-10.md` After waits for Mon Nov 16 |
+| `weeks/week-10.md` After | Filled 2026-11-21 | Lost 96–99. `week-11.md` Before written Sat Nov 21; After waits for Mon Nov 23 |
 
 ## League data: the Yahoo web session
 
