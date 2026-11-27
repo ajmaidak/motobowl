@@ -13,7 +13,7 @@ The project reads league data and recommends waiver pickups and weekly lineups.
 **All roster moves are made by hand in the Yahoo app.** The Yahoo API is
 read-only, and no code here should attempt writes. Recommend, don't execute.
 
-## Status, 2026-11-21
+## Status, 2026-11-26
 
 Check this table before trusting anything below. Update the date when it changes.
 
@@ -25,7 +25,8 @@ Check this table before trusting anything below. Update the date when it changes
 | FantasyPros | **Unusable here** (no key) | Free tier only covers the top 10 per position anyway |
 | QBERT (`qbert()`) | **Broken**, parse error on 2026-11-07 | Silver Bulletin changed the post layout. Fix or skip |
 | Sleeper, nflverse, ffopportunity, ESPN lines, Open-Meteo | Working | See "External data sources" |
-| `weeks/week-10.md` After | Filled 2026-11-21 | Lost 96–99. `week-11.md` Before written Sat Nov 21; After waits for Mon Nov 23 |
+| Yahoo matchup page, current week | **Broken 2026-11-26** | `matchup?week=12` returns no lineup tables (manager-comparison view only); scoreboard returns "not found". Past weeks still parse. `sync` dies after writing my roster. Workaround: opponent from `BASE/<team>?week=W`, which has one extra blank cell that `parse_roster` rejects |
+| `weeks/` | week 11 After filled 2026-11-26 (lost 92–103) | `week-12.md` Before written Thu Nov 26; After waits for Mon Nov 30 |
 
 ## League data: the Yahoo web session
 

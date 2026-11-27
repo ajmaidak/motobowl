@@ -1,6 +1,6 @@
 # Week 11
 
-**Opponent:** Let go of my Johnson (team 5) · **Result:** — · **Final score:** —
+**Opponent:** Let go of my Johnson (team 5) · **Result:** Loss · **Final score:** 92–103
 
 Team: Team Auto Pick · Source: `yahoo_web.py sync 11` (web session),
 fetched 2026-11-22T04:14Z (Sat Nov 21, 10:14 pm CST). Analysis run Sat Nov 21
@@ -121,33 +121,87 @@ All three were made Sat Nov 21 at night and confirmed by the 04:26Z re-sync.
 
 ## After
 
-Filled <date> from <source>. (`/week-review`)
+Filled 2026-11-26 from the Yahoo matchup page (`cache/yahoo/matchup_w11.json`).
+Free agents come from Sleeper week 11 stats, league-scored. Usage from
+ffopportunity week 11. (`/week-review`)
+
+The lineup played matched the recommendation: Ward at QB, Egbuka at WR,
+Strange at TE, Shakir at flex, Chargers DEF. All three transactions were made
+Saturday night.
 
 ### Actual results
 
 | Slot | Player | Proj (Yahoo / Sleeper) | Actual | Δ |
 |---|---|---|---|---|
-| | | | | |
+| QB | Cam Ward (add) | 21 / 19.3 | 25 | +4. 30 attempts, xFP 17.0 |
+| WR | Chris Olave | 15 / 15.3 | 19 | +4. **15 targets**, xFP 24.3. The week 10 dip (4) was one week |
+| WR | Stefon Diggs | 13 / 13.4 | 8 | −5. 6 targets, xFP 11.1 |
+| WR | Emeka Egbuka | 11 / 10.1 | 3 | −8. 5 targets, xFP 7.8 |
+| RB | Jonathan Taylor (locked Thu) | 14 / — | 6 | −8. 11 carries, 5 targets, xFP 11.4 |
+| RB | Ollie Gordon II | 11 / 11.1 | 8 | −3. 11 carries, 3 targets |
+| TE | Brenton Strange | 8 / 9.0 | 4 | −4. **3 targets**, xFP 3.7 |
+| W/R/T | Khalil Shakir | 11 / 9.6 | 15 | +4. 9 targets, 2 carries, xFP 17.8 |
+| K | Spencer Shrader (locked Thu) | 8 / — | 3 | −5 |
+| DEF | Chargers (add) | 7 / 6.9 | 1 | −6. vs NYJ (Geno 25.4 by Sleeper) |
 
-**Actual total:** — vs projected —. Opponent: — vs projected —.
+**Actual total:** 92 vs projected 119 (Yahoo, matchup page). Opponent: 103 vs
+projected 112. Bench: Dike 12, Worthy 11, McGowan 1, Cooper 0 (Out), Harvey
+0 (IR), Fannin (bye).
 
 ### Counterfactual
 
+Free-agent numbers are Sleeper, league-scored. Rostered players are Yahoo.
+
 | Started | Pts | Alternative | Pts | Verdict |
 |---|---|---|---|---|
-| Cam Ward | | Geno Smith / Herbert | | |
-| Chargers DEF | | Panthers / Giants | | |
-| Egbuka at WR3 | | Dike / Worthy | | |
-| Shakir at flex | | Dike / Worthy | | |
-| Dike for Robinson (bench, #8) | | Bryant | | Grade over weeks 12–17 |
-| Keep Harvey (#9) | | Perine | | Grade at week 13 |
-| Strange at TE | | Goedert | | |
+| Strange to TE for Fannin (bye) (#1) | 4 | Empty slot | 0 | +4. Hit (rule 1). No other TE on the roster |
+| Egbuka to WR for Robinson (IR) (#1) | 3 | Empty slot / Worthy (bench) | 0 / 11 | +3 vs a 0 (rule 1, hit). −8 vs Worthy, but Egbuka out-projected him 11 / 10.1 vs 6 / 6.8. Right on projection |
+| Ward for Geno (#2) | 25 | Geno 25.4, Herbert 26.4 | | Noise. The implied-total tiebreak (rule 3) picked a QB who matched the field |
+| Chargers DEF for Giants (#3) | 1 | Giants 8 (dropped), Panthers 5 | | **−7 vs the Giants, −4 vs the Panthers. Miss.** No free-agent DEF reached the 18 target. The Giants faced JAX at 25.75 and still outscored the stream |
+| Egbuka at WR3 over Dike (#4, #6) | 3 | Dike 12 (bench after #8) | | **−9. Coin flip, lost.** Sleeper had them tied (10.1 vs 10.2); Yahoo favored Egbuka by 3. Dike was ranked in the #4 pool as a free agent, so the rule 6 re-run after the add would have changed nothing |
+| Shakir at flex (#4) | 15 | Dike 12, Worthy 11 | | +3. Hit. Rule 7 cited BUF's 30.5 implied total |
+| Diggs held at WR2 (#4) | 8 | Dike 12, Worthy 11 | | −4. Miss on points, right on projection (13 vs 8–10). Thursday rest DNP was not a factor |
+| Olave held after a 4-target week (#4) | 19 | Worthy / Dike | 11 / 12 | +7. Hit. Holding on one bad week was right |
+| No Goedert add (#5) | Strange 4 | Goedert 4.8 | | Noise |
+| K (#7) | 3 | — | — | Locked Thursday. No call |
+| Dike for Robinson (IR), bench (#8) | Dike 12 (bench) | Robinson 0 (IR) | | Bench only this week. Grade over weeks 12–17 |
+| Keep Harvey (IR) over Perine (#9) | Harvey 0 (bench) | Perine 13.7 | | Bench only. Perine projected 7.8, so he would not have started over Gordon. Grade at week 13 |
+| RB2: Gordon, no bench alternative (uncovered) | 8 | McGowan (Out, locked) | 1 | No alternative on the roster |
 
-**Could it have been won?** —
+**Could it have been won?** **Yes, by 1.** The best legal lineup from the
+roster started Olave 19, Shakir 15, Dike 12 and Worthy 11 across WR and flex
+instead of Diggs 8 and Egbuka 3: 104–103. With only the calls on the table
+fixed:
+
+* Dike over Egbuka (#4): 101. Still a loss by 2.
+* Keep the Giants DEF (#3): 99. Panthers instead: 96.
+* Dike plus the Giants: 108, a win. Dike plus the Panthers: 105, a win.
+
+Neither coin flip lost the week alone. The two together did: the WR3 tiebreak
+(−9) and the DEF stream (−7). Taylor's 6 and Shrader's 3 locked Thursday
+before any analysis, and the opponent's Purdy (28) sat on their bench.
 
 ### What to learn
 
-* What the reasoning got right:
-* What it got wrong:
+* What the reasoning got right: the zero check caught both zero slots (Fannin's
+  bye, Robinson's IR) before the lock. The rule 3 tiebreak picked Ward, who
+  matched Geno and Herbert. The holds on Olave (after a 4-target week) and
+  Shakir at flex (rule 7, BUF's implied total) were right.
+* What it got wrong: the DEF stream again failed to beat the DEF it replaced
+  (−7). Every free-agent DEF faced an implied total above the 18 target that
+  week, and the Before section said so. The WR3 tiebreak lost 9, on a true
+  coin flip. No usage signal separated Egbuka (5 targets in week 9) and Dike
+  (3 in week 10).
 * Anything to change in how recommendations are made:
-* Rules confirmed or contradicted this week:
+  * **DEF streams when the 18 target is not met.** Track the streams where
+    a free-agent DEF faced an implied total of 18 or under separately from
+    the ones where none did. Week 11 (none met it, −7) is one data point.
+    Rule 8 is a user decision, so this is a measurement, not a rule change.
+    Added to LESSONS rule 8.
+  * No new rule from the WR3 tiebreak. It was a coin flip that lost, which
+    the tally already says to expect.
+* Rules confirmed or contradicted this week: rule 1 confirmed (+4, +3 vs 0).
+  Rule 3 tiebreak: noise. Rule 4: no unexamined slot; the uncovered RB2 had no
+  alternative. Rule 6: the Dike add was already in the pool, so no gap.
+  Rule 7: applied at flex (+3) and TE (noise). Rule 8: −7, net −1 over 9
+  streams. Rule 9: no call (Shrader locked Thursday).

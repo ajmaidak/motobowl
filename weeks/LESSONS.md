@@ -23,6 +23,7 @@ move that prevents a 0. Run `lineup_check.py` before any analysis.
   the add or the claim in the same session. The week 9 plan to add a QB on
   Tue/Wed was not carried out. Lamar was still at QB on Thu Nov 12.
 * Week 10: confirmed. Geno was added for Lamar before the Sunday lock (+5 vs a 0).
+* Week 11: confirmed. Two zero slots (Fannin bye, Robinson IR) fixed Saturday night, +4 and +3 vs a 0.
 
 ### 2. Choose the fallback as if the questionable starter is out, and put it in now
 
@@ -53,7 +54,8 @@ happen before the lock.
 * **Picking among streaming QBs (added week 10):** when several are inside the
   noise line, certainty (immediate add vs claim) decides only between a
   claim and an add. Between immediate adds, break the tie on implied team total
-  and wind, then on the last two weeks of xFP. Tally: 0–1 (week 10, −15).
+  and wind, then on the last two weeks of xFP. Tally: 0–1 (week 10, −15),
+  then noise (week 11: Ward 25 vs Geno 25.4 and Herbert 26.4).
 
 ### 4. Rank every eligible player for every unlocked slot, as one pool
 
@@ -73,6 +75,8 @@ for flex before the analysis ends (week 8: Fannin).
 * Week 10: McGowan (RB, flex-eligible, bench) was left out of the flex pool
   and scored 13 to Robinson's 4. He projected last (6.8), so the result was
   luck, but the pool must list every flex-eligible bench player, RBs included.
+* Week 11: no unexamined slot. The best legal lineup (Dike and Worthy over Diggs
+  and Egbuka, +12) came from examined coin flips and a projection hold, not a gap.
 
 ### 5. Check usage for every starter, not only the contested ones
 
@@ -97,6 +101,8 @@ before lock.
   written as a conditional and followed (+8). Week 8: the Robinson claim cleared and
   Harvey went on IR on Oct 31. The user re-ran the slots (Fannin to flex),
   +12 over the written plan. The re-run is not in the log.
+* Week 11: Dike was added after the lineup was set, but he was already ranked in
+  the WR3 pool as a free agent, so a re-run would not have changed the call.
 
 ### 7. Break ties toward ceiling when the projection says underdog by 10 or more
 
@@ -107,6 +113,8 @@ same, so take the higher-variance side of a coin flip at the weakest slots.
 * Origin: week 4 outlook, applied in weeks 6, 8 and 9.
 * Tally: not yet graded as a rule. Week 8 cannot grade it: lost by 60, so no
   tiebreak mattered. Week 9: not applied, no coin flip was broken toward ceiling.
+  Week 11: applied at flex (Shakir on BUF's 30.5, +3) and TE (Strange over
+  Goedert, noise). +3 so far.
 
 ### 8. Stream DEF every week for ceiling (user decision, 2026-11-07)
 
@@ -120,7 +128,13 @@ Recommend the best one even inside the noise bar.
   wk8 +10. **Net −1 over 7 streams.** The implied-total signal was right in
   weeks 4, 8 and 9 and wrong in week 5. Week 9: Giants 13 vs Commanders 6, +7.
   **Net +6 over 8 streams.** Week 8 confirmed in the `After` section
-  (Commanders 13, Browns 3).
+  (Commanders 13, Browns 3). Week 11: Chargers 1 vs Giants 8, −7. **Net −1
+  over 9 streams.**
+* **Track separately (added week 11):** streams where a free-agent DEF faced an
+  implied total of 18 or under, and streams where none did. In week 11 none did
+  (best was NYJ 19.75), and the stream lost 7. Say in the Before section which
+  case applies. If the "none met it" streams keep losing, bring it to the user,
+  since rule 8 is their decision.
 
 ### 9. Kicker churn is noise
 
@@ -128,7 +142,7 @@ Change kickers only for a bye, a dome-vs-wind gap, or a large implied-total gap.
 
 * Origin: add/drop review. Five K moves, net about +11, all from the week 6 bye cover.
 * Tally: wk2 −9 (1-point gap, variance), wk6 +16 (bye), wk7 0, wk8 −6
-  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8. Week 9: Shrader held, 16. Week 10: held, 8.
+  (rest-of-season bet; Shrader 1, Bates 7). Confirmed week 8. Week 9: Shrader held, 16. Week 10: held, 8. Week 11: locked Thursday (3), no call.
 
 ### 10. Judge RBs in full PPR on targets per game, not snap share
 

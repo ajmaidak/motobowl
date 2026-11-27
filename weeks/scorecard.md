@@ -4,22 +4,23 @@ Every graded lineup call, by type. Net = points the call scored minus what the
 alternative scored, from the `After` sections. Update this when an `After`
 section is filled. Gaps under 2 are noise and count as neither hit nor miss.
 
-Season: week 10 lost 96–99. Close losses: by 2 (week 5), by 1 (week 6), by 14 with no QB (week 9), by 3 (week 10, on the QB stream pick).
+Season: week 11 lost 92–103. Close losses: by 2 (week 5), by 1 (week 6), by 14 with no QB (week 9), by 3 (week 10, on the QB stream pick), by 11 (week 11; the best legal lineup won by 1, and the WR3 and DEF coin flips together would have won it).
 
 ## By type
 
-Recounted from the rows below on 2026-11-07. Week 9 added 2026-11-12 (the week 9 QB row moved from about −18 to −22). Week 10 added 2026-11-21. Before the recount, the
+Recounted from the rows below on 2026-11-07. Week 9 added 2026-11-12 (the week 9 QB row moved from about −18 to −22). Week 10 added 2026-11-21. Week 11 added 2026-11-26. Before the recount, the
 Availability and Tiebreak rows did not match the rows.
 
 | Type | Calls | Hit | Miss | Noise | Net | Read |
 |---|---|---|---|---|---|---|
-| Availability: fallback for an Out/Q/IR starter | 11 | 7 | 3 | 1 | **+41** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
+| Availability: fallback for an Out/Q/IR starter | 13 | 9 | 3 | 1 | **+48** | Where the advice earns its keep. Two misses were process (rules 1 and 2). One was an in-game injury (Lamar, week 8, −22) |
 | Unexamined slot (no call made) | 6 | 0 | 6 | 0 | **−53** | Rule 4. The most expensive category. Week 8's points are in the TE row. Week 10's (McGowan) ranked last on projection |
-| WR3 / flex tiebreak between examined players | 20 | 6 | 7 | 7 | −18 | Coin flips. Do not over-invest |
-| DEF stream | 8 | 4 | 3 | 1 | +6 | About break-even, vs the DEF replaced (LESSONS rule 8). Streaming for ceiling from week 10 |
+| WR3 / flex tiebreak between examined players | 22 | 7 | 8 | 7 | −24 | Coin flips. Do not over-invest |
+| DEF stream | 9 | 4 | 4 | 1 | −1 | About break-even, vs the DEF replaced (LESSONS rule 8). Streaming for ceiling from week 10. Week 11: no free agent met the 18 target, −7 |
 | K change | 4 | 1 | 2 | 1 | +1 | All of the gain was a bye cover |
-| TE | 3 | 1 | 1 | 1 | −9 | Week 8 tiebreak, Strange over Fannin. Week 10 Fannin when active, +8 |
-| QB stream pick (among free agents inside the noise line) | 1 | 0 | 1 | 0 | −15 | Week 10, Geno over Watson. Net vs the best other immediate add |
+| TE | 4 | 1 | 1 | 2 | −10 | Week 8 tiebreak, Strange over Fannin. Week 10 Fannin when active, +8 |
+| QB stream pick (among free agents inside the noise line) | 2 | 0 | 1 | 1 | −15 | Week 10, Geno over Watson (−15). Week 11, Ward over Geno and Herbert (noise). Net vs the best other immediate add |
+| Hold on a projection edge (2+) | 2 | 1 | 1 | 0 | +3 | Week 11: Olave held after a 4-target week (+7); Diggs held over Dike (−4) |
 | Add / claim | 1 | 1 | 0 | 0 | +6 | Robinson for Sutton |
 | Declined add | 3 | 1 | 0 | 2 | 0 | Ferguson (right), Washington and Corum (bench, no cost) |
 | User change (not a recommendation) | 1 | 1 | 0 | 0 | +12 | Fannin to flex, week 8 |
@@ -89,3 +90,14 @@ Availability and Tiebreak rows did not match the rows.
 | 10 | TE | Fannin at TE when active, Strange to the bench | Strange | +8 | Hit. Coin flip |
 | 10 | Unexamined | McGowan (flex-eligible) not ranked for flex | McGowan 13 | −9 | Miss on process (rule 4). Projected last (6.8) |
 | 10 | Declined add | Corum claim (optional) not made | Corum 20.9 | 0 | Bench only |
+| 11 | Availability | Strange to TE for Fannin (bye) | Empty slot | +4 | Hit (rule 1) |
+| 11 | Availability | Egbuka to WR for Robinson (IR) | Empty slot (Worthy 11 on the bench, projected 6.8) | +3 | Hit (rule 1). Right on projection vs Worthy |
+| 11 | QB stream | Ward added, Geno dropped | Geno 25.4, Herbert 26.4 (Sleeper) | 0 | Noise. Ward 25 |
+| 11 | DEF | Chargers for Giants | Giants 8 (Sleeper) | −7 | Miss. No free-agent DEF met the 18 target |
+| 11 | Tiebreak | Egbuka at WR3 | Dike 12 | −9 | Miss. Coin flip (Sleeper 10.1 vs 10.2) |
+| 11 | Tiebreak | Shakir at flex | Dike 12 | +3 | Hit (rule 7, BUF implied total) |
+| 11 | Hold | Olave held after 4 targets in week 10 | Dike 12 | +7 | Hit. 15 targets |
+| 11 | Hold | Diggs at WR2 | Dike 12 | −4 | Miss on points, right on projection (13 vs 8–10) |
+| 11 | TE | No Goedert add, Strange at TE | Goedert 4.8 (Sleeper) | −1 | Noise |
+| 11 | Add / claim | Dike for Robinson (IR), bench | Robinson (IR) | pending | Bench 12 in week 11. Grade over weeks 12–17 |
+| 11 | Declined add | Keep Harvey (IR) over Perine | Perine 13.7 (bench) | pending | Grade at week 13 |
